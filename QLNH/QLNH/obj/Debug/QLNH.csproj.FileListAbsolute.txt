@@ -1,1 +1,9 @@
-C:\Users\root\Downloads\HK2\Lap trinh NET\Project\QLNH\QLNH\QLNH\bin\Debug\QLNH.exe.config
+C:\Users\root\Downloads\HK2\Lap trinh NET\Project\Nhap\QLNH\QLNH\bin\Debug\QLNH.exe.config
+C:\Users\root\Downloads\HK2\Lap trinh NET\Project\Nhap\QLNH\QLNH\bin\Debug\QLNH.exe
+C:\Users\root\Downloads\HK2\Lap trinh NET\Project\Nhap\QLNH\QLNH\bin\Debug\QLNH.pdb
+C:\Users\root\Downloads\HK2\Lap trinh NET\Project\Nhap\QLNH\QLNH\obj\Debug\QLNH.csprojResolveAssemblyReference.cache
+C:\Users\root\Downloads\HK2\Lap trinh NET\Project\Nhap\QLNH\QLNH\obj\Debug\QLNH.frmOther.resources
+C:\Users\root\Downloads\HK2\Lap trinh NET\Project\Nhap\QLNH\QLNH\obj\Debug\QLNH.Properties.Resources.resources
+C:\Users\root\Downloads\HK2\Lap trinh NET\Project\Nhap\QLNH\QLNH\obj\Debug\QLNH.csproj.GenerateResource.Cache
+C:\Users\root\Downloads\HK2\Lap trinh NET\Project\Nhap\QLNH\QLNH\obj\Debug\QLNH.exe
+C:\Users\root\Downloads\HK2\Lap trinh NET\Project\Nhap\QLNH\QLNH\obj\Debug\QLNH.pdb
