@@ -27,8 +27,8 @@ namespace QLNH.Model
         {
             this.ID = (int)row["ID_Table"];
             this.Position = row["Position"].ToString();
-            this.Capability = (int)row["Capability"];
-            this.Status = Convert.ToInt32(row["Status_Table"]);
+            this.Capability = (int)row["capability"];
+            this.Status = Convert.ToInt32(row["sta"]);
            
         }
 
