@@ -28,7 +28,10 @@ namespace QLNH
             foreach (Table item in tableList)
             {
                 Button btn = new Button() { Width = TableController.TableWidth, Height = TableController.TableHeight };
-                btn.Text = item.ID + Environment.NewLine + item.Status;
+                btn.Text = "Bàn " + item.ID + Environment.NewLine + item.Status 
+                    + Environment.NewLine + item.Position + Environment.NewLine + "Chỗ " + item.Capability;
+
+                btn.FlatStyle = FlatStyle.Flat; 
 
                 switch (item.Status)
                 {
@@ -51,6 +54,7 @@ namespace QLNH
 
         }
 
+        //Su kien thoat form
         private void mnLogout_Click(object sender, EventArgs e)
         {
             this.Close();

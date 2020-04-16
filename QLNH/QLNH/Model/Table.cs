@@ -12,15 +12,15 @@ namespace QLNH.Model
         private string position;
         private int capability;
         private int status;
-        private int iD_pos;
+        
 
-        public Table(int id, string pos, int capa, int status, int id_pos)
+        public Table(int id, string pos, int capa, int status)
         {
             this.ID = id;
             this.Position = pos;
             this.Capability = capa;
             this.Status = status;
-            this.ID_pos = id_pos;
+        
         }
 
         public Table(DataRow row)
@@ -29,7 +29,7 @@ namespace QLNH.Model
             this.Position = row["Position"].ToString();
             this.Capability = (int)row["Capability"];
             this.Status = Convert.ToInt32(row["Status_Table"]);
-            this.ID_pos = (int)row["ID_Pos"];
+           
         }
 
        
@@ -83,17 +83,6 @@ namespace QLNH.Model
             }
         }
 
-        public int ID_pos
-        {
-            get
-            {
-                return iD_pos;
-            }
-
-            set
-            {
-                iD_pos = value;
-            }
-        }
+      
     }
 }
