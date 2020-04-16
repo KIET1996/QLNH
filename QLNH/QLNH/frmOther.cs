@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QLNH.Controller;
+using QLNH.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,9 +20,28 @@ namespace QLNH
             load_Table();
         }
 
+        // Load danh sach ban
         void load_Table()
         {
+            List<Table> tableList = TableController.Instance.list_Table();
 
+            foreach (Table item in tableList)
+            {
+                Button btn = new Button() { Width = TableController.TableWidth, Height = TableController.TableHeight };
+                btn.Text = item.ID + Environment.NewLine + item.Status;
+
+                switch (item.Status)
+                {
+                    case 0:
+                        btn.BackColor = Color.Aqua;
+                        break;
+                    default:
+                        btn.BackColor = Color.LightPink;
+                        break;
+                }
+
+                fpnTable.Controls.Add(btn);
+            }
         }
 
 

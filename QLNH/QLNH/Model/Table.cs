@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 namespace QLNH.Model
 {
-    class TableModel
+    public class Table
     {
         private int iD;
         private string position;
@@ -14,7 +14,7 @@ namespace QLNH.Model
         private int status;
         private int iD_pos;
 
-        public TableModel(int id, string pos, int capa, int status, int id_pos)
+        public Table(int id, string pos, int capa, int status, int id_pos)
         {
             this.ID = id;
             this.Position = pos;
@@ -23,13 +23,13 @@ namespace QLNH.Model
             this.ID_pos = id_pos;
         }
 
-        public TableModel(DataRow row)
+        public Table(DataRow row)
         {
-            this.ID = (int)row["id"];
-            this.Position = row["position"].ToString();
-            this.Capability = (int)row["capability"];
-            this.Status = (int) row["status"];
-            this.ID_pos = (int)row["id_pos"];
+            this.ID = (int)row["ID_Table"];
+            this.Position = row["Position"].ToString();
+            this.Capability = (int)row["Capability"];
+            this.Status = Convert.ToInt32(row["Status_Table"]);
+            this.ID_pos = (int)row["ID_Pos"];
         }
 
        

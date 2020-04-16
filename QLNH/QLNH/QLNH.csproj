@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\Database.cs" />
     <Compile Include="Controller\DataProvider.cs" />
     <Compile Include="Controller\TableController.cs" />
     <Compile Include="frmOther.cs">
@@ -55,7 +54,7 @@
     <Compile Include="frmOther.Designer.cs">
       <DependentUpon>frmOther.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\TableModel.cs" />
+    <Compile Include="Model\Table.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmOther.resx">
