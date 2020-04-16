@@ -30,9 +30,10 @@ namespace QLNH
                 Button btn = new Button() { Width = TableController.TableWidth, Height = TableController.TableHeight };
                 btn.Text = "Bàn " + item.ID + Environment.NewLine + item.Status 
                     + Environment.NewLine + item.Position + Environment.NewLine + "Chỗ " + item.Capability;
-
-                btn.FlatStyle = FlatStyle.Flat; 
-
+         
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.Click += Btn_Click;
+                btn.Tag = item;
                 switch (item.Status)
                 {
                     case 0:
@@ -47,7 +48,18 @@ namespace QLNH
             }
         }
 
+        //Show noi dung hoa don
+        void show_Bill(int id)
+        {
 
+        }
+        
+        //Bat su kien khi nhan vao bieu tuong ban de show bill
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            int tableID = (sender as Table).ID;
+            show_Bill(tableID);
+        }
 
         private void btnOther_Click(object sender, EventArgs e)
         {

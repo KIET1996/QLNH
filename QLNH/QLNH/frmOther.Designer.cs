@@ -171,12 +171,15 @@
             // lvBill
             // 
             this.lvBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvBill.GridLines = true;
+            this.lvBill.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvBill.Location = new System.Drawing.Point(6, 14);
             this.lvBill.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lvBill.Name = "lvBill";
             this.lvBill.Size = new System.Drawing.Size(316, 357);
             this.lvBill.TabIndex = 0;
             this.lvBill.UseCompatibleStateImageBehavior = false;
+            this.lvBill.View = System.Windows.Forms.View.List;
             // 
             // pnButton
             // 
