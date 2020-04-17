@@ -17,18 +17,18 @@ namespace QLNH
         public frmOther()
         {
             InitializeComponent();
-            load_Table();
+            LoadTable();
         }
 
         // Load danh sach ban
-        void load_Table()
+        void LoadTable()
         {
-            List<Table> tableList = TableController.Instance.list_Table();
+            List<Table> tableList = TableController.Instance.ListTable();
 
             foreach (Table item in tableList)
             {
                 Button btn = new Button() { Width = TableController.TableWidth, Height = TableController.TableHeight };
-                btn.Text = "Bàn " + item.ID + Environment.NewLine + item.Status 
+                btn.Text = "Bàn " + item.ID_Table + Environment.NewLine + item.Status 
                     + Environment.NewLine + item.Position + Environment.NewLine + "Chỗ " + item.Capability;
          
                 btn.FlatStyle = FlatStyle.Flat;
@@ -49,16 +49,27 @@ namespace QLNH
         }
 
         //Show noi dung hoa don
-        void show_Bill(int id)
+        void ShowBill(int id)
         {
+            lvBill.Items.Clear();
+            List<Other> listBillInfo = OtherController.Instance.GetOtherByTable(id);
 
+            foreach (Other item in listBillInfo)
+            {
+                ListViewItem lvItem = new ListViewItem(item.FoodName.ToString());
+                lvItem.SubItems.Add(item.Quantity.ToString());
+                lvItem.SubItems.Add(item.Price.ToString());
+                lvItem.SubItems.Add(item.Total.ToString());
+
+                lvBill.Items.Add(lvItem);
+            }
         }
         
         //Bat su kien khi nhan vao bieu tuong ban de show bill
         private void Btn_Click(object sender, EventArgs e)
         {
-            int tableID = (sender as Table).ID;
-            show_Bill(tableID);
+            int tableID = ((sender as Button).Tag as Table).ID_Table;
+            ShowBill(tableID);
         }
 
         private void btnOther_Click(object sender, EventArgs e)

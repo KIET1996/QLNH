@@ -36,7 +36,8 @@ namespace QLNH.Model
             this.ID_Emp = (int)row["ID_Emp"];
             this.ID_Table = (int)row["ID_Table"];
             this.Time_Arrive = (DateTime?)row["Time_Arrive"];
-            this.Time_Payment = (DateTime?)row["Time_Payment"];
+            if (row["Time_Payment"].ToString() != "")
+                this.Time_Payment = (DateTime?)row["Time_Payment"];
             this.ID_Dis = (int)row["ID_Dis"];
             this.Sta = Convert.ToInt32(row["sta"]);
             this.Total_price = (int)row["Total_price"];

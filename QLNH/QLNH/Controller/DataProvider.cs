@@ -59,7 +59,7 @@ namespace QLNH.Controller
             return data;
         }
 
-        //Thuc thi cac lenh nhu update, insert khong tra ve du lieu, ma tra ve so dong thanh cong
+        //Thuc thi cac lenh nhu delete, update, insert khong tra ve du lieu, ma tra ve so dong thanh cong
         public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;

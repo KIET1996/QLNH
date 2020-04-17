@@ -21,7 +21,7 @@ namespace QLNH.Controller
         private BillController() { }
 
         //Lay id bill chua thanh toan
-        public int get_BiiID(int id)
+        public int GetBillID(int id)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Bill WHERE ID_Table = " + id + " AND sta = 0");
 

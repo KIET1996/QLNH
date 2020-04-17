@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\BillController.cs" />
+    <Compile Include="Controller\BillDetailController.cs" />
     <Compile Include="Controller\DataProvider.cs" />
+    <Compile Include="Controller\OtherController.cs" />
     <Compile Include="Controller\TableController.cs" />
     <Compile Include="frmOther.cs">
       <SubType>Form</SubType>
@@ -56,6 +58,8 @@
       <DependentUpon>frmOther.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Bill.cs" />
+    <Compile Include="Model\BillDetail.cs" />
+    <Compile Include="Model\Other.cs" />
     <Compile Include="Model\Table.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

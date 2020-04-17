@@ -54,6 +54,10 @@
             this.quảnLýToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bànToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOther = new System.Windows.Forms.ToolStripMenuItem();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnOther.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantity)).BeginInit();
             this.pnBill.SuspendLayout();
@@ -170,16 +174,21 @@
             // 
             // lvBill
             // 
+            this.lvBill.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
             this.lvBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvBill.GridLines = true;
             this.lvBill.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lvBill.Location = new System.Drawing.Point(6, 14);
+            this.lvBill.Location = new System.Drawing.Point(3, 17);
             this.lvBill.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lvBill.Name = "lvBill";
-            this.lvBill.Size = new System.Drawing.Size(316, 357);
+            this.lvBill.Size = new System.Drawing.Size(324, 359);
             this.lvBill.TabIndex = 0;
             this.lvBill.UseCompatibleStateImageBehavior = false;
-            this.lvBill.View = System.Windows.Forms.View.List;
+            this.lvBill.View = System.Windows.Forms.View.Details;
             // 
             // pnButton
             // 
@@ -341,6 +350,26 @@
             this.mnOther.Size = new System.Drawing.Size(100, 32);
             this.mnOther.Text = "Gọi món";
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Tên món";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Số lượng";
+            this.columnHeader2.Width = 40;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Đơn giá";
+            this.columnHeader3.Width = 75;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Thành tiền";
+            this.columnHeader4.Width = 80;
+            // 
             // frmOther
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -399,6 +428,10 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.NumericUpDown nupQuantity;
         private System.Windows.Forms.NumericUpDown nupDiscount;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
 

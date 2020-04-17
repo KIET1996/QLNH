@@ -23,7 +23,7 @@ namespace QLNH.Controller
 
         private TableController() { }
 
-        public List<Table> list_Table()
+        public List<Table> ListTable()
         {
             List<Table> tableList = new List<Table>();
 
