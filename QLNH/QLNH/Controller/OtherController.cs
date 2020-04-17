@@ -20,12 +20,12 @@ namespace QLNH.Controller
 
         private OtherController() { }
 
-        //
+        //Lấy danh sách bill_detail
         public List<Other> GetOtherByTable(int id)
         {
             List<Other> listOther = new List<Other>();
 
-            string query = "SELECT d.name, bd.quantity, d.price, d.price*bd.quantity AS total FROM Bill_Details AS bd, Bill AS b, Dishes AS d WHERE bd.ID_Bill = b.ID_Bill AND bd.ID_Dish = d.ID_Dish AND b.ID_Table =" + id; 
+            string query = "SELECT d.name, bd.quantity, d.price, d.price*bd.quantity AS total FROM Bill_Details AS bd, Bill AS b, Dishes AS d WHERE bd.ID_Bill = b.ID_Bill AND bd.ID_Dish = d.ID_Dish AND b.sta = 0 AND b.ID_Table =" + id; 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             foreach (DataRow item in data.Rows)

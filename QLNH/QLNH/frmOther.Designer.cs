@@ -58,6 +58,8 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lbTotal = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.pnOther.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantity)).BeginInit();
             this.pnBill.SuspendLayout();
@@ -165,6 +167,8 @@
             // 
             // pnBill
             // 
+            this.pnBill.Controls.Add(this.txtTotal);
+            this.pnBill.Controls.Add(this.lbTotal);
             this.pnBill.Controls.Add(this.lvBill);
             this.pnBill.Location = new System.Drawing.Point(450, 172);
             this.pnBill.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -339,9 +343,10 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.lvBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvBill.Location = new System.Drawing.Point(4, 17);
             this.lvBill.Name = "lvBill";
-            this.lvBill.Size = new System.Drawing.Size(323, 354);
+            this.lvBill.Size = new System.Drawing.Size(323, 324);
             this.lvBill.TabIndex = 0;
             this.lvBill.UseCompatibleStateImageBehavior = false;
             this.lvBill.View = System.Windows.Forms.View.Details;
@@ -368,6 +373,28 @@
             this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader4.Width = 90;
             // 
+            // lbTotal
+            // 
+            this.lbTotal.AutoSize = true;
+            this.lbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal.Location = new System.Drawing.Point(82, 347);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(105, 24);
+            this.lbTotal.TabIndex = 1;
+            this.lbTotal.Text = "Tổng tiền:";
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtTotal.Location = new System.Drawing.Point(185, 347);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(142, 28);
+            this.txtTotal.TabIndex = 2;
+            this.txtTotal.Text = "0";
+            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // frmOther
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -387,6 +414,7 @@
             this.pnOther.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantity)).EndInit();
             this.pnBill.ResumeLayout(false);
+            this.pnBill.PerformLayout();
             this.pnButton.ResumeLayout(false);
             this.pnButton.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupDiscount)).EndInit();
@@ -430,6 +458,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Label lbTotal;
+        private System.Windows.Forms.TextBox txtTotal;
     }
 }
 

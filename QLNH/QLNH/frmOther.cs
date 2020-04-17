@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace QLNH
 {
@@ -51,6 +52,7 @@ namespace QLNH
         //Show noi dung hoa don
         void ShowBill(int id)
         {
+            double total = 0;
             lvBill.Items.Clear();
             List<Other> listBillInfo = OtherController.Instance.GetOtherByTable(id);
 
@@ -60,9 +62,12 @@ namespace QLNH
                 lvItem.SubItems.Add(item.Quantity.ToString());
                 lvItem.SubItems.Add(item.Price.ToString());
                 lvItem.SubItems.Add(item.Total.ToString());
-                
+                total += item.Total;
                 lvBill.Items.Add(lvItem);
             }
+
+            CultureInfo culture = new CultureInfo("vi-VN");
+            txtTotal.Text = total.ToString("C", culture);
         }
         
         //Bat su kien khi nhan vao bieu tuong ban de show bill

@@ -11,10 +11,10 @@ namespace QLNH.Model
     {
         private string foodName;
         private int quantity;
-        private decimal price;
-        private decimal total;
+        private double price;
+        private double total;
 
-        public Other(string foodName, int quantity, decimal price, decimal total = 0)
+        public Other(string foodName, int quantity, double price, double total = 0)
         {
             this.FoodName = foodName;
             this.Quantity = quantity;
@@ -26,8 +26,8 @@ namespace QLNH.Model
         {
             this.FoodName = row["name"].ToString();
             this.Quantity =(int)row["quantity"];
-            this.Price = (decimal)row["price"];
-            this.Total =(decimal)row["total"];
+            this.Price = (double)row["price"];
+            this.Total =(double)row["total"];
         }
         public string FoodName
         {
@@ -55,7 +55,7 @@ namespace QLNH.Model
             }
         }
 
-        public decimal Price
+        public double Price
         {
             get
             {
@@ -68,7 +68,7 @@ namespace QLNH.Model
             }
         }
 
-        public decimal Total
+        public double Total
         {
             get
             {
