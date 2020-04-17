@@ -60,7 +60,7 @@ namespace QLNH
                 lvItem.SubItems.Add(item.Quantity.ToString());
                 lvItem.SubItems.Add(item.Price.ToString());
                 lvItem.SubItems.Add(item.Total.ToString());
-
+                
                 lvBill.Items.Add(lvItem);
             }
         }
