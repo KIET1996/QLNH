@@ -18,7 +18,22 @@ namespace QLNH
         public frmOther()
         {
             InitializeComponent();
+
             LoadTable();
+            LoadCategories();
+            
+        }
+
+        // Load danh sach loai mon an
+        void LoadCategories()
+        {
+
+        }
+
+        // Load danh sach thuc an theo loai
+        void LoadFoodFollowCategoriey(int id)
+        {
+
         }
 
         // Load danh sach ban
@@ -95,6 +110,12 @@ namespace QLNH
             {
                 e.Cancel = true;
             }
+        }
+
+        private void cbCategories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id = 0;
+            LoadFoodFollowCategoriey(id);
         }
     }
 }

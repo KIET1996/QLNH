@@ -164,6 +164,7 @@
             this.cbCategories.Name = "cbCategories";
             this.cbCategories.Size = new System.Drawing.Size(206, 33);
             this.cbCategories.TabIndex = 0;
+            this.cbCategories.SelectedIndexChanged += new System.EventHandler(this.cbCategories_SelectedIndexChanged);
             // 
             // pnBill
             // 
