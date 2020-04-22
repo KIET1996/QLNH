@@ -16,3 +16,6 @@ C:\Users\root\Downloads\HK2\Lap trinh NET\Project\QLNH\QLNH\QLNH\obj\Debug\QLNH.
 C:\Users\root\Downloads\HK2\Lap trinh NET\Project\QLNH\QLNH\QLNH\obj\Debug\QLNH.frmOther.resources
 C:\Users\root\Downloads\HK2\Lap trinh NET\Project\QLNH\QLNH\QLNH\obj\Debug\QLNH.Properties.Resources.resources
 C:\Users\root\Downloads\HK2\Lap trinh NET\Project\QLNH\QLNH\QLNH\obj\Debug\QLNH.csproj.GenerateResource.Cache
+D:\Project .NET\QLNH\QLNH\QLNH\bin\Debug\QLNH.exe.config
+D:\Project .NET\QLNH\QLNH\QLNH\obj\Debug\QLNH.exe
+D:\Project .NET\QLNH\QLNH\QLNH\obj\Debug\QLNH.pdb
