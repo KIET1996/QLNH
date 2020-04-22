@@ -20,6 +20,7 @@ namespace QLNH.Controller
 
         private CategoryController() { }
 
+        //Lấy danh sách category từ csdl, trả về list các phần tử là category
         public List<Category> GetListCategory()
         {
             List<Category> list = new List<Category>();

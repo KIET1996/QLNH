@@ -16,5 +16,12 @@ namespace QLNH
         {
             InitializeComponent();
         }
+
+        private void mnuOrder_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmOther frm = new frmOther();
+            frm.Show();
+        }
     }
 }
