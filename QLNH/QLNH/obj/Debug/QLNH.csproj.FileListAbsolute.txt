@@ -30,3 +30,6 @@ E:\ASP_NET\Project\QLNHGIT\QLNH\QLNH\QLNH\obj\Debug\QLNH.frmOther.resources
 E:\ASP_NET\Project\QLNHGIT\QLNH\QLNH\QLNH\obj\Debug\QLNH.frmTables.resources
 E:\ASP_NET\Project\QLNHGIT\QLNH\QLNH\QLNH\obj\Debug\QLNH.Properties.Resources.resources
 E:\ASP_NET\Project\QLNHGIT\QLNH\QLNH\QLNH\obj\Debug\QLNH.csproj.GenerateResource.Cache
+C:\Users\root\Downloads\HK2\Lap trinh NET\Project\QLNH\QLNH\QLNH\obj\Debug\QLNH.frmMenu.resources
+C:\Users\root\Downloads\HK2\Lap trinh NET\Project\QLNH\QLNH\QLNH\obj\Debug\QLNH.FrmStatistical.resources
+C:\Users\root\Downloads\HK2\Lap trinh NET\Project\QLNH\QLNH\QLNH\obj\Debug\QLNH.frmTables.resources
