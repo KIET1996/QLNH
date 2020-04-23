@@ -45,7 +45,6 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnButton = new System.Windows.Forms.Panel();
-            this.nupDiscount = new System.Windows.Forms.NumericUpDown();
             this.btnChange = new System.Windows.Forms.Button();
             this.lbChange = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -61,11 +60,12 @@
             this.mnDish = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOther = new System.Windows.Forms.ToolStripMenuItem();
             this.mnStatistic = new System.Windows.Forms.ToolStripMenuItem();
+            this.cbDiscount = new System.Windows.Forms.ComboBox();
+            this.txtPercent = new System.Windows.Forms.TextBox();
             this.pnOther.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.updQuantity)).BeginInit();
             this.pnBill.SuspendLayout();
             this.pnButton.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nupDiscount)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +82,7 @@
             this.pnOther.Location = new System.Drawing.Point(396, 38);
             this.pnOther.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnOther.Name = "pnOther";
-            this.pnOther.Size = new System.Drawing.Size(477, 116);
+            this.pnOther.Size = new System.Drawing.Size(500, 116);
             this.pnOther.TabIndex = 0;
             // 
             // updQuantity
@@ -239,7 +239,8 @@
             // 
             // pnButton
             // 
-            this.pnButton.Controls.Add(this.nupDiscount);
+            this.pnButton.Controls.Add(this.txtPercent);
+            this.pnButton.Controls.Add(this.cbDiscount);
             this.pnButton.Controls.Add(this.btnChange);
             this.pnButton.Controls.Add(this.lbChange);
             this.pnButton.Controls.Add(this.comboBox1);
@@ -250,17 +251,8 @@
             this.pnButton.Location = new System.Drawing.Point(733, 161);
             this.pnButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnButton.Name = "pnButton";
-            this.pnButton.Size = new System.Drawing.Size(140, 366);
+            this.pnButton.Size = new System.Drawing.Size(168, 366);
             this.pnButton.TabIndex = 2;
-            // 
-            // nupDiscount
-            // 
-            this.nupDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nupDiscount.Location = new System.Drawing.Point(10, 178);
-            this.nupDiscount.Name = "nupDiscount";
-            this.nupDiscount.Size = new System.Drawing.Size(103, 30);
-            this.nupDiscount.TabIndex = 8;
-            this.nupDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnChange
             // 
@@ -297,14 +289,14 @@
             this.lbDiscount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDiscount.Location = new System.Drawing.Point(9, 146);
             this.lbDiscount.Name = "lbDiscount";
-            this.lbDiscount.Size = new System.Drawing.Size(118, 22);
+            this.lbDiscount.Size = new System.Drawing.Size(154, 22);
             this.lbDiscount.TabIndex = 3;
-            this.lbDiscount.Text = "Giảm giá (%)";
+            this.lbDiscount.Text = "Loại giảm giá (%)";
             // 
             // btnDiscount
             // 
             this.btnDiscount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDiscount.Location = new System.Drawing.Point(9, 215);
+            this.btnDiscount.Location = new System.Drawing.Point(9, 269);
             this.btnDiscount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDiscount.Name = "btnDiscount";
             this.btnDiscount.Size = new System.Drawing.Size(103, 38);
@@ -365,7 +357,7 @@
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(890, 30);
+            this.menuStrip2.Size = new System.Drawing.Size(901, 30);
             this.menuStrip2.TabIndex = 5;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -405,11 +397,28 @@
             this.mnStatistic.Size = new System.Drawing.Size(94, 26);
             this.mnStatistic.Text = "Thống kê";
             // 
+            // cbDiscount
+            // 
+            this.cbDiscount.FormattingEnabled = true;
+            this.cbDiscount.Location = new System.Drawing.Point(13, 181);
+            this.cbDiscount.Name = "cbDiscount";
+            this.cbDiscount.Size = new System.Drawing.Size(143, 26);
+            this.cbDiscount.TabIndex = 8;
+            this.cbDiscount.SelectedIndexChanged += new System.EventHandler(this.cbDiscount_SelectedIndexChanged);
+            // 
+            // txtPercent
+            // 
+            this.txtPercent.Location = new System.Drawing.Point(13, 223);
+            this.txtPercent.Name = "txtPercent";
+            this.txtPercent.ReadOnly = true;
+            this.txtPercent.Size = new System.Drawing.Size(100, 24);
+            this.txtPercent.TabIndex = 9;
+            // 
             // frmOther
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(890, 562);
+            this.ClientSize = new System.Drawing.Size(901, 562);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnButton);
             this.Controls.Add(this.pnBill);
@@ -427,7 +436,6 @@
             this.pnBill.PerformLayout();
             this.pnButton.ResumeLayout(false);
             this.pnButton.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nupDiscount)).EndInit();
             this.panel1.ResumeLayout(false);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
@@ -461,7 +469,6 @@
         private System.Windows.Forms.Label lbChange;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.NumericUpDown updQuantity;
-        private System.Windows.Forms.NumericUpDown nupDiscount;
         private System.Windows.Forms.ListView lvBill;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -471,6 +478,8 @@
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.ToolStripMenuItem mnDish;
         private System.Windows.Forms.ToolStripMenuItem mnStatistic;
+        private System.Windows.Forms.ComboBox cbDiscount;
+        private System.Windows.Forms.TextBox txtPercent;
     }
 }
 

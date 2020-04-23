@@ -21,7 +21,15 @@ namespace QLNH
 
             LoadTable();
             LoadCategories();
-            
+            LoadDiscount();
+        }
+
+        //Load danh sach loai giam gia
+        void LoadDiscount()
+        {
+            List<Discount> listDiscount = DiscountController.Instance.GetListDiscount();
+            cbDiscount.DataSource = listDiscount;
+            cbDiscount.DisplayMember = "descript";
         }
 
         // Load danh sach loai mon an
@@ -86,7 +94,7 @@ namespace QLNH
                 total += item.Total;
                 lvBill.Items.Add(lvItem);
             }
-
+           
             CultureInfo culture = new CultureInfo("vi-VN");
             txtTotal.Text = total.ToString("C", culture);
         }
@@ -159,9 +167,13 @@ namespace QLNH
 
             int idBill = BillController.Instance.GetUncheckBillID(table.ID_Table);
 
+            double per = Convert.ToDouble(txtPercent.Text) / 100;
+            double total =Convert.ToDouble(txtTotal.Text.Split(',')[0]);
+            total = (total + total * 0.1 + total * per)*1000;
+
             if (idBill != -1)
             {
-                if (MessageBox.Show("Bạn có chắc thanh toán hóa đơn cho bàn " + table.ID_Table, "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                if (MessageBox.Show(string.Format("Bạn có chắc thanh toán hóa đơn cho bàn {0}\n Tổng tiền= tổng tiền + 10%(VAT) - giảm giá \n= {1} ", table.ID_Table, total), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                 {
                     BillController.Instance.CheckOut(idBill);
                     ShowBill(table.ID_Table);
@@ -171,6 +183,16 @@ namespace QLNH
             }
         }
 
+        private void cbDiscount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cb = sender as ComboBox;
 
+            if (cb.SelectedItem == null)
+                return;
+            Discount selected = cb.SelectedItem as Discount;
+            txtPercent.Text = selected.Per.ToString();
+
+           
+        }
     }
 }

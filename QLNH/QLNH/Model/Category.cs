@@ -14,8 +14,8 @@ namespace QLNH.Model
 
         public Category(int id_Ca, string name)
         {
-            this.id_Ca = id_Ca;
-            this.name = name;
+            this.Id_Ca = id_Ca;
+            this.Name = name;
         }
 
         public Category(DataRow row)
