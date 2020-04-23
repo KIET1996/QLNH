@@ -17,7 +17,7 @@ namespace QLNH
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new frmTables());
+            Application.Run(new frmOther());
 
         }
     }

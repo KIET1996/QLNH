@@ -27,13 +27,18 @@ namespace QLNH
         // Load danh sach loai mon an
         void LoadCategories()
         {
+            List<Category> listCategory = CategoryController.Instance.GetListCategory();
+            cbCategory.DataSource = listCategory;
+            cbCategory.DisplayMember = "name";
 
         }
 
         // Load danh sach thuc an theo loai
         void LoadFoodFollowCategoriey(int id)
         {
-
+            List<Dish> listDish = DishController.Instance.GetDishByCategoryID(id);
+            cbDish.DataSource = listDish;
+            cbDish.DisplayMember = "name";
         }
 
         // Load danh sach ban
@@ -89,11 +94,30 @@ namespace QLNH
         private void Btn_Click(object sender, EventArgs e)
         {
             int tableID = ((sender as Button).Tag as Table).ID_Table;
+            lvBill.Tag = (sender as Button).Tag;
             ShowBill(tableID);
         }
 
+        //Gọi món theo bàn
         private void btnOther_Click(object sender, EventArgs e)
         {
+            Table table = lvBill.Tag as Table;
+
+            int idBill = BillController.Instance.GetUncheckBillID(table.ID_Table);
+            int idDish = (cbDish.SelectedItem as Dish).ID_Dish;
+            int count = (int)updQuantity.Value;
+
+            if (idBill == -1)
+            {
+                BillController.Instance.InsertBill(table.ID_Table);
+                BillDetailController.Instance.InsertBillDetail(BillController.Instance.GetMaxIDBill(), idDish, count);
+            }
+            else
+            {
+                BillDetailController.Instance.InsertBillDetail(idBill, idDish, count);
+            }
+            updQuantity.Value = 1;
+            ShowBill(table.ID_Table);
 
         }
 
@@ -115,6 +139,14 @@ namespace QLNH
         private void cbCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
             int id = 0;
+            ComboBox cb = sender as ComboBox;
+
+            if (cb.SelectedItem == null)
+                return;
+
+            Category selected = cb.SelectedItem as Category;
+            id = selected.Id_Ca;
+
             LoadFoodFollowCategoriey(id);
         }
     }
