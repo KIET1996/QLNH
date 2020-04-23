@@ -19,3 +19,4 @@ C:\Users\root\Downloads\HK2\Lap trinh NET\Project\QLNH\QLNH\QLNH\obj\Debug\QLNH.
 D:\Project .NET\QLNH\QLNH\QLNH\bin\Debug\QLNH.exe.config
 D:\Project .NET\QLNH\QLNH\QLNH\obj\Debug\QLNH.exe
 D:\Project .NET\QLNH\QLNH\QLNH\obj\Debug\QLNH.pdb
+C:\Users\root\Downloads\HK2\Lap trinh NET\Project\QLNH\QLNH\QLNH\obj\Debug\QLNH.frmTables.resources
