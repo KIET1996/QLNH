@@ -64,15 +64,12 @@
     <Compile Include="frmOther.Designer.cs">
       <DependentUpon>frmOther.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="FrmStatistical.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmStatistical.Designer.cs">
       <DependentUpon>FrmStatistical.cs</DependentUpon>
     </Compile>
-=======
->>>>>>> master
     <Compile Include="frmTables.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,12 +89,9 @@
     <EmbeddedResource Include="frmOther.resx">
       <DependentUpon>frmOther.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="FrmStatistical.resx">
       <DependentUpon>FrmStatistical.cs</DependentUpon>
     </EmbeddedResource>
-=======
->>>>>>> master
     <EmbeddedResource Include="frmTables.resx">
       <DependentUpon>frmTables.cs</DependentUpon>
     </EmbeddedResource>
