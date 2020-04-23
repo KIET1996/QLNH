@@ -16,7 +16,7 @@ namespace QLNH
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmOther());
+            Application.Run(new FrmStatistical());
         }
     }
 }
