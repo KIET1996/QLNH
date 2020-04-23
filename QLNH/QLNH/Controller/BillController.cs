@@ -34,14 +34,13 @@ namespace QLNH.Controller
             return -1;
         }
 
-        //Thêm bill mới, giá trị truyền vào có id_emp, id_table, id_discount, total
+        //Thêm bill mới, giá trị truyền vào có id_emp, id_table
         //Tạm thời chỉ truyền id_table
         public void InsertBill(int id)
         {
             int emp = 1;
-            int dis = 2;
-            float tt = 0;
-            DataProvider.Instance.ExecuteNonQuery("exec QLNH_InsertBill  @id_emp , @id_table , @id_discount , @total", new object[] { emp , id, dis, tt });
+           
+            DataProvider.Instance.ExecuteNonQuery("exec QLNH_InsertBill  @id_emp , @id_table", new object[] { emp , id });
         }
 
         //Lấy id bill lớn nhất
@@ -55,6 +54,13 @@ namespace QLNH.Controller
             {
                 return 1;
             }
+        }
+
+        //Thay doi trang thai thanh tinh tien, tham so la id_bill
+        public void CheckOut(int id)
+        {
+            string query = "UPDATE Bill SET sta = 1 WHERE ID_Bill = " + id;
+            DataProvider.Instance.ExecuteNonQuery(query);
         }
 
     }

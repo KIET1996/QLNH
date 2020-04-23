@@ -44,6 +44,7 @@ namespace QLNH
         // Load danh sach ban
         void LoadTable()
         {
+            fpnTable.Controls.Clear();
             List<Table> tableList = TableController.Instance.ListTable();
 
             foreach (Table item in tableList)
@@ -118,7 +119,7 @@ namespace QLNH
             }
             updQuantity.Value = 1;
             ShowBill(table.ID_Table);
-
+            LoadTable();
         }
 
         //Su kien thoat form
@@ -136,6 +137,7 @@ namespace QLNH
             }
         }
 
+        //Bắt sự kiện khi Categogy thay đổi thức ăn thay đổi
         private void cbCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
             int id = 0;
@@ -149,5 +151,26 @@ namespace QLNH
 
             LoadFoodFollowCategoriey(id);
         }
+
+        //Thanh toán tièn
+        private void btnCheckout_Click(object sender, EventArgs e)
+        {
+            Table table = lvBill.Tag as Table;
+
+            int idBill = BillController.Instance.GetUncheckBillID(table.ID_Table);
+
+            if (idBill != -1)
+            {
+                if (MessageBox.Show("Bạn có chắc thanh toán hóa đơn cho bàn " + table.ID_Table, "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                {
+                    BillController.Instance.CheckOut(idBill);
+                    ShowBill(table.ID_Table);
+
+                    LoadTable();
+                }
+            }
+        }
+
+
     }
 }
