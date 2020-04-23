@@ -19,4 +19,14 @@ C:\Users\root\Downloads\HK2\Lap trinh NET\Project\QLNH\QLNH\QLNH\obj\Debug\QLNH.
 D:\Project .NET\QLNH\QLNH\QLNH\bin\Debug\QLNH.exe.config
 D:\Project .NET\QLNH\QLNH\QLNH\obj\Debug\QLNH.exe
 D:\Project .NET\QLNH\QLNH\QLNH\obj\Debug\QLNH.pdb
-C:\Users\root\Downloads\HK2\Lap trinh NET\Project\QLNH\QLNH\QLNH\obj\Debug\QLNH.frmTables.resources
+E:\ASP_NET\Project\QLNHGIT\QLNH\QLNH\QLNH\bin\Debug\QLNH.exe.config
+E:\ASP_NET\Project\QLNHGIT\QLNH\QLNH\QLNH\obj\Debug\QLNH.exe
+E:\ASP_NET\Project\QLNHGIT\QLNH\QLNH\QLNH\obj\Debug\QLNH.pdb
+E:\ASP_NET\Project\QLNHGIT\QLNH\QLNH\QLNH\bin\Debug\QLNH.exe
+E:\ASP_NET\Project\QLNHGIT\QLNH\QLNH\QLNH\bin\Debug\QLNH.pdb
+E:\ASP_NET\Project\QLNHGIT\QLNH\QLNH\QLNH\obj\Debug\QLNH.csprojResolveAssemblyReference.cache
+E:\ASP_NET\Project\QLNHGIT\QLNH\QLNH\QLNH\obj\Debug\QLNH.frmMenu.resources
+E:\ASP_NET\Project\QLNHGIT\QLNH\QLNH\QLNH\obj\Debug\QLNH.frmOther.resources
+E:\ASP_NET\Project\QLNHGIT\QLNH\QLNH\QLNH\obj\Debug\QLNH.frmTables.resources
+E:\ASP_NET\Project\QLNHGIT\QLNH\QLNH\QLNH\obj\Debug\QLNH.Properties.Resources.resources
+E:\ASP_NET\Project\QLNHGIT\QLNH\QLNH\QLNH\obj\Debug\QLNH.csproj.GenerateResource.Cache
