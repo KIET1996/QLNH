@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -38,18 +39,27 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+=======
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+
+>>>>>>> master
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.mnuManagement = new System.Windows.Forms.ToolStripMenuItem();
-            this.bànToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.khuVựcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.khuyếnMãiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuDish = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuOrder = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuStatistic = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnManagement = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnDish = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnOrder = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnStatistic = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.tabTable = new System.Windows.Forms.TabControl();
-            this.tabPageTable = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.grpListTable = new System.Windows.Forms.GroupBox();
             this.scrollTable = new System.Windows.Forms.VScrollBar();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -100,9 +110,12 @@
             this.lbStatus = new System.Windows.Forms.Label();
             this.lbNamePos = new System.Windows.Forms.Label();
             this.lbIDPosition = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.menuStrip1.SuspendLayout();
             this.tabTable.SuspendLayout();
-            this.tabPageTable.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.grpListTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grpInfo.SuspendLayout();
@@ -117,12 +130,14 @@
             this.menuStrip1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuManagement,
-            this.mnuDish,
-            this.mnuOrder,
-            this.mnuStatistic});
+            this.mnManagement,
+            this.mnDish,
+            this.mnOrder,
+            this.mnStatistic,
+            this.mnLogout});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+<<<<<<< HEAD
             this.menuStrip1.Size = new System.Drawing.Size(1548, 35);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
@@ -157,28 +172,62 @@
             this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
             this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(213, 32);
             this.nhânViênToolStripMenuItem.Text = "Nhân viên";
+=======
+            this.menuStrip1.Size = new System.Drawing.Size(1093, 30);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // kháchHàngToolStripMenuItem
+            // mnManagement
             // 
+            this.mnManagement.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnManagement.Name = "mnManagement";
+            this.mnManagement.Size = new System.Drawing.Size(89, 26);
+            this.mnManagement.Text = "Quản lý ";
+>>>>>>> master
+            // 
+            // mnDish
+            // 
+<<<<<<< HEAD
             this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
             this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(213, 32);
             this.kháchHàngToolStripMenuItem.Text = "Khách hàng";
+=======
+            this.mnDish.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnDish.Name = "mnDish";
+            this.mnDish.Size = new System.Drawing.Size(81, 26);
+            this.mnDish.Text = "Món ăn";
+>>>>>>> master
             // 
-            // khuyếnMãiToolStripMenuItem
+            // mnOrder
             // 
+<<<<<<< HEAD
             this.khuyếnMãiToolStripMenuItem.Name = "khuyếnMãiToolStripMenuItem";
             this.khuyếnMãiToolStripMenuItem.Size = new System.Drawing.Size(213, 32);
             this.khuyếnMãiToolStripMenuItem.Text = "Khuyến mãi";
+=======
+            this.mnOrder.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnOrder.Name = "mnOrder";
+            this.mnOrder.Size = new System.Drawing.Size(90, 26);
+            this.mnOrder.Text = "Gọi món";
+>>>>>>> master
             // 
-            // mnuDish
+            // mnStatistic
             // 
+<<<<<<< HEAD
             this.mnuDish.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuDish.Name = "mnuDish";
             this.mnuDish.Size = new System.Drawing.Size(98, 31);
             this.mnuDish.Text = "Món ăn";
+=======
+            this.mnStatistic.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnStatistic.Name = "mnStatistic";
+            this.mnStatistic.Size = new System.Drawing.Size(94, 26);
+            this.mnStatistic.Text = "Thống kê";
+>>>>>>> master
             // 
-            // mnuOrder
+            // mnLogout
             // 
+<<<<<<< HEAD
             this.mnuOrder.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuOrder.Name = "mnuOrder";
             this.mnuOrder.Size = new System.Drawing.Size(107, 31);
@@ -190,18 +239,30 @@
             this.mnuStatistic.Name = "mnuStatistic";
             this.mnuStatistic.Size = new System.Drawing.Size(114, 31);
             this.mnuStatistic.Text = "Thống kê";
+=======
+
+            this.mnLogout.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnLogout.Name = "mnLogout";
+            this.mnLogout.Size = new System.Drawing.Size(98, 26);
+            this.mnLogout.Text = "Đăng xuất";
+
+>>>>>>> master
             // 
             // tabTable
             // 
-            this.tabTable.Controls.Add(this.tabPageTable);
+            this.tabTable.Controls.Add(this.tabPage3);
             this.tabTable.Controls.Add(this.tabPage2);
+            this.tabTable.Controls.Add(this.tabPage1);
+            this.tabTable.Controls.Add(this.tabPage4);
+            this.tabTable.Controls.Add(this.tabPage5);
             this.tabTable.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabTable.Location = new System.Drawing.Point(12, 33);
+            this.tabTable.Location = new System.Drawing.Point(0, 33);
             this.tabTable.Name = "tabTable";
             this.tabTable.SelectedIndex = 0;
-            this.tabTable.Size = new System.Drawing.Size(1536, 896);
+            this.tabTable.Size = new System.Drawing.Size(1548, 896);
             this.tabTable.TabIndex = 1;
             // 
+<<<<<<< HEAD
             // tabPageTable
             // 
             this.tabPageTable.Controls.Add(this.grpListTable);
@@ -218,6 +279,24 @@
             this.tabPageTable.TabIndex = 0;
             this.tabPageTable.Text = "Bàn";
             this.tabPageTable.UseVisualStyleBackColor = true;
+=======
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.grpListTable);
+            this.tabPage3.Controls.Add(this.btnSave);
+            this.tabPage3.Controls.Add(this.btnCancel);
+            this.tabPage3.Controls.Add(this.btnDelete);
+            this.tabPage3.Controls.Add(this.btnEdit);
+            this.tabPage3.Controls.Add(this.btnAdd);
+            this.tabPage3.Controls.Add(this.grpInfo);
+            this.tabPage3.Location = new System.Drawing.Point(4, 31);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1540, 861);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "Bàn";
+            this.tabPage3.UseVisualStyleBackColor = true;
+>>>>>>> master
             // 
             // grpListTable
             // 
@@ -255,47 +334,84 @@
             // 
             // Column1
             // 
+<<<<<<< HEAD
             dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column1.DefaultCellStyle = dataGridViewCellStyle31;
+=======
+
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+
+>>>>>>> master
             this.Column1.HeaderText = "ID Bàn";
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
+<<<<<<< HEAD
             dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column2.DefaultCellStyle = dataGridViewCellStyle32;
+=======
+
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
+>>>>>>> master
             this.Column2.HeaderText = "Khu vực";
             this.Column2.Name = "Column2";
             this.Column2.Width = 150;
             // 
             // Column3
             // 
+<<<<<<< HEAD
             dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column3.DefaultCellStyle = dataGridViewCellStyle33;
+=======
+
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
+>>>>>>> master
             this.Column3.HeaderText = "Tên Bàn";
             this.Column3.Name = "Column3";
             this.Column3.Width = 150;
             // 
             // Column4
             // 
+<<<<<<< HEAD
             dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column4.DefaultCellStyle = dataGridViewCellStyle34;
+=======
+
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle4;
+>>>>>>> master
             this.Column4.HeaderText = "Cơ Cấu";
             this.Column4.Name = "Column4";
             this.Column4.Width = 150;
             // 
             // Column5
             // 
+<<<<<<< HEAD
             dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column5.DefaultCellStyle = dataGridViewCellStyle35;
+=======
+
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle5;
+>>>>>>> master
             this.Column5.HeaderText = "Trạng Thái";
             this.Column5.Name = "Column5";
             this.Column5.Width = 150;
             // 
             // Column6
             // 
+<<<<<<< HEAD
             dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column6.DefaultCellStyle = dataGridViewCellStyle36;
+=======
+
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle6;
+>>>>>>> master
             this.Column6.HeaderText = "Ghi Chú";
             this.Column6.Name = "Column6";
             this.Column6.Width = 150;
@@ -506,7 +622,11 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 36);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+<<<<<<< HEAD
             this.tabPage2.Size = new System.Drawing.Size(1528, 856);
+=======
+            this.tabPage2.Size = new System.Drawing.Size(1540, 861);
+>>>>>>> master
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Khu vực";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -545,33 +665,58 @@
             // 
             // ColIDPos
             // 
+<<<<<<< HEAD
             dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle37.NullValue = null;
             this.ColIDPos.DefaultCellStyle = dataGridViewCellStyle37;
+=======
+
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.NullValue = null;
+            this.ColIDPos.DefaultCellStyle = dataGridViewCellStyle7;
+>>>>>>> master
             this.ColIDPos.HeaderText = "ID Khu Vực";
             this.ColIDPos.Name = "ColIDPos";
             this.ColIDPos.Width = 150;
             // 
             // ColPos
             // 
+<<<<<<< HEAD
             dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.ColPos.DefaultCellStyle = dataGridViewCellStyle38;
+=======
+
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColPos.DefaultCellStyle = dataGridViewCellStyle8;
+>>>>>>> master
             this.ColPos.HeaderText = "Tên Khu Vực";
             this.ColPos.Name = "ColPos";
             this.ColPos.Width = 180;
             // 
             // ColStatusPos
             // 
+<<<<<<< HEAD
             dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.ColStatusPos.DefaultCellStyle = dataGridViewCellStyle39;
+=======
+
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColStatusPos.DefaultCellStyle = dataGridViewCellStyle9;
+>>>>>>> master
             this.ColStatusPos.HeaderText = "Trạng Thái";
             this.ColStatusPos.Name = "ColStatusPos";
             this.ColStatusPos.Width = 150;
             // 
             // ColNotePos
             // 
+<<<<<<< HEAD
             dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.ColNotePos.DefaultCellStyle = dataGridViewCellStyle40;
+=======
+
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColNotePos.DefaultCellStyle = dataGridViewCellStyle10;
+>>>>>>> master
             this.ColNotePos.HeaderText = "Ghi Chú";
             this.ColNotePos.Name = "ColNotePos";
             this.ColNotePos.Width = 150;
@@ -707,11 +852,39 @@
             this.lbIDPosition.TabIndex = 0;
             this.lbIDPosition.Text = "ID Khu Vực";
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 31);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1540, 861);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Nhân viên";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 31);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1540, 861);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Khách hàng";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 31);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(1540, 861);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Khuyến mãi";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
             // frmTables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1548, 941);
+            this.ClientSize = new System.Drawing.Size(1093, 503);
             this.Controls.Add(this.tabTable);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -722,7 +895,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabTable.ResumeLayout(false);
-            this.tabPageTable.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
             this.grpListTable.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.grpInfo.ResumeLayout(false);
@@ -740,16 +913,12 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem mnuManagement;
-        private System.Windows.Forms.ToolStripMenuItem bànToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem khuVựcToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mnuDish;
-        private System.Windows.Forms.ToolStripMenuItem mnuOrder;
-        private System.Windows.Forms.ToolStripMenuItem mnuStatistic;
-        private System.Windows.Forms.ToolStripMenuItem nhânViênToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kháchHàngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnManagement;
+        private System.Windows.Forms.ToolStripMenuItem mnDish;
+        private System.Windows.Forms.ToolStripMenuItem mnOrder;
+        private System.Windows.Forms.ToolStripMenuItem mnStatistic;
         private System.Windows.Forms.TabControl tabTable;
-        private System.Windows.Forms.TabPage tabPageTable;
+        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox grpInfo;
         private System.Windows.Forms.Label labID;
         private System.Windows.Forms.TabPage tabPage2;
@@ -800,7 +969,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPos;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColStatusPos;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNotePos;
-        private System.Windows.Forms.ToolStripMenuItem khuyếnMãiToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.ToolStripMenuItem mnLogout;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPage5;
     }
 }
 
