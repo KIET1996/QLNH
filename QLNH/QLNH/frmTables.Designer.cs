@@ -28,30 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< Updated upstream
-
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-
-=======
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -62,7 +38,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
->>>>>>> Stashed changes
+
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnManagement = new System.Windows.Forms.ToolStripMenuItem();
             this.mnDish = new System.Windows.Forms.ToolStripMenuItem();
@@ -182,44 +158,12 @@
             // 
             // mnLogout
             // 
-<<<<<<< Updated upstream
-            this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
-            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-            this.kháchHàngToolStripMenuItem.Text = "Khách hàng";
-            // 
-            // khuyếnMãiToolStripMenuItem
-            // 
-            this.khuyếnMãiToolStripMenuItem.Name = "khuyếnMãiToolStripMenuItem";
-            this.khuyếnMãiToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-            this.khuyếnMãiToolStripMenuItem.Text = "Khuyến mãi";
-            // 
-            // mnuDish
-            // 
-            this.mnuDish.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mnuDish.Name = "mnuDish";
-            this.mnuDish.Size = new System.Drawing.Size(81, 26);
-            this.mnuDish.Text = "Món ăn";
-            // 
-            // mnuOrder
-            // 
-            this.mnuOrder.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mnuOrder.Name = "mnuOrder";
-            this.mnuOrder.Size = new System.Drawing.Size(90, 26);
-            this.mnuOrder.Text = "Gọi món";
-            this.mnuOrder.Click += new System.EventHandler(this.mnuOrder_Click);
-            // 
-            // mnuStatistic
-            // 
-            this.mnuStatistic.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mnuStatistic.Name = "mnuStatistic";
-            this.mnuStatistic.Size = new System.Drawing.Size(94, 26);
-            this.mnuStatistic.Text = "Thống kê";
-=======
+
             this.mnLogout.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnLogout.Name = "mnLogout";
             this.mnLogout.Size = new System.Drawing.Size(98, 26);
             this.mnLogout.Text = "Đăng xuất";
->>>>>>> Stashed changes
+
             // 
             // tabTable
             // 
@@ -288,107 +232,54 @@
             // 
             // Column1
             // 
-<<<<<<< Updated upstream
 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle11;
-
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle21;
-
-=======
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
->>>>>>> Stashed changes
+
             this.Column1.HeaderText = "ID Bàn";
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
-<<<<<<< Updated upstream
 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle12;
-
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle22;
-
-=======
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
->>>>>>> Stashed changes
             this.Column2.HeaderText = "Khu vực";
             this.Column2.Name = "Column2";
             this.Column2.Width = 150;
             // 
             // Column3
             // 
-<<<<<<< Updated upstream
 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle13;
-
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle23;
-
-=======
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
->>>>>>> Stashed changes
             this.Column3.HeaderText = "Tên Bàn";
             this.Column3.Name = "Column3";
             this.Column3.Width = 150;
             // 
             // Column4
             // 
-<<<<<<< Updated upstream
 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle14;
-
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle24;
-
-=======
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column4.DefaultCellStyle = dataGridViewCellStyle4;
->>>>>>> Stashed changes
             this.Column4.HeaderText = "Cơ Cấu";
             this.Column4.Name = "Column4";
             this.Column4.Width = 150;
             // 
             // Column5
             // 
-<<<<<<< Updated upstream
 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle15;
-
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle25;
-
-=======
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column5.DefaultCellStyle = dataGridViewCellStyle5;
->>>>>>> Stashed changes
             this.Column5.HeaderText = "Trạng Thái";
             this.Column5.Name = "Column5";
             this.Column5.Width = 150;
             // 
             // Column6
             // 
-<<<<<<< Updated upstream
 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle16;
-
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle26;
-
-=======
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column6.DefaultCellStyle = dataGridViewCellStyle6;
->>>>>>> Stashed changes
             this.Column6.HeaderText = "Ghi Chú";
             this.Column6.Name = "Column6";
             this.Column6.Width = 150;
@@ -638,75 +529,37 @@
             // 
             // ColIDPos
             // 
-<<<<<<< Updated upstream
 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.NullValue = null;
-            this.ColIDPos.DefaultCellStyle = dataGridViewCellStyle17;
-
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.NullValue = null;
-            this.ColIDPos.DefaultCellStyle = dataGridViewCellStyle27;
-
-=======
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.NullValue = null;
             this.ColIDPos.DefaultCellStyle = dataGridViewCellStyle7;
->>>>>>> Stashed changes
             this.ColIDPos.HeaderText = "ID Khu Vực";
             this.ColIDPos.Name = "ColIDPos";
             this.ColIDPos.Width = 150;
             // 
             // ColPos
             // 
-<<<<<<< Updated upstream
 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColPos.DefaultCellStyle = dataGridViewCellStyle18;
-
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColPos.DefaultCellStyle = dataGridViewCellStyle28;
-
-=======
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.ColPos.DefaultCellStyle = dataGridViewCellStyle8;
->>>>>>> Stashed changes
             this.ColPos.HeaderText = "Tên Khu Vực";
             this.ColPos.Name = "ColPos";
             this.ColPos.Width = 180;
             // 
             // ColStatusPos
             // 
-<<<<<<< Updated upstream
 
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColStatusPos.DefaultCellStyle = dataGridViewCellStyle19;
-
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColStatusPos.DefaultCellStyle = dataGridViewCellStyle29;
-
-=======
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.ColStatusPos.DefaultCellStyle = dataGridViewCellStyle9;
->>>>>>> Stashed changes
             this.ColStatusPos.HeaderText = "Trạng Thái";
             this.ColStatusPos.Name = "ColStatusPos";
             this.ColStatusPos.Width = 150;
             // 
             // ColNotePos
             // 
-<<<<<<< Updated upstream
 
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColNotePos.DefaultCellStyle = dataGridViewCellStyle20;
-
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColNotePos.DefaultCellStyle = dataGridViewCellStyle30;
-
-=======
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.ColNotePos.DefaultCellStyle = dataGridViewCellStyle10;
->>>>>>> Stashed changes
             this.ColNotePos.HeaderText = "Ghi Chú";
             this.ColNotePos.Name = "ColNotePos";
             this.ColNotePos.Width = 150;
