@@ -40,7 +40,7 @@ namespace QLNH.Model
                 this.Time_Payment = (DateTime?)row["Time_Payment"];
             this.ID_Dis = (int)row["ID_Dis"];
             this.Sta = Convert.ToInt32(row["sta"]);
-            this.Total_price = (int)row["Total_price"];
+            this.Total_price = (float)row["Total_price"];
         }
 
         public int ID_Bill
