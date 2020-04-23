@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuManagement = new System.Windows.Forms.ToolStripMenuItem();
             this.bànToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -123,7 +123,7 @@
             this.mnuStatistic});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1548, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1548, 35);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -137,58 +137,58 @@
             this.khuyếnMãiToolStripMenuItem});
             this.mnuManagement.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuManagement.Name = "mnuManagement";
-            this.mnuManagement.Size = new System.Drawing.Size(89, 26);
+            this.mnuManagement.Size = new System.Drawing.Size(106, 31);
             this.mnuManagement.Text = "Quản lý ";
             // 
             // bànToolStripMenuItem
             // 
             this.bànToolStripMenuItem.Name = "bànToolStripMenuItem";
-            this.bànToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.bànToolStripMenuItem.Size = new System.Drawing.Size(213, 32);
             this.bànToolStripMenuItem.Text = "Bàn";
             // 
             // khuVựcToolStripMenuItem
             // 
             this.khuVựcToolStripMenuItem.Name = "khuVựcToolStripMenuItem";
-            this.khuVựcToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.khuVựcToolStripMenuItem.Size = new System.Drawing.Size(213, 32);
             this.khuVựcToolStripMenuItem.Text = "Khu vực";
             // 
             // nhânViênToolStripMenuItem
             // 
             this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
-            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(213, 32);
             this.nhânViênToolStripMenuItem.Text = "Nhân viên";
             // 
             // kháchHàngToolStripMenuItem
             // 
             this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
-            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(213, 32);
             this.kháchHàngToolStripMenuItem.Text = "Khách hàng";
             // 
             // khuyếnMãiToolStripMenuItem
             // 
             this.khuyếnMãiToolStripMenuItem.Name = "khuyếnMãiToolStripMenuItem";
-            this.khuyếnMãiToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.khuyếnMãiToolStripMenuItem.Size = new System.Drawing.Size(213, 32);
             this.khuyếnMãiToolStripMenuItem.Text = "Khuyến mãi";
             // 
             // mnuDish
             // 
             this.mnuDish.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuDish.Name = "mnuDish";
-            this.mnuDish.Size = new System.Drawing.Size(81, 26);
+            this.mnuDish.Size = new System.Drawing.Size(98, 31);
             this.mnuDish.Text = "Món ăn";
             // 
             // mnuOrder
             // 
             this.mnuOrder.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuOrder.Name = "mnuOrder";
-            this.mnuOrder.Size = new System.Drawing.Size(90, 26);
+            this.mnuOrder.Size = new System.Drawing.Size(107, 31);
             this.mnuOrder.Text = "Gọi món";
             // 
             // mnuStatistic
             // 
             this.mnuStatistic.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuStatistic.Name = "mnuStatistic";
-            this.mnuStatistic.Size = new System.Drawing.Size(94, 26);
+            this.mnuStatistic.Size = new System.Drawing.Size(114, 31);
             this.mnuStatistic.Text = "Thống kê";
             // 
             // tabTable
@@ -211,10 +211,10 @@
             this.tabPageTable.Controls.Add(this.btnEdit);
             this.tabPageTable.Controls.Add(this.btnAdd);
             this.tabPageTable.Controls.Add(this.grpInfo);
-            this.tabPageTable.Location = new System.Drawing.Point(4, 31);
+            this.tabPageTable.Location = new System.Drawing.Point(4, 36);
             this.tabPageTable.Name = "tabPageTable";
             this.tabPageTable.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTable.Size = new System.Drawing.Size(1528, 861);
+            this.tabPageTable.Size = new System.Drawing.Size(1528, 856);
             this.tabPageTable.TabIndex = 0;
             this.tabPageTable.Text = "Bàn";
             this.tabPageTable.UseVisualStyleBackColor = true;
@@ -255,47 +255,47 @@
             // 
             // Column1
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle31;
             this.Column1.HeaderText = "ID Bàn";
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle32;
             this.Column2.HeaderText = "Khu vực";
             this.Column2.Name = "Column2";
             this.Column2.Width = 150;
             // 
             // Column3
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle33;
             this.Column3.HeaderText = "Tên Bàn";
             this.Column3.Name = "Column3";
             this.Column3.Width = 150;
             // 
             // Column4
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle34;
             this.Column4.HeaderText = "Cơ Cấu";
             this.Column4.Name = "Column4";
             this.Column4.Width = 150;
             // 
             // Column5
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle35;
             this.Column5.HeaderText = "Trạng Thái";
             this.Column5.Name = "Column5";
             this.Column5.Width = 150;
             // 
             // Column6
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle36;
             this.Column6.HeaderText = "Ghi Chú";
             this.Column6.Name = "Column6";
             this.Column6.Width = 150;
@@ -373,7 +373,7 @@
             this.checkNo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkNo.Location = new System.Drawing.Point(271, 192);
             this.checkNo.Name = "checkNo";
-            this.checkNo.Size = new System.Drawing.Size(78, 26);
+            this.checkNo.Size = new System.Drawing.Size(94, 31);
             this.checkNo.TabIndex = 12;
             this.checkNo.Text = "Trống";
             this.checkNo.UseVisualStyleBackColor = true;
@@ -384,7 +384,7 @@
             this.checkYes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkYes.Location = new System.Drawing.Point(146, 192);
             this.checkYes.Name = "checkYes";
-            this.checkYes.Size = new System.Drawing.Size(106, 26);
+            this.checkYes.Size = new System.Drawing.Size(127, 31);
             this.checkYes.TabIndex = 11;
             this.checkYes.Text = "Có người";
             this.checkYes.UseVisualStyleBackColor = true;
@@ -401,7 +401,7 @@
             "VIP"});
             this.combCapability.Location = new System.Drawing.Point(146, 151);
             this.combCapability.Name = "combCapability";
-            this.combCapability.Size = new System.Drawing.Size(219, 30);
+            this.combCapability.Size = new System.Drawing.Size(219, 35);
             this.combCapability.TabIndex = 10;
             // 
             // combPosition
@@ -416,28 +416,28 @@
             "Sân Trước"});
             this.combPosition.Location = new System.Drawing.Point(146, 74);
             this.combPosition.Name = "combPosition";
-            this.combPosition.Size = new System.Drawing.Size(219, 30);
+            this.combPosition.Size = new System.Drawing.Size(219, 35);
             this.combPosition.TabIndex = 9;
             // 
             // txtNote
             // 
             this.txtNote.Location = new System.Drawing.Point(146, 234);
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(219, 30);
+            this.txtNote.Size = new System.Drawing.Size(219, 35);
             this.txtNote.TabIndex = 8;
             // 
             // txtNameTable
             // 
             this.txtNameTable.Location = new System.Drawing.Point(146, 112);
             this.txtNameTable.Name = "txtNameTable";
-            this.txtNameTable.Size = new System.Drawing.Size(219, 30);
+            this.txtNameTable.Size = new System.Drawing.Size(219, 35);
             this.txtNameTable.TabIndex = 7;
             // 
             // txtID
             // 
             this.txtID.Location = new System.Drawing.Point(146, 38);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(219, 30);
+            this.txtID.Size = new System.Drawing.Size(219, 35);
             this.txtID.TabIndex = 6;
             // 
             // labNote
@@ -445,7 +445,7 @@
             this.labNote.AutoSize = true;
             this.labNote.Location = new System.Drawing.Point(27, 237);
             this.labNote.Name = "labNote";
-            this.labNote.Size = new System.Drawing.Size(76, 22);
+            this.labNote.Size = new System.Drawing.Size(93, 27);
             this.labNote.TabIndex = 5;
             this.labNote.Text = "Ghi Chú";
             // 
@@ -454,7 +454,7 @@
             this.labStatus.AutoSize = true;
             this.labStatus.Location = new System.Drawing.Point(27, 193);
             this.labStatus.Name = "labStatus";
-            this.labStatus.Size = new System.Drawing.Size(96, 22);
+            this.labStatus.Size = new System.Drawing.Size(116, 27);
             this.labStatus.TabIndex = 4;
             this.labStatus.Text = "Trạng Thái";
             // 
@@ -463,7 +463,7 @@
             this.labCapability.AutoSize = true;
             this.labCapability.Location = new System.Drawing.Point(27, 154);
             this.labCapability.Name = "labCapability";
-            this.labCapability.Size = new System.Drawing.Size(70, 22);
+            this.labCapability.Size = new System.Drawing.Size(86, 27);
             this.labCapability.TabIndex = 3;
             this.labCapability.Text = "Cơ Cấu";
             // 
@@ -472,7 +472,7 @@
             this.labNameTable.AutoSize = true;
             this.labNameTable.Location = new System.Drawing.Point(27, 115);
             this.labNameTable.Name = "labNameTable";
-            this.labNameTable.Size = new System.Drawing.Size(76, 22);
+            this.labNameTable.Size = new System.Drawing.Size(94, 27);
             this.labNameTable.TabIndex = 2;
             this.labNameTable.Text = "Tên Bàn";
             // 
@@ -481,7 +481,7 @@
             this.labPosition.AutoSize = true;
             this.labPosition.Location = new System.Drawing.Point(27, 77);
             this.labPosition.Name = "labPosition";
-            this.labPosition.Size = new System.Drawing.Size(80, 22);
+            this.labPosition.Size = new System.Drawing.Size(99, 27);
             this.labPosition.TabIndex = 1;
             this.labPosition.Text = "Khu Vực";
             // 
@@ -490,7 +490,7 @@
             this.labID.AutoSize = true;
             this.labID.Location = new System.Drawing.Point(27, 41);
             this.labID.Name = "labID";
-            this.labID.Size = new System.Drawing.Size(66, 22);
+            this.labID.Size = new System.Drawing.Size(82, 27);
             this.labID.TabIndex = 0;
             this.labID.Text = "ID Bàn";
             // 
@@ -503,10 +503,10 @@
             this.tabPage2.Controls.Add(this.btnEditPos);
             this.tabPage2.Controls.Add(this.btnAddPos);
             this.tabPage2.Controls.Add(this.grpPosition);
-            this.tabPage2.Location = new System.Drawing.Point(4, 31);
+            this.tabPage2.Location = new System.Drawing.Point(4, 36);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1528, 861);
+            this.tabPage2.Size = new System.Drawing.Size(1528, 856);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Khu vực";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -545,33 +545,33 @@
             // 
             // ColIDPos
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.NullValue = null;
-            this.ColIDPos.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle37.NullValue = null;
+            this.ColIDPos.DefaultCellStyle = dataGridViewCellStyle37;
             this.ColIDPos.HeaderText = "ID Khu Vực";
             this.ColIDPos.Name = "ColIDPos";
             this.ColIDPos.Width = 150;
             // 
             // ColPos
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColPos.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColPos.DefaultCellStyle = dataGridViewCellStyle38;
             this.ColPos.HeaderText = "Tên Khu Vực";
             this.ColPos.Name = "ColPos";
             this.ColPos.Width = 180;
             // 
             // ColStatusPos
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColStatusPos.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColStatusPos.DefaultCellStyle = dataGridViewCellStyle39;
             this.ColStatusPos.HeaderText = "Trạng Thái";
             this.ColStatusPos.Name = "ColStatusPos";
             this.ColStatusPos.Width = 150;
             // 
             // ColNotePos
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColNotePos.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColNotePos.DefaultCellStyle = dataGridViewCellStyle40;
             this.ColNotePos.HeaderText = "Ghi Chú";
             this.ColNotePos.Name = "ColNotePos";
             this.ColNotePos.Width = 150;
@@ -647,28 +647,28 @@
             "Ngừng hoạt động"});
             this.comboStatus.Location = new System.Drawing.Point(186, 122);
             this.comboStatus.Name = "comboStatus";
-            this.comboStatus.Size = new System.Drawing.Size(258, 30);
+            this.comboStatus.Size = new System.Drawing.Size(258, 35);
             this.comboStatus.TabIndex = 7;
             // 
             // txtNotePos
             // 
             this.txtNotePos.Location = new System.Drawing.Point(186, 167);
             this.txtNotePos.Name = "txtNotePos";
-            this.txtNotePos.Size = new System.Drawing.Size(258, 30);
+            this.txtNotePos.Size = new System.Drawing.Size(258, 35);
             this.txtNotePos.TabIndex = 6;
             // 
             // txtNamePos
             // 
             this.txtNamePos.Location = new System.Drawing.Point(186, 82);
             this.txtNamePos.Name = "txtNamePos";
-            this.txtNamePos.Size = new System.Drawing.Size(258, 30);
+            this.txtNamePos.Size = new System.Drawing.Size(258, 35);
             this.txtNamePos.TabIndex = 5;
             // 
             // txtIDPos
             // 
             this.txtIDPos.Location = new System.Drawing.Point(186, 43);
             this.txtIDPos.Name = "txtIDPos";
-            this.txtIDPos.Size = new System.Drawing.Size(258, 30);
+            this.txtIDPos.Size = new System.Drawing.Size(258, 35);
             this.txtIDPos.TabIndex = 4;
             // 
             // lbNote
@@ -676,7 +676,7 @@
             this.lbNote.AutoSize = true;
             this.lbNote.Location = new System.Drawing.Point(32, 170);
             this.lbNote.Name = "lbNote";
-            this.lbNote.Size = new System.Drawing.Size(76, 22);
+            this.lbNote.Size = new System.Drawing.Size(93, 27);
             this.lbNote.TabIndex = 3;
             this.lbNote.Text = "Ghi Chú";
             // 
@@ -685,7 +685,7 @@
             this.lbStatus.AutoSize = true;
             this.lbStatus.Location = new System.Drawing.Point(32, 125);
             this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(96, 22);
+            this.lbStatus.Size = new System.Drawing.Size(116, 27);
             this.lbStatus.TabIndex = 2;
             this.lbStatus.Text = "Trạng Thái";
             // 
@@ -694,7 +694,7 @@
             this.lbNamePos.AutoSize = true;
             this.lbNamePos.Location = new System.Drawing.Point(32, 85);
             this.lbNamePos.Name = "lbNamePos";
-            this.lbNamePos.Size = new System.Drawing.Size(115, 22);
+            this.lbNamePos.Size = new System.Drawing.Size(142, 27);
             this.lbNamePos.TabIndex = 1;
             this.lbNamePos.Text = "Tên Khu Vực";
             // 
@@ -703,13 +703,13 @@
             this.lbIDPosition.AutoSize = true;
             this.lbIDPosition.Location = new System.Drawing.Point(32, 46);
             this.lbIDPosition.Name = "lbIDPosition";
-            this.lbIDPosition.Size = new System.Drawing.Size(105, 22);
+            this.lbIDPosition.Size = new System.Drawing.Size(130, 27);
             this.lbIDPosition.TabIndex = 0;
             this.lbIDPosition.Text = "ID Khu Vực";
             // 
             // frmTables
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1548, 941);
             this.Controls.Add(this.tabTable);
