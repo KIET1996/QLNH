@@ -56,11 +56,10 @@ namespace QLNH.Controller
             }
         }
 
-        //Thay doi trang thai thanh tinh tien, tham so la id_bill
-        public void CheckOut(int id)
-        {
-            string query = "UPDATE Bill SET sta = 1 WHERE ID_Bill = " + id;
-            DataProvider.Instance.ExecuteNonQuery(query);
+        //Thay doi trang thai thanh tinh tien, tham so la id_bill, id_discount, date, total
+        public void CheckOut(int id_bill, int id_discount,  double total)
+        {   
+            DataProvider.Instance.ExecuteNonQuery("exec QLNH_CheckoutBill @id_bill , @id_dícount , @total", new object[] { id_bill, id_discount, total });
         }
 
     }
