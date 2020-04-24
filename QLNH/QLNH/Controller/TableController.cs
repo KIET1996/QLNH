@@ -23,6 +23,7 @@ namespace QLNH.Controller
 
         private TableController() { }
 
+        //Lấy danh sách bàn 
         public List<Table> ListTable()
         {
             List<Table> tableList = new List<Table>();
@@ -37,6 +38,7 @@ namespace QLNH.Controller
 
             return tableList;
         }
+
 
     }
 }
