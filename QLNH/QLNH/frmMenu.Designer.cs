@@ -57,6 +57,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.btnDeleteFood = new System.Windows.Forms.Button();
             this.btnUpdateFood = new System.Windows.Forms.Button();
+            this.btnAddFood = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.txtFoodDes = new System.Windows.Forms.RichTextBox();
             this.lblFoodDes = new System.Windows.Forms.Label();
@@ -81,7 +82,6 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.btnFoodSearch = new System.Windows.Forms.Button();
             this.txtFoodSearch = new System.Windows.Forms.TextBox();
-            this.btnAddFood = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.TagMenu.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -221,19 +221,21 @@
             // 
             this.btnDeleteCa.Location = new System.Drawing.Point(877, 240);
             this.btnDeleteCa.Name = "btnDeleteCa";
-            this.btnDeleteCa.Size = new System.Drawing.Size(93, 37);
+            this.btnDeleteCa.Size = new System.Drawing.Size(158, 58);
             this.btnDeleteCa.TabIndex = 9;
             this.btnDeleteCa.Text = "Xóa";
             this.btnDeleteCa.UseVisualStyleBackColor = true;
+            this.btnDeleteCa.Click += new System.EventHandler(this.btnDeleteCa_Click);
             // 
             // btnAddCa
             // 
             this.btnAddCa.Location = new System.Drawing.Point(697, 240);
             this.btnAddCa.Name = "btnAddCa";
-            this.btnAddCa.Size = new System.Drawing.Size(163, 37);
+            this.btnAddCa.Size = new System.Drawing.Size(158, 58);
             this.btnAddCa.TabIndex = 8;
             this.btnAddCa.Text = "Thêm mới";
             this.btnAddCa.UseVisualStyleBackColor = true;
+            this.btnAddCa.Click += new System.EventHandler(this.btnAddCa_Click);
             // 
             // txtCaName
             // 
@@ -379,6 +381,15 @@
             this.btnUpdateFood.TabIndex = 5;
             this.btnUpdateFood.Text = "Sửa";
             this.btnUpdateFood.UseVisualStyleBackColor = true;
+            // 
+            // btnAddFood
+            // 
+            this.btnAddFood.Location = new System.Drawing.Point(62, 582);
+            this.btnAddFood.Name = "btnAddFood";
+            this.btnAddFood.Size = new System.Drawing.Size(196, 55);
+            this.btnAddFood.TabIndex = 4;
+            this.btnAddFood.Text = "Thêm món";
+            this.btnAddFood.UseVisualStyleBackColor = true;
             // 
             // panel9
             // 
@@ -590,15 +601,6 @@
             this.txtFoodSearch.Size = new System.Drawing.Size(294, 35);
             this.txtFoodSearch.TabIndex = 1;
             // 
-            // btnAddFood
-            // 
-            this.btnAddFood.Location = new System.Drawing.Point(62, 582);
-            this.btnAddFood.Name = "btnAddFood";
-            this.btnAddFood.Size = new System.Drawing.Size(196, 55);
-            this.btnAddFood.TabIndex = 4;
-            this.btnAddFood.Text = "Thêm món";
-            this.btnAddFood.UseVisualStyleBackColor = true;
-            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -608,6 +610,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "frmMenu";
             this.Text = "Quản lý nhà hàng";
+            this.Load += new System.EventHandler(this.frmMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.TagMenu.ResumeLayout(false);

@@ -37,5 +37,25 @@ namespace QLNH.Controller
 
             return list;
         }
+
+        // Add category
+        public bool AddCategory(string name)
+        {
+            string query = string.Format("INSERT dbo.Categories ( name)VALUES  ( '{0}')", name);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        //Delete category
+        public bool DeleteCategory(int id_Ca)
+        {
+            string query = string.Format("DeLETE dbo.Categories ( id_Ca)VALUES  ( {0})", id_Ca);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+
     }
 }
