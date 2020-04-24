@@ -23,6 +23,7 @@ namespace QLNH
             LoadTable();
             LoadCategories();
             LoadDiscount();
+          
         }
 
         //Load danh sach loai giam gia
@@ -184,6 +185,7 @@ namespace QLNH
             }
         }
 
+        //Bắt sự kiện combox của discount thay đổi
         private void cbDiscount_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox cb = sender as ComboBox;
@@ -196,5 +198,7 @@ namespace QLNH
 
            
         }
+
+       
     }
 }
