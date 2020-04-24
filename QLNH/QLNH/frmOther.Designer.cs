@@ -45,11 +45,12 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnButton = new System.Windows.Forms.Panel();
+            this.txtPercent = new System.Windows.Forms.TextBox();
+            this.cbDiscount = new System.Windows.Forms.ComboBox();
             this.btnChange = new System.Windows.Forms.Button();
             this.lbChange = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lbDiscount = new System.Windows.Forms.Label();
-            this.btnDiscount = new System.Windows.Forms.Button();
             this.btnCheckout = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.fpnTable = new System.Windows.Forms.FlowLayoutPanel();
@@ -60,8 +61,6 @@
             this.mnDish = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOther = new System.Windows.Forms.ToolStripMenuItem();
             this.mnStatistic = new System.Windows.Forms.ToolStripMenuItem();
-            this.cbDiscount = new System.Windows.Forms.ComboBox();
-            this.txtPercent = new System.Windows.Forms.TextBox();
             this.pnOther.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.updQuantity)).BeginInit();
             this.pnBill.SuspendLayout();
@@ -245,7 +244,6 @@
             this.pnButton.Controls.Add(this.lbChange);
             this.pnButton.Controls.Add(this.comboBox1);
             this.pnButton.Controls.Add(this.lbDiscount);
-            this.pnButton.Controls.Add(this.btnDiscount);
             this.pnButton.Controls.Add(this.btnCheckout);
             this.pnButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnButton.Location = new System.Drawing.Point(733, 161);
@@ -253,6 +251,23 @@
             this.pnButton.Name = "pnButton";
             this.pnButton.Size = new System.Drawing.Size(168, 366);
             this.pnButton.TabIndex = 2;
+            // 
+            // txtPercent
+            // 
+            this.txtPercent.Location = new System.Drawing.Point(13, 223);
+            this.txtPercent.Name = "txtPercent";
+            this.txtPercent.ReadOnly = true;
+            this.txtPercent.Size = new System.Drawing.Size(100, 24);
+            this.txtPercent.TabIndex = 9;
+            // 
+            // cbDiscount
+            // 
+            this.cbDiscount.FormattingEnabled = true;
+            this.cbDiscount.Location = new System.Drawing.Point(13, 181);
+            this.cbDiscount.Name = "cbDiscount";
+            this.cbDiscount.Size = new System.Drawing.Size(143, 26);
+            this.cbDiscount.TabIndex = 8;
+            this.cbDiscount.SelectedIndexChanged += new System.EventHandler(this.cbDiscount_SelectedIndexChanged);
             // 
             // btnChange
             // 
@@ -292,17 +307,6 @@
             this.lbDiscount.Size = new System.Drawing.Size(154, 22);
             this.lbDiscount.TabIndex = 3;
             this.lbDiscount.Text = "Loại giảm giá (%)";
-            // 
-            // btnDiscount
-            // 
-            this.btnDiscount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDiscount.Location = new System.Drawing.Point(9, 269);
-            this.btnDiscount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnDiscount.Name = "btnDiscount";
-            this.btnDiscount.Size = new System.Drawing.Size(103, 38);
-            this.btnDiscount.TabIndex = 2;
-            this.btnDiscount.Text = "Gỉam";
-            this.btnDiscount.UseVisualStyleBackColor = true;
             // 
             // btnCheckout
             // 
@@ -397,23 +401,6 @@
             this.mnStatistic.Size = new System.Drawing.Size(94, 26);
             this.mnStatistic.Text = "Thống kê";
             // 
-            // cbDiscount
-            // 
-            this.cbDiscount.FormattingEnabled = true;
-            this.cbDiscount.Location = new System.Drawing.Point(13, 181);
-            this.cbDiscount.Name = "cbDiscount";
-            this.cbDiscount.Size = new System.Drawing.Size(143, 26);
-            this.cbDiscount.TabIndex = 8;
-            this.cbDiscount.SelectedIndexChanged += new System.EventHandler(this.cbDiscount_SelectedIndexChanged);
-            // 
-            // txtPercent
-            // 
-            this.txtPercent.Location = new System.Drawing.Point(13, 223);
-            this.txtPercent.Name = "txtPercent";
-            this.txtPercent.ReadOnly = true;
-            this.txtPercent.Size = new System.Drawing.Size(100, 24);
-            this.txtPercent.TabIndex = 9;
-            // 
             // frmOther
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -458,7 +445,6 @@
         private System.Windows.Forms.ComboBox cbDish;
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.Label lbDiscount;
-        private System.Windows.Forms.Button btnDiscount;
         private System.Windows.Forms.Button btnCheckout;
         private System.Windows.Forms.ToolStripMenuItem mnLogout;
         private System.Windows.Forms.MenuStrip menuStrip2;

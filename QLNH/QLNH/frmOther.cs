@@ -15,6 +15,7 @@ namespace QLNH
 {
     public partial class frmOther : Form
     {
+        public int id_discount = 1;
         public frmOther()
         {
             InitializeComponent();
@@ -175,7 +176,7 @@ namespace QLNH
             {
                 if (MessageBox.Show(string.Format("Bạn có chắc thanh toán hóa đơn cho bàn {0}\n Tổng tiền= tổng tiền + 10%(VAT) - giảm giá \n= {1} ", table.ID_Table, total), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                 {
-                    BillController.Instance.CheckOut(idBill);
+                    BillController.Instance.CheckOut(idBill, id_discount, total);
                     ShowBill(table.ID_Table);
 
                     LoadTable();
@@ -191,6 +192,7 @@ namespace QLNH
                 return;
             Discount selected = cb.SelectedItem as Discount;
             txtPercent.Text = selected.Per.ToString();
+            id_discount = selected.ID_Dis;
 
            
         }
