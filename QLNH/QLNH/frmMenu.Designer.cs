@@ -372,6 +372,7 @@
             this.btnDeleteFood.TabIndex = 7;
             this.btnDeleteFood.Text = "Xóa";
             this.btnDeleteFood.UseVisualStyleBackColor = true;
+            this.btnDeleteFood.Click += new System.EventHandler(this.btnDeleteFood_Click);
             // 
             // btnUpdateFood
             // 
@@ -381,6 +382,7 @@
             this.btnUpdateFood.TabIndex = 5;
             this.btnUpdateFood.Text = "Sửa";
             this.btnUpdateFood.UseVisualStyleBackColor = true;
+            this.btnUpdateFood.Click += new System.EventHandler(this.btnUpdateFood_Click);
             // 
             // btnAddFood
             // 
@@ -390,6 +392,7 @@
             this.btnAddFood.TabIndex = 4;
             this.btnAddFood.Text = "Thêm món";
             this.btnAddFood.UseVisualStyleBackColor = true;
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // panel9
             // 
@@ -539,6 +542,7 @@
             this.txtFoodID.Name = "txtFoodID";
             this.txtFoodID.Size = new System.Drawing.Size(294, 35);
             this.txtFoodID.TabIndex = 1;
+            this.txtFoodID.TextChanged += new System.EventHandler(this.txtFoodID_TextChanged);
             // 
             // lblFoodID
             // 
@@ -593,6 +597,7 @@
             this.btnFoodSearch.TabIndex = 2;
             this.btnFoodSearch.Text = "Tìm kiếm";
             this.btnFoodSearch.UseVisualStyleBackColor = true;
+            this.btnFoodSearch.Click += new System.EventHandler(this.btnFoodSearch_Click);
             // 
             // txtFoodSearch
             // 

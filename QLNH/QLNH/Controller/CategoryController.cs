@@ -56,6 +56,34 @@ namespace QLNH.Controller
             return result > 0;
         }
 
+        //Get category by id
+        public Category getCategoryByID(int id)
+        {
+            Category ca = null;
+
+            string query = "select * from Categories where ID_Ca = " + id;
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                ca = new Category(item);
+                return ca;
+            }
+
+            return ca;
+        }
+
+        //Check exist category
+        public bool CheckCategory(string name)
+        {
+            string sql = string.Format("Select count(name) from  dbo.Categories where name = '{0}' ", name);
+            int result = (Int32)DataProvider.Instance.ExecuteScalar(sql);
+
+            return result > 0;
+        }
+
+       
 
     }
 }
