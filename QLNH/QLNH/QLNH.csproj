@@ -53,6 +53,7 @@
     <Compile Include="Controller\DiscountController.cs" />
     <Compile Include="Controller\DishController.cs" />
     <Compile Include="Controller\OtherController.cs" />
+    <Compile Include="Controller\PositionController.cs" />
     <Compile Include="Controller\TableController.cs" />
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
@@ -84,6 +85,7 @@
     <Compile Include="Model\Discount.cs" />
     <Compile Include="Model\Dish.cs" />
     <Compile Include="Model\Other.cs" />
+    <Compile Include="Model\Position.cs" />
     <Compile Include="Model\Table.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
