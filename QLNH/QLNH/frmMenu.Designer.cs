@@ -57,6 +57,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.btnDeleteFood = new System.Windows.Forms.Button();
             this.btnUpdateFood = new System.Windows.Forms.Button();
+            this.btnAddFood = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.txtFoodDes = new System.Windows.Forms.RichTextBox();
             this.lblFoodDes = new System.Windows.Forms.Label();
@@ -81,7 +82,15 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.btnFoodSearch = new System.Windows.Forms.Button();
             this.txtFoodSearch = new System.Windows.Forms.TextBox();
-            this.btnAddFood = new System.Windows.Forms.Button();
+            this.ID_Dish = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_Ca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descript = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.caName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnReset = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.TagMenu.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -221,19 +230,21 @@
             // 
             this.btnDeleteCa.Location = new System.Drawing.Point(877, 240);
             this.btnDeleteCa.Name = "btnDeleteCa";
-            this.btnDeleteCa.Size = new System.Drawing.Size(93, 37);
+            this.btnDeleteCa.Size = new System.Drawing.Size(158, 58);
             this.btnDeleteCa.TabIndex = 9;
             this.btnDeleteCa.Text = "Xóa";
             this.btnDeleteCa.UseVisualStyleBackColor = true;
+            this.btnDeleteCa.Click += new System.EventHandler(this.btnDeleteCa_Click);
             // 
             // btnAddCa
             // 
             this.btnAddCa.Location = new System.Drawing.Point(697, 240);
             this.btnAddCa.Name = "btnAddCa";
-            this.btnAddCa.Size = new System.Drawing.Size(163, 37);
+            this.btnAddCa.Size = new System.Drawing.Size(158, 58);
             this.btnAddCa.TabIndex = 8;
             this.btnAddCa.Text = "Thêm mới";
             this.btnAddCa.UseVisualStyleBackColor = true;
+            this.btnAddCa.Click += new System.EventHandler(this.btnAddCa_Click);
             // 
             // txtCaName
             // 
@@ -274,6 +285,9 @@
             // datagrdviewCategories
             // 
             this.datagrdviewCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrdviewCategories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCa,
+            this.caName});
             this.datagrdviewCategories.Location = new System.Drawing.Point(22, 53);
             this.datagrdviewCategories.Name = "datagrdviewCategories";
             this.datagrdviewCategories.RowTemplate.Height = 28;
@@ -282,6 +296,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnReset);
             this.tabPage2.Controls.Add(this.panel3);
             this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Controls.Add(this.panel11);
@@ -370,6 +385,7 @@
             this.btnDeleteFood.TabIndex = 7;
             this.btnDeleteFood.Text = "Xóa";
             this.btnDeleteFood.UseVisualStyleBackColor = true;
+            this.btnDeleteFood.Click += new System.EventHandler(this.btnDeleteFood_Click);
             // 
             // btnUpdateFood
             // 
@@ -379,6 +395,17 @@
             this.btnUpdateFood.TabIndex = 5;
             this.btnUpdateFood.Text = "Sửa";
             this.btnUpdateFood.UseVisualStyleBackColor = true;
+            this.btnUpdateFood.Click += new System.EventHandler(this.btnUpdateFood_Click);
+            // 
+            // btnAddFood
+            // 
+            this.btnAddFood.Location = new System.Drawing.Point(62, 582);
+            this.btnAddFood.Name = "btnAddFood";
+            this.btnAddFood.Size = new System.Drawing.Size(196, 55);
+            this.btnAddFood.TabIndex = 4;
+            this.btnAddFood.Text = "Thêm món";
+            this.btnAddFood.UseVisualStyleBackColor = true;
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // panel9
             // 
@@ -528,6 +555,7 @@
             this.txtFoodID.Name = "txtFoodID";
             this.txtFoodID.Size = new System.Drawing.Size(294, 35);
             this.txtFoodID.TabIndex = 1;
+            this.txtFoodID.TextChanged += new System.EventHandler(this.txtFoodID_TextChanged);
             // 
             // lblFoodID
             // 
@@ -549,7 +577,15 @@
             // 
             // datagrdFood
             // 
+            this.datagrdFood.AllowUserToAddRows = false;
             this.datagrdFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrdFood.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_Dish,
+            this.ID_Ca,
+            this.name,
+            this.unit,
+            this.price,
+            this.descript});
             this.datagrdFood.Location = new System.Drawing.Point(4, 46);
             this.datagrdFood.Name = "datagrdFood";
             this.datagrdFood.RowTemplate.Height = 28;
@@ -582,6 +618,7 @@
             this.btnFoodSearch.TabIndex = 2;
             this.btnFoodSearch.Text = "Tìm kiếm";
             this.btnFoodSearch.UseVisualStyleBackColor = true;
+            this.btnFoodSearch.Click += new System.EventHandler(this.btnFoodSearch_Click);
             // 
             // txtFoodSearch
             // 
@@ -590,14 +627,63 @@
             this.txtFoodSearch.Size = new System.Drawing.Size(294, 35);
             this.txtFoodSearch.TabIndex = 1;
             // 
-            // btnAddFood
+            // ID_Dish
             // 
-            this.btnAddFood.Location = new System.Drawing.Point(62, 582);
-            this.btnAddFood.Name = "btnAddFood";
-            this.btnAddFood.Size = new System.Drawing.Size(196, 55);
-            this.btnAddFood.TabIndex = 4;
-            this.btnAddFood.Text = "Thêm món";
-            this.btnAddFood.UseVisualStyleBackColor = true;
+            this.ID_Dish.DataPropertyName = "ID_Dish";
+            this.ID_Dish.HeaderText = "Mã món";
+            this.ID_Dish.Name = "ID_Dish";
+            // 
+            // ID_Ca
+            // 
+            this.ID_Ca.DataPropertyName = "ID_Ca";
+            this.ID_Ca.HeaderText = "Mã loại";
+            this.ID_Ca.Name = "ID_Ca";
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Tên món";
+            this.name.Name = "name";
+            // 
+            // unit
+            // 
+            this.unit.DataPropertyName = "unit";
+            this.unit.HeaderText = "Đơn vị";
+            this.unit.Name = "unit";
+            // 
+            // price
+            // 
+            this.price.DataPropertyName = "price";
+            this.price.HeaderText = "Giá";
+            this.price.Name = "price";
+            // 
+            // descript
+            // 
+            this.descript.DataPropertyName = "descript";
+            this.descript.HeaderText = "Mô tả";
+            this.descript.Name = "descript";
+            // 
+            // idCa
+            // 
+            this.idCa.DataPropertyName = "ID_Ca";
+            this.idCa.HeaderText = "Mã món";
+            this.idCa.Name = "idCa";
+            // 
+            // caName
+            // 
+            this.caName.DataPropertyName = "name";
+            this.caName.HeaderText = "Tên loại";
+            this.caName.Name = "caName";
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(509, 10);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(102, 55);
+            this.btnReset.TabIndex = 6;
+            this.btnReset.Text = "Tải lại";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // frmMenu
             // 
@@ -608,6 +694,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "frmMenu";
             this.Text = "Quản lý nhà hàng";
+            this.Load += new System.EventHandler(this.frmMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.TagMenu.ResumeLayout(false);
@@ -698,5 +785,14 @@
         private System.Windows.Forms.TextBox txtFoodSearch;
         private System.Windows.Forms.ToolStripMenuItem mnLogout;
         private System.Windows.Forms.Button btnAddFood;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Dish;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Ca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descript;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn caName;
+        private System.Windows.Forms.Button btnReset;
     }
 }

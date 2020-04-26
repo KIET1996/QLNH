@@ -25,7 +25,7 @@ namespace QLNH.Model
             this.Name = row["name"].ToString();
             this.Unit = row["unit"].ToString();
             this.Price = (double)row["price"];
-            this.Sta = Convert.ToInt32(row["sta"]);
+            this.sta = Convert.ToInt32(row["sta"]);
             this.Descript = row["descript"].ToString();
         }
 
@@ -36,7 +36,7 @@ namespace QLNH.Model
             this.Name = name;
             this.Unit = unit;
             this.Price = price;
-            this.Sta = sta;
+            this.sta = sta;
             this.Descript = descript;
         }
 
@@ -105,16 +105,67 @@ namespace QLNH.Model
             }
         }
 
-        public int Sta
+        /* public int Sta
+         {
+             get
+             {
+                 return sta;
+             }
+
+             set
+             {
+                 sta = value;
+             }
+         }*/
+        //  Get/Set for 1st Radio button
+        public bool PhucVu
         {
+            // If the Global Variable = 1 return true, else return false
             get
             {
-                return sta;
+                if (sta.Equals(1))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
 
+            // If the value being passed in = 1 set the Global Variable = 1, else do nothing
             set
             {
-                sta = value;
+                if (value.Equals(true))
+                {
+                    sta = 1;
+                }
+            }
+        }
+
+        // Get/Set for 2nd Radio button
+        public bool NgungPhucVu
+        {
+            // If the Global Variable = 2 return true, else return false
+            get
+            {
+                if (sta.Equals(0))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            // If the value being passed in = 2 set the Global Variable = 2, else do nothing
+            set
+            {
+                if (value.Equals(true))
+                {
+                    sta = 0;
+                }
             }
         }
 
