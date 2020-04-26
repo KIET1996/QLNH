@@ -1,70 +1,82 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace QLNH.Model
 {
-    class Position
+    public class Position
     {
-        private int IDPosition;
-        private string position;
-        private string status;
-        private string note;
+        private int idPos;
+        private string namePos;
+        private string statusPos;
+        private string notePos;
 
-        public Position(int id_pos, string pos, string sta, string note)
+        public Position(int idPos, string namePos, string statusPos, string notePos)
         {
-            this.ID_Position = id_pos;
-            this.NamePosition = pos;
-            this.Status = sta;
-            this.Note = note;
+            this.IDPos = idPos;
+            this.NamePos = namePos;
+            this.StatusPos = statusPos;
+            this.NotePos = notePos;
         }
 
-        public int ID_Position
+        public Position(DataRow row)
+        {
+            this.IDPos = (int)row["ID_Pos"];
+            this.NamePos = row["position"].ToString();
+            this.StatusPos = row["sta"].ToString();
+            this.NotePos = row["note"].ToString();
+        }
+
+        public int IDPos
         {
             get
             {
-                return ID_Position;
+                return idPos;
             }
             set
             {
-                ID_Position = value;
-            }
-        }
-        public string NamePosition
-        {
-            get
-            {
-                return NamePosition;
-            }
-            set
-            {
-                NamePosition = value;
+                idPos = value;
             }
         }
 
-        public string Status
+        public string NamePos
         {
             get
             {
-                return Status;
+                return namePos;
             }
             set
             {
-                Status = value;
+                namePos = value;
             }
         }
-        public string Note
+
+        public string StatusPos
         {
             get
             {
-                return Note;
+                return statusPos;
             }
             set
             {
-                Note = value;
+                statusPos = value;
             }
         }
+
+        public string NotePos
+        {
+            get
+            {
+                return notePos;
+            }
+            set
+            {
+                notePos = value;
+            }
+        }
+        
     }
 }
