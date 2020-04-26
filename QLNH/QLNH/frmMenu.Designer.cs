@@ -82,6 +82,15 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.btnFoodSearch = new System.Windows.Forms.Button();
             this.txtFoodSearch = new System.Windows.Forms.TextBox();
+            this.ID_Dish = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_Ca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descript = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.caName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnReset = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.TagMenu.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -276,6 +285,9 @@
             // datagrdviewCategories
             // 
             this.datagrdviewCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrdviewCategories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCa,
+            this.caName});
             this.datagrdviewCategories.Location = new System.Drawing.Point(22, 53);
             this.datagrdviewCategories.Name = "datagrdviewCategories";
             this.datagrdviewCategories.RowTemplate.Height = 28;
@@ -284,6 +296,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnReset);
             this.tabPage2.Controls.Add(this.panel3);
             this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Controls.Add(this.panel11);
@@ -564,7 +577,15 @@
             // 
             // datagrdFood
             // 
+            this.datagrdFood.AllowUserToAddRows = false;
             this.datagrdFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrdFood.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_Dish,
+            this.ID_Ca,
+            this.name,
+            this.unit,
+            this.price,
+            this.descript});
             this.datagrdFood.Location = new System.Drawing.Point(4, 46);
             this.datagrdFood.Name = "datagrdFood";
             this.datagrdFood.RowTemplate.Height = 28;
@@ -605,6 +626,64 @@
             this.txtFoodSearch.Name = "txtFoodSearch";
             this.txtFoodSearch.Size = new System.Drawing.Size(294, 35);
             this.txtFoodSearch.TabIndex = 1;
+            // 
+            // ID_Dish
+            // 
+            this.ID_Dish.DataPropertyName = "ID_Dish";
+            this.ID_Dish.HeaderText = "Mã món";
+            this.ID_Dish.Name = "ID_Dish";
+            // 
+            // ID_Ca
+            // 
+            this.ID_Ca.DataPropertyName = "ID_Ca";
+            this.ID_Ca.HeaderText = "Mã loại";
+            this.ID_Ca.Name = "ID_Ca";
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Tên món";
+            this.name.Name = "name";
+            // 
+            // unit
+            // 
+            this.unit.DataPropertyName = "unit";
+            this.unit.HeaderText = "Đơn vị";
+            this.unit.Name = "unit";
+            // 
+            // price
+            // 
+            this.price.DataPropertyName = "price";
+            this.price.HeaderText = "Giá";
+            this.price.Name = "price";
+            // 
+            // descript
+            // 
+            this.descript.DataPropertyName = "descript";
+            this.descript.HeaderText = "Mô tả";
+            this.descript.Name = "descript";
+            // 
+            // idCa
+            // 
+            this.idCa.DataPropertyName = "ID_Ca";
+            this.idCa.HeaderText = "Mã món";
+            this.idCa.Name = "idCa";
+            // 
+            // caName
+            // 
+            this.caName.DataPropertyName = "name";
+            this.caName.HeaderText = "Tên loại";
+            this.caName.Name = "caName";
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(509, 10);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(102, 55);
+            this.btnReset.TabIndex = 6;
+            this.btnReset.Text = "Tải lại";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // frmMenu
             // 
@@ -706,5 +785,14 @@
         private System.Windows.Forms.TextBox txtFoodSearch;
         private System.Windows.Forms.ToolStripMenuItem mnLogout;
         private System.Windows.Forms.Button btnAddFood;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Dish;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Ca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descript;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn caName;
+        private System.Windows.Forms.Button btnReset;
     }
 }

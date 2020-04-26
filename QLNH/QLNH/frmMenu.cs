@@ -192,7 +192,7 @@ namespace QLNH
         }
         private void btnFoodSearch_Click(object sender, EventArgs e)
         {
-            BindingData1.DataSource = SearchingFood(txtFoodName.Text);
+            BindingData1.DataSource = SearchingFood(txtFoodSearch.Text);
         }
 
 
@@ -290,6 +290,10 @@ namespace QLNH
             }
         }
 
-        
+        //Tai lai trang
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            LoadCobCategory(cobFoodCa);
+        }
     }
 }
