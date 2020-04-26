@@ -39,6 +39,20 @@ namespace QLNH.Controller
             return tableList;
         }
 
+        //Lấy tất cả các trường ra list table
+        public List<Table> getListTable()
+        {
+            List<Table> table = new List<Table>();
+            DataTable dt = DataProvider.Instance.ExecuteQuery("QLNH_getListTable");
+
+            foreach(DataRow item in dt.Rows)
+            {
+                Table tb = new Table(item);
+                table.Add(tb);
+            }
+            return table;
+        }
+
 
     }
 }

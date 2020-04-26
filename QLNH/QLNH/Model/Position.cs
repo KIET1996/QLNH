@@ -9,74 +9,77 @@ namespace QLNH.Model
 {
     public class Position
     {
-        private int idPos;
-        private string namePos;
-        private string statusPos;
-        private string notePos;
+        private int iD_Pos;
+        private string pos;
+        private string sta;
+        private string note;
 
-        public Position(int idPos, string namePos, string statusPos, string notePos)
+        public int ID_Pos
         {
-            this.IDPos = idPos;
-            this.NamePos = namePos;
-            this.StatusPos = statusPos;
-            this.NotePos = notePos;
+            get
+            {
+                return iD_Pos;
+            }
+
+            set
+            {
+                iD_Pos = value;
+            }
+        }
+
+        public string Pos
+        {
+            get
+            {
+                return pos;
+            }
+
+            set
+            {
+                pos = value;
+            }
+        }
+
+        public string Sta
+        {
+            get
+            {
+                return sta;
+            }
+
+            set
+            {
+                sta = value;
+            }
+        }
+
+        public string Note
+        {
+            get
+            {
+                return note;
+            }
+
+            set
+            {
+                note = value;
+            }
         }
 
         public Position(DataRow row)
         {
-            this.IDPos = (int)row["ID_Pos"];
-            this.NamePos = row["position"].ToString();
-            this.StatusPos = row["sta"].ToString();
-            this.NotePos = row["note"].ToString();
+            this.ID_Pos = (int)row["ID_Pos"];
+            this.Pos = row["position"].ToString();
+            this.Sta = row["sta"].ToString();
+            this.Note = row["note"].ToString();
         }
 
-        public int IDPos
+        public Position(int iD_Pos, string position, string sta, string note)
         {
-            get
-            {
-                return idPos;
-            }
-            set
-            {
-                idPos = value;
-            }
+            this.ID_Pos = iD_Pos;
+            this.Pos = position;
+            this.Sta = sta;
+            this.Note = note;
         }
-
-        public string NamePos
-        {
-            get
-            {
-                return namePos;
-            }
-            set
-            {
-                namePos = value;
-            }
-        }
-
-        public string StatusPos
-        {
-            get
-            {
-                return statusPos;
-            }
-            set
-            {
-                statusPos = value;
-            }
-        }
-
-        public string NotePos
-        {
-            get
-            {
-                return notePos;
-            }
-            set
-            {
-                notePos = value;
-            }
-        }
-        
     }
 }

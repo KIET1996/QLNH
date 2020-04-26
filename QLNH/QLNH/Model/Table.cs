@@ -13,7 +13,7 @@ namespace QLNH.Model
         private int capability;
         private int status;
         
-
+       
         public Table(int id_table, string pos, int capa, int status)
         {
             this.ID_Table = id_table;

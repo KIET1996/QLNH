@@ -33,5 +33,11 @@ namespace QLNH.Controller
             }
             return list;
         }
+
+        //Thêm vị trí
+        void ResetFields(bool status)
+        {
+            
+        }
     }
 }

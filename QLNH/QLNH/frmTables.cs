@@ -44,7 +44,7 @@ namespace QLNH
         /*-------------------Tao cac ham xu ly Table---------------------*/
         private void table_Load()
         {
-            tableList.DataSource = Controller.TableController.Instance.ListTable();
+            tableList.DataSource = Controller.TableController.Instance.getListTable();
         }
         
 
