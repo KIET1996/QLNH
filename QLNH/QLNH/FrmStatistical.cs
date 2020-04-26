@@ -16,5 +16,6 @@ namespace QLNH
         {
             InitializeComponent();
         }
+
     }
 }
