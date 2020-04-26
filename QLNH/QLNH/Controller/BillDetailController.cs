@@ -35,5 +35,11 @@ namespace QLNH.Controller
 
             return listBillDetail;
         }
+
+        public void InsertBillDetail(int idBill, int idDish, int count)
+        {
+            DataProvider.Instance.ExecuteNonQuery("QLNH_InsertBillDetail @idBill , @idFood , @count", new object[] { idBill, idDish, count });
+        }
+
     }
 }

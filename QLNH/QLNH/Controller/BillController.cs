@@ -21,7 +21,7 @@ namespace QLNH.Controller
         private BillController() { }
 
         //Lay id bill chua thanh toan
-        public int GetBillID(int id)
+        public int GetUncheckBillID(int id)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Bill WHERE ID_Table = " + id + " AND sta = 0");
 
@@ -34,6 +34,33 @@ namespace QLNH.Controller
             return -1;
         }
 
+        //Thêm bill mới, giá trị truyền vào có id_emp, id_table
+        //Tạm thời chỉ truyền id_table
+        public void InsertBill(int id)
+        {
+            int emp = 1;
+           
+            DataProvider.Instance.ExecuteNonQuery("exec QLNH_InsertBill  @id_emp , @id_table", new object[] { emp , id });
+        }
+
+        //Lấy id bill lớn nhất
+        public int GetMaxIDBill()
+        {
+            try
+            {
+                return (int)DataProvider.Instance.ExecuteScalar("SELECT MAX(id) FROM Bill");
+            }
+            catch
+            {
+                return 1;
+            }
+        }
+
+        //Thay doi trang thai thanh tinh tien, tham so la id_bill, id_discount, date, total
+        public void CheckOut(int id_bill, int id_discount,  double total)
+        {   
+            DataProvider.Instance.ExecuteNonQuery("exec QLNH_CheckoutBill @id_bill , @id_dícount , @total", new object[] { id_bill, id_discount, total });
+        }
 
     }
 }

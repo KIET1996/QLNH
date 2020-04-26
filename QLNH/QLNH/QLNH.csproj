@@ -50,6 +50,8 @@
     <Compile Include="Controller\BillDetailController.cs" />
     <Compile Include="Controller\CategoryController.cs" />
     <Compile Include="Controller\DataProvider.cs" />
+    <Compile Include="Controller\DiscountController.cs" />
+    <Compile Include="Controller\DishController.cs" />
     <Compile Include="Controller\OtherController.cs" />
     <Compile Include="Controller\TableController.cs" />
     <Compile Include="frmMenu.cs">
@@ -79,6 +81,8 @@
     <Compile Include="Model\Bill.cs" />
     <Compile Include="Model\BillDetail.cs" />
     <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Discount.cs" />
+    <Compile Include="Model\Dish.cs" />
     <Compile Include="Model\Other.cs" />
     <Compile Include="Model\Table.cs" />
     <Compile Include="Program.cs" />
