@@ -4,6 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.ComponentModel;
 
 namespace QLNH.Model
 {
@@ -81,5 +83,7 @@ namespace QLNH.Model
             this.Sta = sta;
             this.Note = note;
         }
+
+        
     }
 }

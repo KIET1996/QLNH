@@ -46,9 +46,8 @@
             this.grpInfo = new System.Windows.Forms.GroupBox();
             this.radNo = new System.Windows.Forms.RadioButton();
             this.radYes = new System.Windows.Forms.RadioButton();
-            this.combCapability = new System.Windows.Forms.ComboBox();
-            this.combPosition = new System.Windows.Forms.ComboBox();
-            this.txtID = new System.Windows.Forms.TextBox();
+            this.cbPosition = new System.Windows.Forms.ComboBox();
+            this.txtIDTable = new System.Windows.Forms.TextBox();
             this.labStatus = new System.Windows.Forms.Label();
             this.labCapability = new System.Windows.Forms.Label();
             this.labPosition = new System.Windows.Forms.Label();
@@ -57,13 +56,17 @@
             this.grpListPos = new System.Windows.Forms.GroupBox();
             this.scrollPosition = new System.Windows.Forms.VScrollBar();
             this.dtGridPosition = new System.Windows.Forms.DataGridView();
+            this.ID_Pos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NamePos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusPos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NotePos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSavePos = new System.Windows.Forms.Button();
             this.btnCanl = new System.Windows.Forms.Button();
             this.btnDeletePos = new System.Windows.Forms.Button();
             this.btnEditPos = new System.Windows.Forms.Button();
             this.btnAddPos = new System.Windows.Forms.Button();
             this.grpPosition = new System.Windows.Forms.GroupBox();
-            this.comboStatus = new System.Windows.Forms.ComboBox();
+            this.txtStatusPos = new System.Windows.Forms.TextBox();
             this.txtNotePos = new System.Windows.Forms.TextBox();
             this.txtNamePos = new System.Windows.Forms.TextBox();
             this.txtIDPos = new System.Windows.Forms.TextBox();
@@ -74,14 +77,11 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.txtCapa = new System.Windows.Forms.TextBox();
             this.ID_Table = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PositionTable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CapabilityTable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_Pos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NamePos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StatusPos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NotePos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tabTable.SuspendLayout();
             this.tabPageTable.SuspendLayout();
@@ -250,11 +250,11 @@
             // 
             // grpInfo
             // 
+            this.grpInfo.Controls.Add(this.txtCapa);
             this.grpInfo.Controls.Add(this.radNo);
             this.grpInfo.Controls.Add(this.radYes);
-            this.grpInfo.Controls.Add(this.combCapability);
-            this.grpInfo.Controls.Add(this.combPosition);
-            this.grpInfo.Controls.Add(this.txtID);
+            this.grpInfo.Controls.Add(this.cbPosition);
+            this.grpInfo.Controls.Add(this.txtIDTable);
             this.grpInfo.Controls.Add(this.labStatus);
             this.grpInfo.Controls.Add(this.labCapability);
             this.grpInfo.Controls.Add(this.labPosition);
@@ -288,29 +288,22 @@
             this.radYes.Text = "Có người";
             this.radYes.UseVisualStyleBackColor = true;
             // 
-            // combCapability
+            // cbPosition
             // 
-            this.combCapability.FormattingEnabled = true;
-            this.combCapability.Location = new System.Drawing.Point(146, 110);
-            this.combCapability.Name = "combCapability";
-            this.combCapability.Size = new System.Drawing.Size(219, 30);
-            this.combCapability.TabIndex = 10;
+            this.cbPosition.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.cbPosition.FormattingEnabled = true;
+            this.cbPosition.Location = new System.Drawing.Point(146, 74);
+            this.cbPosition.Name = "cbPosition";
+            this.cbPosition.Size = new System.Drawing.Size(219, 30);
+            this.cbPosition.TabIndex = 9;
             // 
-            // combPosition
+            // txtIDTable
             // 
-            this.combPosition.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.combPosition.FormattingEnabled = true;
-            this.combPosition.Location = new System.Drawing.Point(146, 74);
-            this.combPosition.Name = "combPosition";
-            this.combPosition.Size = new System.Drawing.Size(219, 30);
-            this.combPosition.TabIndex = 9;
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(146, 38);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(219, 30);
-            this.txtID.TabIndex = 6;
+            this.txtIDTable.Location = new System.Drawing.Point(146, 38);
+            this.txtIDTable.Name = "txtIDTable";
+            this.txtIDTable.Size = new System.Drawing.Size(219, 30);
+            this.txtIDTable.TabIndex = 6;
+            this.txtIDTable.TextChanged += new System.EventHandler(this.txtIDTable_TextChanged);
             // 
             // labStatus
             // 
@@ -399,6 +392,30 @@
             this.dtGridPosition.Size = new System.Drawing.Size(514, 347);
             this.dtGridPosition.TabIndex = 0;
             // 
+            // ID_Pos
+            // 
+            this.ID_Pos.DataPropertyName = "ID_Pos";
+            this.ID_Pos.HeaderText = "ID Khu Vực";
+            this.ID_Pos.Name = "ID_Pos";
+            // 
+            // NamePos
+            // 
+            this.NamePos.DataPropertyName = "Pos";
+            this.NamePos.HeaderText = "Tên Khu Vực";
+            this.NamePos.Name = "NamePos";
+            // 
+            // StatusPos
+            // 
+            this.StatusPos.DataPropertyName = "Sta";
+            this.StatusPos.HeaderText = "Trạng Thái";
+            this.StatusPos.Name = "StatusPos";
+            // 
+            // NotePos
+            // 
+            this.NotePos.DataPropertyName = "Note";
+            this.NotePos.HeaderText = "Ghi Chú";
+            this.NotePos.Name = "NotePos";
+            // 
             // btnSavePos
             // 
             this.btnSavePos.Location = new System.Drawing.Point(310, 379);
@@ -443,10 +460,11 @@
             this.btnAddPos.TabIndex = 1;
             this.btnAddPos.Text = "Thêm";
             this.btnAddPos.UseVisualStyleBackColor = true;
+            this.btnAddPos.Click += new System.EventHandler(this.btnAddPos_Click);
             // 
             // grpPosition
             // 
-            this.grpPosition.Controls.Add(this.comboStatus);
+            this.grpPosition.Controls.Add(this.txtStatusPos);
             this.grpPosition.Controls.Add(this.txtNotePos);
             this.grpPosition.Controls.Add(this.txtNamePos);
             this.grpPosition.Controls.Add(this.txtIDPos);
@@ -461,13 +479,12 @@
             this.grpPosition.TabStop = false;
             this.grpPosition.Text = "Thông tin khu vực";
             // 
-            // comboStatus
+            // txtStatusPos
             // 
-            this.comboStatus.FormattingEnabled = true;
-            this.comboStatus.Location = new System.Drawing.Point(186, 122);
-            this.comboStatus.Name = "comboStatus";
-            this.comboStatus.Size = new System.Drawing.Size(258, 30);
-            this.comboStatus.TabIndex = 7;
+            this.txtStatusPos.Location = new System.Drawing.Point(186, 122);
+            this.txtStatusPos.Name = "txtStatusPos";
+            this.txtStatusPos.Size = new System.Drawing.Size(258, 30);
+            this.txtStatusPos.TabIndex = 7;
             // 
             // txtNotePos
             // 
@@ -554,6 +571,13 @@
             this.tabPage5.Text = "Khuyến mãi";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // txtCapa
+            // 
+            this.txtCapa.Location = new System.Drawing.Point(146, 110);
+            this.txtCapa.Name = "txtCapa";
+            this.txtCapa.Size = new System.Drawing.Size(219, 30);
+            this.txtCapa.TabIndex = 15;
+            // 
             // ID_Table
             // 
             this.ID_Table.DataPropertyName = "ID_Table";
@@ -563,8 +587,8 @@
             // 
             // PositionTable
             // 
-            this.PositionTable.DataPropertyName = "position";
-            this.PositionTable.HeaderText = "Khu Vực";
+            this.PositionTable.DataPropertyName = "ID_Pos";
+            this.PositionTable.HeaderText = "ID Khu Vực";
             this.PositionTable.Name = "PositionTable";
             this.PositionTable.ReadOnly = true;
             // 
@@ -581,30 +605,6 @@
             this.Column1.HeaderText = "Trạng Thái";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            // 
-            // ID_Pos
-            // 
-            this.ID_Pos.DataPropertyName = "ID_Pos";
-            this.ID_Pos.HeaderText = "ID Khu Vực";
-            this.ID_Pos.Name = "ID_Pos";
-            // 
-            // NamePos
-            // 
-            this.NamePos.DataPropertyName = "Pos";
-            this.NamePos.HeaderText = "Tên Khu Vực";
-            this.NamePos.Name = "NamePos";
-            // 
-            // StatusPos
-            // 
-            this.StatusPos.DataPropertyName = "Sta";
-            this.StatusPos.HeaderText = "Trạng Thái";
-            this.StatusPos.Name = "StatusPos";
-            // 
-            // NotePos
-            // 
-            this.NotePos.DataPropertyName = "Note";
-            this.NotePos.HeaderText = "Ghi Chú";
-            this.NotePos.Name = "NotePos";
             // 
             // frmTables
             // 
@@ -652,9 +652,8 @@
         private System.Windows.Forms.Label labPosition;
         private System.Windows.Forms.Label labCapability;
         private System.Windows.Forms.Label labStatus;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.ComboBox combPosition;
-        private System.Windows.Forms.ComboBox combCapability;
+        private System.Windows.Forms.TextBox txtIDTable;
+        private System.Windows.Forms.ComboBox cbPosition;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
@@ -670,7 +669,6 @@
         private System.Windows.Forms.TextBox txtIDPos;
         private System.Windows.Forms.TextBox txtNamePos;
         private System.Windows.Forms.TextBox txtNotePos;
-        private System.Windows.Forms.ComboBox comboStatus;
         private System.Windows.Forms.Button btnAddPos;
         private System.Windows.Forms.Button btnEditPos;
         private System.Windows.Forms.Button btnDeletePos;
@@ -685,14 +683,16 @@
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.RadioButton radYes;
         private System.Windows.Forms.RadioButton radNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Table;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PositionTable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CapabilityTable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Pos;
         private System.Windows.Forms.DataGridViewTextBoxColumn NamePos;
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusPos;
         private System.Windows.Forms.DataGridViewTextBoxColumn NotePos;
+        private System.Windows.Forms.TextBox txtStatusPos;
+        private System.Windows.Forms.TextBox txtCapa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Table;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PositionTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CapabilityTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }
 

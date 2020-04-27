@@ -39,19 +39,23 @@ namespace QLNH.Controller
             return tableList;
         }
 
-        //Lấy tất cả các trường ra list table
+        //Lay danh sach ban va hien thi id position
         public List<Table> getListTable()
         {
-            List<Table> table = new List<Table>();
-            DataTable dt = DataProvider.Instance.ExecuteQuery("QLNH_getListTable");
+            List<Table> gettableList = new List<Table>();
 
-            foreach(DataRow item in dt.Rows)
+            DataTable data = DataProvider.Instance.ExecuteQuery("QLNH_getListTable");
+
+            foreach (DataRow item in data.Rows)
             {
-                Table tb = new Table(item);
-                table.Add(tb);
+                Table table = new Table(item);
+                gettableList.Add(table);
             }
-            return table;
+
+            return gettableList;
         }
+
+        
 
 
     }

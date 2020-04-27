@@ -34,10 +34,46 @@ namespace QLNH.Controller
             return list;
         }
 
-        //Thêm vị trí
-        void ResetFields(bool status)
+        //get position by id
+        public Position getPositionByID(int id)
         {
-            
+            Position position = null;
+            string sql = string.Format("SELECT * FROM Position_Table where ID_Pos = " + id);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(sql);
+            foreach(DataRow item in data.Rows)
+            {
+                position = new Position(item);
+                return position;
+            }
+            return position;
         }
+
+        //Thêm vị trí
+        public bool AddPosition(string pos, string sta, string note)
+        {
+            string sql = string.Format("INSERT INTO Position_Table (pos, sta, note) VALUES ('{0}', '{1}', '{2}')", pos, sta, note);
+            int result = DataProvider.Instance.ExecuteNonQuery(sql);
+
+            return result > 0;
+        }
+
+        //Check xem vi tri co ton tai khong
+        public bool CheckPosition(string pos)
+        {
+            string sql = string.Format("SELECT COUNT(pos) from Position_Table where pos = '{0}'", pos);
+            int result = (Int32)DataProvider.Instance.ExecuteScalar(sql);
+            return result > 0;
+        }
+
+        //thuc hien truy van lay ve ma so lon nhat IDPOS, xoa trang cac truong them vao thong qua phuong thuc resetfields
+        public bool CheckAddPos(int ID_Pos)
+        {
+            string sql = string.Format("SELECT MAX(ID_Pos) FROM Position_Table where ID_Pos = '{0}'", ID_Pos);
+            int result = (Int32)DataProvider.Instance.ExecuteScalar(sql);
+            return result > 0;
+        }
+
+
     }
 }

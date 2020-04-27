@@ -17,6 +17,8 @@ namespace QLNH
 
         BindingSource positionList = new BindingSource(); //khai bao bindingsource de moi lan load du lieu se thay doi theo binding
         BindingSource tableList = new BindingSource();
+
+        
         public frmTables()
         {
             InitializeComponent();
@@ -34,26 +36,158 @@ namespace QLNH
             //load du lieu position
             position_Load();
             dtGridPosition.DataSource = positionList;
+            addPositionBinding();
 
             //load du lieu table
             table_Load();
             dtGridTable.DataSource = tableList;
-
+            addTableBinding();
+            LoadPositionIntoComboBox(cbPosition);
         }
+
+        /*Reset lai cac truong
+        void ResetFields(bool status)
+        {
+            txtIDPos.Clear();
+            txtNamePos.Clear();
+            txtNotePos.Clear();
+            txtIDTable.Clear();
+            txtStatusPos.Clear();
+            cbPosition.SelectedIndex = -1;
+            
+
+            radYes.Checked = true;
+            radNo.Checked = false;
+            btnSavePos.Enabled = status;
+            btnSave.Enabled = status;
+            btnCancel.Enabled = status;
+            btnCanl.Enabled = status;
+            btnAddPos.Enabled = !status;
+            btnAdd.Enabled = !status;
+            btnEdit.Enabled = !status;
+            btnEditPos.Enabled = !status;
+        }*/
 
         /*-------------------Tao cac ham xu ly Table---------------------*/
         private void table_Load()
         {
             tableList.DataSource = Controller.TableController.Instance.getListTable();
         }
+
+        //load databinding ban
+        void addTableBinding()
+        {
+            txtIDTable.DataBindings.Add(new Binding("Text", dtGridTable.DataSource, "ID_Table"));
+           
+            txtCapa.DataBindings.Add(new Binding("Text", dtGridTable.DataSource, "Capability"));
+            
+        }
+
+        //load khu vuc ra combobox
+        void LoadPositionIntoComboBox(ComboBox cb)
+        {
+            cb.DataSource = PositionController.Instance.getListPosition();
+            cb.DisplayMember = "Pos";
+        }
         
 
         /*--------------------Tao cac ham xu ly position------------------*/
+        
+        /*Load list position*/
         private void position_Load()
         {
             positionList.DataSource = Controller.PositionController.Instance.getListPosition();
         }
+        
+        /*thong tin binding du lieu position*/
+        void addPositionBinding()
+        {
+            txtNamePos.DataBindings.Add(new Binding("Text", dtGridPosition.DataSource, "Pos"));
+            txtStatusPos.DataBindings.Add(new Binding("Text", dtGridPosition.DataSource, "Sta"));
+            txtNotePos.DataBindings.Add(new Binding("Text", dtGridPosition.DataSource, "Note"));
+            txtIDPos.DataBindings.Add(new Binding("Text", dtGridPosition.DataSource, "ID_Pos"));
+        }
 
+        /* su kien click nut add
+        private void btnAddPos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PositionController.Instance.CheckAddPos(ID_Pos);
+            }
+            catch (Exception)
+            {
+                ID_Pos = 0;
+            }
+            ID_Pos = ID_Pos + 1;
+            ResetFields(true);
+            txtIDPos.Text = ID_Pos.ToString();
+        }*/
 
+       private void btnAddPos_Click(object sender, EventArgs e)
+        {
+            if(txtNamePos.Text == "" || txtStatusPos.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập tên khu vực hoặc trạng thái. Vui lòng nhập đầy dủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
+                {
+                    string pos = txtNamePos.Text;
+                    string sta = txtStatusPos.Text;
+                    string note = txtNotePos.Text;
+
+                    if (PositionController.Instance.CheckPosition(pos))
+                    {
+                        MessageBox.Show("Khu vực đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        if (PositionController.Instance.AddPosition(pos, sta, note))
+                        {
+                            MessageBox.Show("Thêm khu vực thành công!");
+                            position_Load();
+                        }
+                     }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        //binding id khu vuc theo id ban
+        private void txtIDTable_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dtGridTable.SelectedCells.Count > 0)
+                {
+                    int id = (int)dtGridTable.SelectedCells[0].OwningRow.Cells["PositionTable"].Value;   //lay gia tri o id bat ky
+
+                    Position pos = PositionController.Instance.getPositionByID(id);
+                    cbPosition.SelectedItem = pos;
+
+                    int index = -1;
+                    int i = 0;
+                    foreach(Position item in cbPosition.Items)
+                    {
+                        if (item.ID_Pos == pos.ID_Pos)
+                        {
+                            index = i;
+                            break;
+                        }
+                        i++;
+                    }
+                    cbPosition.SelectedIndex = index;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
