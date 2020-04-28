@@ -157,10 +157,29 @@ namespace QLNH
                 MessageBox.Show("Thêm bàn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
         }
-        
+
+        //su kien xoa ban
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int ID_Table = Convert.ToInt32(txtIDTable.Text);
+
+            DialogResult dr = MessageBox.Show("Bạn có muốn xóa bàn này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (dr == DialogResult.OK)
+            {
+                if (TableController.Instance.DeleteTable(ID_Table))
+                {
+                    MessageBox.Show("Xóa bàn thành công!");
+                    table_Load();
+                }
+                else
+                {
+                    MessageBox.Show("Xóa bàn thất bại!");
+                }
+            }
+        }
 
         /*--------------------Tao cac ham xu ly position------------------*/
-        
+
         /*Load list position*/
         private void position_Load()
         {
@@ -231,9 +250,6 @@ namespace QLNH
 
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

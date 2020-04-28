@@ -65,7 +65,14 @@ namespace QLNH.Controller
 
         }
         
+        //Delete table
+        public bool DeleteTable(int ID_Table)
+        {
+            string sql = string.Format("DELETE Table_Management WHERE ID_Table = '{0}'", ID_Table);
+            int result = DataProvider.Instance.ExecuteNonQuery(sql);
 
+            return result > 0;
+        }
 
     }
 }
