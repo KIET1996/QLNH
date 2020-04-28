@@ -14,7 +14,7 @@ namespace QLNH
 {
     public partial class frmTables : Form
     {
-
+        int currentIndex = 0;
         BindingSource positionList = new BindingSource(); //khai bao bindingsource de moi lan load du lieu se thay doi theo binding
         BindingSource tableList = new BindingSource();
 
@@ -42,7 +42,7 @@ namespace QLNH
             table_Load();
             dtGridTable.DataSource = tableList;
             addTableBinding();
-            LoadPositionIntoComboBox(cbPosition);
+            LoadPositionIntoComboBox(cbPosition); //combobox khu vuc cua bang table
         }
 
         /*Reset lai cac truong
@@ -77,10 +77,8 @@ namespace QLNH
         //load databinding ban
         void addTableBinding()
         {
-            txtIDTable.DataBindings.Add(new Binding("Text", dtGridTable.DataSource, "ID_Table"));
-           
-            txtCapa.DataBindings.Add(new Binding("Text", dtGridTable.DataSource, "Capability"));
-            
+            txtIDTable.DataBindings.Add(new Binding("Text", dtGridTable.DataSource, "ID_Table"));           
+            numCapa.DataBindings.Add(new Binding("Value", dtGridTable.DataSource, "Capa"));                       
         }
 
         //load khu vuc ra combobox
@@ -88,6 +86,76 @@ namespace QLNH
         {
             cb.DataSource = PositionController.Instance.getListPosition();
             cb.DisplayMember = "Pos";
+        }
+
+        //su kien load radiobuttton
+        private void dtGridTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            currentIndex = dtGridTable.CurrentRow.Index;
+            string sql = dtGridTable.Rows[currentIndex].Cells[3].Value.ToString();
+            int check = Convert.ToInt32(sql);
+            if (check == 1)
+            {
+                radYes.Checked = true;
+                radNo.Checked = false;
+            }
+            else
+            {
+                radYes.Checked = false;
+                radNo.Checked = true;
+            }
+
+        }
+
+
+        //binding id khu vuc theo id ban
+        private void txtIDTable_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dtGridTable.SelectedCells.Count > 0)
+                {
+                    int id = (int)dtGridTable.SelectedCells[0].OwningRow.Cells["PositionTable"].Value;   //lay gia tri o id bat ky
+
+                    Position pos = PositionController.Instance.getPositionByID(id);
+                    cbPosition.SelectedItem = pos;
+
+                    int index = -1;
+                    int i = 0;
+                    foreach (Position item in cbPosition.Items)
+                    {
+                        if (item.ID_Pos == pos.ID_Pos)
+                        {
+                            index = i;
+                            break;
+                        }
+                        i++;
+                    }
+                    cbPosition.SelectedIndex = index;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //tao xu kien cho nut them
+        private void btnAddTable_Click(object sender, EventArgs e)
+        {
+            int ID_Pos = (cbPosition.SelectedItem as Position).ID_Pos;
+            int Capability = (int)numCapa.Value;
+            int sta = 0;
+
+            if (radYes.Checked)
+            {
+                sta = 1;
+            }
+
+            if (TableController.Instance.InsertTable(ID_Pos, Capability, sta))
+            {
+                MessageBox.Show("Thêm bàn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+            }
         }
         
 
@@ -158,36 +226,14 @@ namespace QLNH
             }
         }
 
-        //binding id khu vuc theo id ban
-        private void txtIDTable_TextChanged(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (dtGridTable.SelectedCells.Count > 0)
-                {
-                    int id = (int)dtGridTable.SelectedCells[0].OwningRow.Cells["PositionTable"].Value;   //lay gia tri o id bat ky
 
-                    Position pos = PositionController.Instance.getPositionByID(id);
-                    cbPosition.SelectedItem = pos;
+        }
 
-                    int index = -1;
-                    int i = 0;
-                    foreach(Position item in cbPosition.Items)
-                    {
-                        if (item.ID_Pos == pos.ID_Pos)
-                        {
-                            index = i;
-                            break;
-                        }
-                        i++;
-                    }
-                    cbPosition.SelectedIndex = index;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

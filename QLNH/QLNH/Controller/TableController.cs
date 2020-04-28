@@ -40,21 +40,30 @@ namespace QLNH.Controller
         }
 
         //Lay danh sach ban va hien thi id position
-        public List<Table> getListTable()
+        public List<Table_Management> getListTable()
         {
-            List<Table> gettableList = new List<Table>();
+            List<Table_Management> gettableList = new List<Table_Management>();
 
             DataTable data = DataProvider.Instance.ExecuteQuery("QLNH_getListTable");
 
             foreach (DataRow item in data.Rows)
             {
-                Table table = new Table(item);
+                Table_Management table = new Table_Management(item);
                 gettableList.Add(table);
             }
 
             return gettableList;
         }
 
+        //Insert table
+        public bool InsertTable(int idpos, int capa, int sta)
+        {
+            string sql = string.Format("INSERT Table_Management (ID_Pos, capability, sta) VALUES ({0}, {1}, '{2}')", idpos, capa, sta );
+            int result = DataProvider.Instance.ExecuteNonQuery(sql);
+
+            return result > 0;
+
+        }
         
 
 

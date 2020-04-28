@@ -44,8 +44,10 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.grpInfo = new System.Windows.Forms.GroupBox();
-            this.radNo = new System.Windows.Forms.RadioButton();
+            this.numCapa = new System.Windows.Forms.NumericUpDown();
+            this.panelStatus = new System.Windows.Forms.Panel();
             this.radYes = new System.Windows.Forms.RadioButton();
+            this.radNo = new System.Windows.Forms.RadioButton();
             this.cbPosition = new System.Windows.Forms.ComboBox();
             this.txtIDTable = new System.Windows.Forms.TextBox();
             this.labStatus = new System.Windows.Forms.Label();
@@ -77,7 +79,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.txtCapa = new System.Windows.Forms.TextBox();
             this.ID_Table = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PositionTable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CapabilityTable = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,6 +89,8 @@
             this.grpListTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridTable)).BeginInit();
             this.grpInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numCapa)).BeginInit();
+            this.panelStatus.SuspendLayout();
             this.tabPagePosition.SuspendLayout();
             this.grpListPos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridPosition)).BeginInit();
@@ -202,6 +205,7 @@
             this.dtGridTable.RowTemplate.Height = 24;
             this.dtGridTable.Size = new System.Drawing.Size(578, 343);
             this.dtGridTable.TabIndex = 0;
+            this.dtGridTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridTable_CellClick);
             // 
             // btnSave
             // 
@@ -229,6 +233,7 @@
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -238,6 +243,7 @@
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -247,12 +253,12 @@
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAddTable_Click);
             // 
             // grpInfo
             // 
-            this.grpInfo.Controls.Add(this.txtCapa);
-            this.grpInfo.Controls.Add(this.radNo);
-            this.grpInfo.Controls.Add(this.radYes);
+            this.grpInfo.Controls.Add(this.numCapa);
+            this.grpInfo.Controls.Add(this.panelStatus);
             this.grpInfo.Controls.Add(this.cbPosition);
             this.grpInfo.Controls.Add(this.txtIDTable);
             this.grpInfo.Controls.Add(this.labStatus);
@@ -261,32 +267,53 @@
             this.grpInfo.Controls.Add(this.labID);
             this.grpInfo.Location = new System.Drawing.Point(29, 36);
             this.grpInfo.Name = "grpInfo";
-            this.grpInfo.Size = new System.Drawing.Size(437, 213);
+            this.grpInfo.Size = new System.Drawing.Size(437, 205);
             this.grpInfo.TabIndex = 0;
             this.grpInfo.TabStop = false;
             this.grpInfo.Text = "Thông tin bàn";
             // 
+            // numCapa
+            // 
+            this.numCapa.Increment = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.numCapa.Location = new System.Drawing.Point(146, 110);
+            this.numCapa.Name = "numCapa";
+            this.numCapa.Size = new System.Drawing.Size(219, 30);
+            this.numCapa.TabIndex = 17;
+            // 
+            // panelStatus
+            // 
+            this.panelStatus.Controls.Add(this.radYes);
+            this.panelStatus.Controls.Add(this.radNo);
+            this.panelStatus.Location = new System.Drawing.Point(146, 146);
+            this.panelStatus.Name = "panelStatus";
+            this.panelStatus.Size = new System.Drawing.Size(219, 42);
+            this.panelStatus.TabIndex = 16;
+            // 
+            // radYes
+            // 
+            this.radYes.AutoSize = true;
+            this.radYes.Location = new System.Drawing.Point(111, 6);
+            this.radYes.Name = "radYes";
+            this.radYes.Size = new System.Drawing.Size(105, 26);
+            this.radYes.TabIndex = 13;
+            this.radYes.Text = "Có người";
+            this.radYes.UseVisualStyleBackColor = true;
+            // 
             // radNo
             // 
             this.radNo.AutoSize = true;
-            this.radNo.Location = new System.Drawing.Point(288, 150);
+            this.radNo.Checked = true;
+            this.radNo.Location = new System.Drawing.Point(16, 6);
             this.radNo.Name = "radNo";
             this.radNo.Size = new System.Drawing.Size(77, 26);
             this.radNo.TabIndex = 14;
             this.radNo.TabStop = true;
             this.radNo.Text = "Trống";
             this.radNo.UseVisualStyleBackColor = true;
-            // 
-            // radYes
-            // 
-            this.radYes.AutoSize = true;
-            this.radYes.Location = new System.Drawing.Point(146, 151);
-            this.radYes.Name = "radYes";
-            this.radYes.Size = new System.Drawing.Size(105, 26);
-            this.radYes.TabIndex = 13;
-            this.radYes.TabStop = true;
-            this.radYes.Text = "Có người";
-            this.radYes.UseVisualStyleBackColor = true;
             // 
             // cbPosition
             // 
@@ -317,7 +344,7 @@
             // labCapability
             // 
             this.labCapability.AutoSize = true;
-            this.labCapability.Location = new System.Drawing.Point(27, 113);
+            this.labCapability.Location = new System.Drawing.Point(27, 112);
             this.labCapability.Name = "labCapability";
             this.labCapability.Size = new System.Drawing.Size(70, 22);
             this.labCapability.TabIndex = 3;
@@ -571,13 +598,6 @@
             this.tabPage5.Text = "Khuyến mãi";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // txtCapa
-            // 
-            this.txtCapa.Location = new System.Drawing.Point(146, 110);
-            this.txtCapa.Name = "txtCapa";
-            this.txtCapa.Size = new System.Drawing.Size(219, 30);
-            this.txtCapa.TabIndex = 15;
-            // 
             // ID_Table
             // 
             this.ID_Table.DataPropertyName = "ID_Table";
@@ -594,14 +614,14 @@
             // 
             // CapabilityTable
             // 
-            this.CapabilityTable.DataPropertyName = "capability";
+            this.CapabilityTable.DataPropertyName = "Capa";
             this.CapabilityTable.HeaderText = "Cơ Cấu";
             this.CapabilityTable.Name = "CapabilityTable";
             this.CapabilityTable.ReadOnly = true;
             // 
             // Column1
             // 
-            this.Column1.DataPropertyName = "Status";
+            this.Column1.DataPropertyName = "Sta";
             this.Column1.HeaderText = "Trạng Thái";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -627,6 +647,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtGridTable)).EndInit();
             this.grpInfo.ResumeLayout(false);
             this.grpInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numCapa)).EndInit();
+            this.panelStatus.ResumeLayout(false);
+            this.panelStatus.PerformLayout();
             this.tabPagePosition.ResumeLayout(false);
             this.grpListPos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtGridPosition)).EndInit();
@@ -688,7 +711,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusPos;
         private System.Windows.Forms.DataGridViewTextBoxColumn NotePos;
         private System.Windows.Forms.TextBox txtStatusPos;
-        private System.Windows.Forms.TextBox txtCapa;
+        private System.Windows.Forms.Panel panelStatus;
+        private System.Windows.Forms.NumericUpDown numCapa;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Table;
         private System.Windows.Forms.DataGridViewTextBoxColumn PositionTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn CapabilityTable;
