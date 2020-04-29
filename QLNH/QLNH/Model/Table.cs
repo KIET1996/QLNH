@@ -13,14 +13,15 @@ namespace QLNH.Model
         private int capability;
         private int status;
         
-
+        
+       
         public Table(int id_table, string pos, int capa, int status)
         {
             this.ID_Table = id_table;
             this.Position = pos;
             this.Capability = capa;
             this.Status = status;
-        
+            
         }
 
         public Table(DataRow row)
@@ -29,7 +30,7 @@ namespace QLNH.Model
             this.Position = row["Position"].ToString();
             this.Capability = (int)row["capability"];
             this.Status = Convert.ToInt32(row["sta"]);
-           
+            
         }
 
        
@@ -82,5 +83,7 @@ namespace QLNH.Model
                 iD_Table = value;
             }
         }
+
+        
     }
 }
