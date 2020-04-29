@@ -155,7 +155,9 @@ namespace QLNH
             if (TableController.Instance.InsertTable(ID_Pos, Capability, sta))
             {
                 MessageBox.Show("Thêm bàn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+                table_Load();
             }
+            //MessageBox.Show("ID thanh cong" + ID_Pos);
         }
 
         //su kien xoa ban
@@ -175,6 +177,26 @@ namespace QLNH
                 {
                     MessageBox.Show("Xóa bàn thất bại!");
                 }
+            }
+        }
+
+        //Sua thong tin ban
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            int ID_Table = Convert.ToInt32(txtIDTable.Text);
+            int ID_Pos = (cbPosition.SelectedItem as Position).ID_Pos;
+            int Capability = Convert.ToInt32(numCapa.Value);
+            int Sta = 0;
+
+            if (radYes.Checked)
+            {
+                Sta = 1;
+            }
+
+            if (TableController.Instance.UpdateTable(ID_Table, ID_Pos, Capability, Sta))
+            {
+                MessageBox.Show("Sửa thông tin thành công!");
+                table_Load();
             }
         }
 
@@ -245,10 +267,6 @@ namespace QLNH
             }
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-
-        }
 
         
     }

@@ -38,6 +38,10 @@
             this.tabPageTable = new System.Windows.Forms.TabPage();
             this.grpListTable = new System.Windows.Forms.GroupBox();
             this.dtGridTable = new System.Windows.Forms.DataGridView();
+            this.ID_Table = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PositionTable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Capability = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -79,10 +83,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.ID_Table = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PositionTable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CapabilityTable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tabTable.SuspendLayout();
             this.tabPageTable.SuspendLayout();
@@ -197,7 +197,7 @@
             this.dtGridTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_Table,
             this.PositionTable,
-            this.CapabilityTable,
+            this.Capability,
             this.Column1});
             this.dtGridTable.Location = new System.Drawing.Point(29, 29);
             this.dtGridTable.Name = "dtGridTable";
@@ -206,6 +206,34 @@
             this.dtGridTable.Size = new System.Drawing.Size(578, 343);
             this.dtGridTable.TabIndex = 0;
             this.dtGridTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridTable_CellClick);
+            // 
+            // ID_Table
+            // 
+            this.ID_Table.DataPropertyName = "ID_Table";
+            this.ID_Table.HeaderText = "ID Bàn";
+            this.ID_Table.Name = "ID_Table";
+            this.ID_Table.ReadOnly = true;
+            // 
+            // PositionTable
+            // 
+            this.PositionTable.DataPropertyName = "ID_Pos";
+            this.PositionTable.HeaderText = "ID Khu Vực";
+            this.PositionTable.Name = "PositionTable";
+            this.PositionTable.ReadOnly = true;
+            // 
+            // Capability
+            // 
+            this.Capability.DataPropertyName = "Capa";
+            this.Capability.HeaderText = "Cơ Cấu";
+            this.Capability.Name = "Capability";
+            this.Capability.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Sta";
+            this.Column1.HeaderText = "Trạng Thái";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // btnSave
             // 
@@ -326,6 +354,7 @@
             // 
             // txtIDTable
             // 
+            this.txtIDTable.Enabled = false;
             this.txtIDTable.Location = new System.Drawing.Point(146, 38);
             this.txtIDTable.Name = "txtIDTable";
             this.txtIDTable.Size = new System.Drawing.Size(219, 30);
@@ -346,9 +375,9 @@
             this.labCapability.AutoSize = true;
             this.labCapability.Location = new System.Drawing.Point(27, 112);
             this.labCapability.Name = "labCapability";
-            this.labCapability.Size = new System.Drawing.Size(70, 22);
+            this.labCapability.Size = new System.Drawing.Size(84, 22);
             this.labCapability.TabIndex = 3;
-            this.labCapability.Text = "Cơ Cấu";
+            this.labCapability.Text = "Sức chứa";
             // 
             // labPosition
             // 
@@ -598,34 +627,6 @@
             this.tabPage5.Text = "Khuyến mãi";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // ID_Table
-            // 
-            this.ID_Table.DataPropertyName = "ID_Table";
-            this.ID_Table.HeaderText = "ID Bàn";
-            this.ID_Table.Name = "ID_Table";
-            this.ID_Table.ReadOnly = true;
-            // 
-            // PositionTable
-            // 
-            this.PositionTable.DataPropertyName = "ID_Pos";
-            this.PositionTable.HeaderText = "ID Khu Vực";
-            this.PositionTable.Name = "PositionTable";
-            this.PositionTable.ReadOnly = true;
-            // 
-            // CapabilityTable
-            // 
-            this.CapabilityTable.DataPropertyName = "Capa";
-            this.CapabilityTable.HeaderText = "Cơ Cấu";
-            this.CapabilityTable.Name = "CapabilityTable";
-            this.CapabilityTable.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Sta";
-            this.Column1.HeaderText = "Trạng Thái";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
             // frmTables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -715,7 +716,7 @@
         private System.Windows.Forms.NumericUpDown numCapa;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Table;
         private System.Windows.Forms.DataGridViewTextBoxColumn PositionTable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CapabilityTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Capability;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }
