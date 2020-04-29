@@ -498,6 +498,7 @@
             this.btnDeletePos.TabIndex = 3;
             this.btnDeletePos.Text = "Xóa";
             this.btnDeletePos.UseVisualStyleBackColor = true;
+            this.btnDeletePos.Click += new System.EventHandler(this.btnDeletePos_Click);
             // 
             // btnEditPos
             // 
@@ -507,6 +508,7 @@
             this.btnEditPos.TabIndex = 2;
             this.btnEditPos.Text = "Sửa";
             this.btnEditPos.UseVisualStyleBackColor = true;
+            this.btnEditPos.Click += new System.EventHandler(this.btnEditPos_Click);
             // 
             // btnAddPos
             // 
@@ -558,6 +560,7 @@
             // 
             // txtIDPos
             // 
+            this.txtIDPos.Enabled = false;
             this.txtIDPos.Location = new System.Drawing.Point(186, 43);
             this.txtIDPos.Name = "txtIDPos";
             this.txtIDPos.Size = new System.Drawing.Size(258, 30);

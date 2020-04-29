@@ -267,7 +267,37 @@ namespace QLNH
             }
         }
 
+        private void btnDeletePos_Click(object sender, EventArgs e)
+        {
+            int ID_Pos = Convert.ToInt32(txtIDPos.Text);
 
-        
+            DialogResult dr = MessageBox.Show("Bạn có muốn xóa khu vực này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (dr == DialogResult.OK)
+            {
+                if (PositionController.Instance.DeletePosition(ID_Pos))
+                {
+                    MessageBox.Show("Xóa khu vực thành công!");
+                    position_Load();
+                }
+                else
+                {
+                    MessageBox.Show("Xóa khu vực thất bại!");
+                }
+            }
+        }
+
+        private void btnEditPos_Click(object sender, EventArgs e)
+        {
+            int ID_Pos = Convert.ToInt32(txtIDPos.Text);
+            string name = txtNamePos.Text;
+            string Sta = txtStatusPos.Text;
+            string note = txtNotePos.Text;
+            
+            if (PositionController.Instance.UpdatePosition(ID_Pos, name, Sta, note))
+            {
+                MessageBox.Show("Sửa thông tin thành công!");
+                position_Load();
+            }
+        }
     }
 }
