@@ -55,6 +55,7 @@
     <Compile Include="Controller\OtherController.cs" />
     <Compile Include="Controller\PositionController.cs" />
     <Compile Include="Controller\ProfitController.cs" />
+    <Compile Include="Controller\StatisticController.cs" />
     <Compile Include="Controller\TableController.cs" />
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
@@ -88,6 +89,7 @@
     <Compile Include="Model\Other.cs" />
     <Compile Include="Model\Position.cs" />
     <Compile Include="Model\Profit.cs" />
+    <Compile Include="Model\Statistic.cs" />
     <Compile Include="Model\Table.cs" />
     <Compile Include="Model\Table_Management.cs" />
     <Compile Include="Program.cs" />

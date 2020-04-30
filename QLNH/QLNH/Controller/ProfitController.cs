@@ -35,7 +35,5 @@ namespace QLNH.Controller
             return list;
         }
 
-
-
     }
 }
