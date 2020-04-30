@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnManagement = new System.Windows.Forms.ToolStripMenuItem();
             this.mnDish = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +60,7 @@
             this.start = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.finish = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabProfit = new System.Windows.Forms.TabPage();
+            this.tabDish = new System.Windows.Forms.TabPage();
             this.gbTimePicker2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.gb2_dt2 = new System.Windows.Forms.DateTimePicker();
@@ -71,15 +71,27 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSeen = new System.Windows.Forms.Button();
+            this.tabProfit = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dtDTStart = new System.Windows.Forms.DateTimePicker();
+            this.btnDTSeen = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dtDTFinish = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabDiscount.SuspendLayout();
             this.gbDiscount.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPercent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDiscount)).BeginInit();
-            this.tabProfit.SuspendLayout();
+            this.tabDish.SuspendLayout();
             this.gbTimePicker2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabProfit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -136,6 +148,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabDiscount);
             this.tabControl1.Controls.Add(this.tabProfit);
+            this.tabControl1.Controls.Add(this.tabDish);
             this.tabControl1.Location = new System.Drawing.Point(0, 28);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -350,9 +363,9 @@
             // start
             // 
             this.start.DataPropertyName = "Start";
-            dataGridViewCellStyle11.Format = "dd-MM-yyyy";
-            dataGridViewCellStyle11.NullValue = null;
-            this.start.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Format = "dd-MM-yyyy";
+            dataGridViewCellStyle1.NullValue = null;
+            this.start.DefaultCellStyle = dataGridViewCellStyle1;
             this.start.HeaderText = "Bắt đầu";
             this.start.Name = "start";
             this.start.ReadOnly = true;
@@ -360,9 +373,9 @@
             // finish
             // 
             this.finish.DataPropertyName = "Finish";
-            dataGridViewCellStyle12.Format = "dd-MM-yyyy";
-            dataGridViewCellStyle12.NullValue = null;
-            this.finish.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Format = "dd-MM-yyyy";
+            dataGridViewCellStyle2.NullValue = null;
+            this.finish.DefaultCellStyle = dataGridViewCellStyle2;
             this.finish.HeaderText = "Kết thúc";
             this.finish.Name = "finish";
             this.finish.ReadOnly = true;
@@ -375,18 +388,19 @@
             this.sta.ReadOnly = true;
             this.sta.Width = 50;
             // 
-            // tabProfit
+            // tabDish
             // 
-            this.tabProfit.Controls.Add(this.gbTimePicker2);
-            this.tabProfit.Controls.Add(this.dataGridView2);
-            this.tabProfit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabProfit.Location = new System.Drawing.Point(4, 22);
-            this.tabProfit.Name = "tabProfit";
-            this.tabProfit.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProfit.Size = new System.Drawing.Size(869, 377);
-            this.tabProfit.TabIndex = 1;
-            this.tabProfit.Text = "Lợi Nhuận";
-            this.tabProfit.UseVisualStyleBackColor = true;
+            this.tabDish.Controls.Add(this.btnSeen);
+            this.tabDish.Controls.Add(this.gbTimePicker2);
+            this.tabDish.Controls.Add(this.dataGridView2);
+            this.tabDish.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabDish.Location = new System.Drawing.Point(4, 22);
+            this.tabDish.Name = "tabDish";
+            this.tabDish.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDish.Size = new System.Drawing.Size(869, 377);
+            this.tabDish.TabIndex = 1;
+            this.tabDish.Text = "Món Ăn";
+            this.tabDish.UseVisualStyleBackColor = true;
             // 
             // gbTimePicker2
             // 
@@ -468,6 +482,95 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Tổng tiền";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
+            // btnSeen
+            // 
+            this.btnSeen.Location = new System.Drawing.Point(143, 287);
+            this.btnSeen.Name = "btnSeen";
+            this.btnSeen.Size = new System.Drawing.Size(75, 30);
+            this.btnSeen.TabIndex = 7;
+            this.btnSeen.Text = "Xem";
+            this.btnSeen.UseVisualStyleBackColor = true;
+            // 
+            // tabProfit
+            // 
+            this.tabProfit.Controls.Add(this.btnDTSeen);
+            this.tabProfit.Controls.Add(this.groupBox1);
+            this.tabProfit.Controls.Add(this.dataGridView1);
+            this.tabProfit.Location = new System.Drawing.Point(4, 22);
+            this.tabProfit.Name = "tabProfit";
+            this.tabProfit.Size = new System.Drawing.Size(869, 377);
+            this.tabProfit.TabIndex = 2;
+            this.tabProfit.Text = "Doanh thu";
+            this.tabProfit.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(405, 6);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(444, 311);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dtDTFinish);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.dtDTStart);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(50, 26);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(256, 190);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Doanh Thu";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(13, 50);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 19);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Từ ngày";
+            // 
+            // dtDTStart
+            // 
+            this.dtDTStart.CustomFormat = "dd-MM-yyyy";
+            this.dtDTStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtDTStart.Location = new System.Drawing.Point(68, 72);
+            this.dtDTStart.Name = "dtDTStart";
+            this.dtDTStart.Size = new System.Drawing.Size(144, 26);
+            this.dtDTStart.TabIndex = 1;
+            // 
+            // btnDTSeen
+            // 
+            this.btnDTSeen.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDTSeen.Location = new System.Drawing.Point(135, 222);
+            this.btnDTSeen.Name = "btnDTSeen";
+            this.btnDTSeen.Size = new System.Drawing.Size(75, 30);
+            this.btnDTSeen.TabIndex = 2;
+            this.btnDTSeen.Text = "Xem";
+            this.btnDTSeen.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(13, 112);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 19);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Đến ngày";
+            // 
+            // dtDTFinish
+            // 
+            this.dtDTFinish.CustomFormat = "dd-MM-yyyy";
+            this.dtDTFinish.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtDTFinish.Location = new System.Drawing.Point(68, 134);
+            this.dtDTFinish.Name = "dtDTFinish";
+            this.dtDTFinish.Size = new System.Drawing.Size(144, 26);
+            this.dtDTFinish.TabIndex = 3;
+            // 
             // FrmStatistical
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,10 +589,14 @@
             this.gbDiscount.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPercent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDiscount)).EndInit();
-            this.tabProfit.ResumeLayout(false);
+            this.tabDish.ResumeLayout(false);
             this.gbTimePicker2.ResumeLayout(false);
             this.gbTimePicker2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabProfit.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -505,7 +612,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnLogout;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabDiscount;
-        private System.Windows.Forms.TabPage tabProfit;
+        private System.Windows.Forms.TabPage tabDish;
         private System.Windows.Forms.DataGridView gvDiscount;
         private System.Windows.Forms.GroupBox gbTimePicker2;
         private System.Windows.Forms.Label label3;
@@ -538,5 +645,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn finish;
         private System.Windows.Forms.DataGridViewTextBoxColumn sta;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TabPage tabProfit;
+        private System.Windows.Forms.Button btnDTSeen;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DateTimePicker dtDTFinish;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker dtDTStart;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnSeen;
     }
 }
