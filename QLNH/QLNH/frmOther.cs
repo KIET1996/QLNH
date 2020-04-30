@@ -171,7 +171,7 @@ namespace QLNH
 
             double per = Convert.ToDouble(txtPercent.Text) / 100;
             double total =Convert.ToDouble(txtTotal.Text.Split(',')[0]);
-            total = (total + total * 0.1 + total * per)*1000;
+            total = (total + total * 0.1 - total * per)*1000;
 
             if (idBill != -1)
             {
