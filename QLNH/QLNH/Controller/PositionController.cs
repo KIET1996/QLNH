@@ -52,7 +52,25 @@ namespace QLNH.Controller
         //Thêm vị trí
         public bool AddPosition(string pos, string sta, string note)
         {
-            string sql = string.Format("INSERT INTO Position_Table (pos, sta, note) VALUES ('{0}', '{1}', '{2}')", pos, sta, note);
+            string sql = string.Format("INSERT INTO Position_Table VALUES ( '{0}', '{1}', '{2}')", pos, sta, note);
+            int result = DataProvider.Instance.ExecuteNonQuery(sql);
+
+            return result > 0;
+        }
+
+        //Delete position 
+        public bool DeletePosition(int ID_Pos)
+        {
+            string sql = string.Format("DELETE Position_Table WHERE ID_Pos = '{0}'", ID_Pos);
+            int result = DataProvider.Instance.ExecuteNonQuery(sql);
+
+            return result > 0;
+        }
+
+        //Update information position
+        public bool UpdatePosition(int ID_Pos, string name, string Sta, string note)
+        {
+            string sql = string.Format("UPDATE Position_Table SET position = '{0}', sta = '{1}', note = '{2}' where ID_Pos = '{3}'", name, Sta, note, ID_Pos);
             int result = DataProvider.Instance.ExecuteNonQuery(sql);
 
             return result > 0;
@@ -61,7 +79,7 @@ namespace QLNH.Controller
         //Check xem vi tri co ton tai khong
         public bool CheckPosition(string pos)
         {
-            string sql = string.Format("SELECT COUNT(pos) from Position_Table where pos = '{0}'", pos);
+            string sql = string.Format("SELECT COUNT(*) from Position_Table where position = '{0}'", pos);
             int result = (Int32)DataProvider.Instance.ExecuteScalar(sql);
             return result > 0;
         }
