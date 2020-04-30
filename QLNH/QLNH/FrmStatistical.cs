@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ namespace QLNH
         {
             InitializeComponent();
             LoadDiscount();
+            loadProfit(dtDTStart.Value, dtDTFinish.Value);
         }
 
         // load danh sách các chương trình giảm giá
@@ -137,6 +139,29 @@ namespace QLNH
                     MessageBox.Show("Xóa chương trình giảm giá thất bại!");
                 }
             }
+        }
+
+        //Load doanh thu tu ngay a den ngay b
+        public void loadProfit(DateTime start, DateTime finish)
+        {
+            double total = 0;
+            List<Profit> listProfit = ProfitController.Instance.GetListProfit(start, finish);
+            foreach (Profit item in listProfit)
+            {   
+                total += item.Total_price;
+            }
+            gvProfit.DataSource = listProfit;
+            CultureInfo culture = new CultureInfo("vi-VN");
+            txtTotal.Text = total.ToString("C", culture);
+
+        }
+
+        //Chon xem danh doanh thu tu ngay a den ngay b
+        private void btnDTSeen_Click(object sender, EventArgs e)
+        {
+            DateTime start = dtDTStart.Value;
+            DateTime finish = dtDTFinish.Value;
+            loadProfit(start, finish);
         }
     }
 }
