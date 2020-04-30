@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnManagement = new System.Windows.Forms.ToolStripMenuItem();
             this.mnDish = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,7 +38,28 @@
             this.mnLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabDiscount = new System.Windows.Forms.TabPage();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.gbDiscount = new System.Windows.Forms.GroupBox();
+            this.nudPercent = new System.Windows.Forms.NumericUpDown();
+            this.txtIDDis = new System.Windows.Forms.TextBox();
+            this.lblID = new System.Windows.Forms.Label();
+            this.dtFinish = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dtStart = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtDiscription = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.gvDiscount = new System.Windows.Forms.DataGridView();
+            this.ID_Dis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.per = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descript = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.start = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.finish = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabProfit = new System.Windows.Forms.TabPage();
             this.gbTimePicker2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,35 +71,15 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gbDiscount = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtDiscription = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dtStart = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dtFinish = new System.Windows.Forms.DateTimePicker();
-            this.lblID = new System.Windows.Forms.Label();
-            this.txtIDDis = new System.Windows.Forms.TextBox();
-            this.nudPercent = new System.Windows.Forms.NumericUpDown();
-            this.txtAdd = new System.Windows.Forms.Button();
-            this.txtEdit = new System.Windows.Forms.Button();
-            this.txtDelete = new System.Windows.Forms.Button();
-            this.ID_Dis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.per = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descript = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.start = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.finish = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabDiscount.SuspendLayout();
+            this.gbDiscount.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPercent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDiscount)).BeginInit();
             this.tabProfit.SuspendLayout();
             this.gbTimePicker2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.gbDiscount.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPercent)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -138,24 +139,171 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 28);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(877, 370);
+            this.tabControl1.Size = new System.Drawing.Size(877, 403);
             this.tabControl1.TabIndex = 1;
             // 
             // tabDiscount
             // 
-            this.tabDiscount.Controls.Add(this.txtDelete);
-            this.tabDiscount.Controls.Add(this.txtEdit);
-            this.tabDiscount.Controls.Add(this.txtAdd);
+            this.tabDiscount.Controls.Add(this.btnSave);
+            this.tabDiscount.Controls.Add(this.btnDelete);
+            this.tabDiscount.Controls.Add(this.btnEdit);
+            this.tabDiscount.Controls.Add(this.btnAdd);
             this.tabDiscount.Controls.Add(this.gbDiscount);
             this.tabDiscount.Controls.Add(this.gvDiscount);
             this.tabDiscount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabDiscount.Location = new System.Drawing.Point(4, 22);
             this.tabDiscount.Name = "tabDiscount";
             this.tabDiscount.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDiscount.Size = new System.Drawing.Size(869, 344);
+            this.tabDiscount.Size = new System.Drawing.Size(869, 377);
             this.tabDiscount.TabIndex = 0;
             this.tabDiscount.Text = "Giảm Giá";
             this.tabDiscount.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Enabled = false;
+            this.btnSave.Location = new System.Drawing.Point(102, 337);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 30);
+            this.btnSave.TabIndex = 5;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(287, 337);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 30);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(193, 337);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 30);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "Sửa";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(10, 337);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 30);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // gbDiscount
+            // 
+            this.gbDiscount.Controls.Add(this.nudPercent);
+            this.gbDiscount.Controls.Add(this.txtIDDis);
+            this.gbDiscount.Controls.Add(this.lblID);
+            this.gbDiscount.Controls.Add(this.dtFinish);
+            this.gbDiscount.Controls.Add(this.label6);
+            this.gbDiscount.Controls.Add(this.dtStart);
+            this.gbDiscount.Controls.Add(this.label5);
+            this.gbDiscount.Controls.Add(this.txtDiscription);
+            this.gbDiscount.Controls.Add(this.label2);
+            this.gbDiscount.Controls.Add(this.label1);
+            this.gbDiscount.Location = new System.Drawing.Point(20, 54);
+            this.gbDiscount.Name = "gbDiscount";
+            this.gbDiscount.Size = new System.Drawing.Size(302, 251);
+            this.gbDiscount.TabIndex = 1;
+            this.gbDiscount.TabStop = false;
+            this.gbDiscount.Text = "Giảm Giá";
+            // 
+            // nudPercent
+            // 
+            this.nudPercent.Location = new System.Drawing.Point(83, 65);
+            this.nudPercent.Name = "nudPercent";
+            this.nudPercent.Size = new System.Drawing.Size(120, 26);
+            this.nudPercent.TabIndex = 2;
+            // 
+            // txtIDDis
+            // 
+            this.txtIDDis.Location = new System.Drawing.Point(83, 19);
+            this.txtIDDis.Name = "txtIDDis";
+            this.txtIDDis.ReadOnly = true;
+            this.txtIDDis.Size = new System.Drawing.Size(100, 26);
+            this.txtIDDis.TabIndex = 9;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(22, 26);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(25, 19);
+            this.lblID.TabIndex = 8;
+            this.lblID.Text = "ID";
+            // 
+            // dtFinish
+            // 
+            this.dtFinish.CustomFormat = "dd-MM-yyyy";
+            this.dtFinish.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtFinish.Location = new System.Drawing.Point(83, 209);
+            this.dtFinish.Name = "dtFinish";
+            this.dtFinish.Size = new System.Drawing.Size(200, 26);
+            this.dtFinish.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(22, 216);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 19);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Finish";
+            // 
+            // dtStart
+            // 
+            this.dtStart.CustomFormat = "dd-MM-yyyy";
+            this.dtStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtStart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dtStart.Location = new System.Drawing.Point(83, 163);
+            this.dtStart.Name = "dtStart";
+            this.dtStart.Size = new System.Drawing.Size(200, 26);
+            this.dtStart.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(22, 170);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 19);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Start";
+            // 
+            // txtDiscription
+            // 
+            this.txtDiscription.Location = new System.Drawing.Point(83, 113);
+            this.txtDiscription.Name = "txtDiscription";
+            this.txtDiscription.Size = new System.Drawing.Size(200, 26);
+            this.txtDiscription.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(22, 120);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 19);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Mô tả";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Phần trăm";
             // 
             // gvDiscount
             // 
@@ -174,6 +322,58 @@
             this.gvDiscount.ReadOnly = true;
             this.gvDiscount.Size = new System.Drawing.Size(501, 311);
             this.gvDiscount.TabIndex = 0;
+            this.gvDiscount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDiscount_CellClick);
+            // 
+            // ID_Dis
+            // 
+            this.ID_Dis.DataPropertyName = "ID_Dis";
+            this.ID_Dis.HeaderText = "Mã giảm giá";
+            this.ID_Dis.Name = "ID_Dis";
+            this.ID_Dis.ReadOnly = true;
+            this.ID_Dis.Width = 50;
+            // 
+            // per
+            // 
+            this.per.DataPropertyName = "Per";
+            this.per.HeaderText = "Phần trăm";
+            this.per.Name = "per";
+            this.per.ReadOnly = true;
+            this.per.Width = 50;
+            // 
+            // descript
+            // 
+            this.descript.DataPropertyName = "Descript";
+            this.descript.HeaderText = "Mô tả";
+            this.descript.Name = "descript";
+            this.descript.ReadOnly = true;
+            // 
+            // start
+            // 
+            this.start.DataPropertyName = "Start";
+            dataGridViewCellStyle11.Format = "dd-MM-yyyy";
+            dataGridViewCellStyle11.NullValue = null;
+            this.start.DefaultCellStyle = dataGridViewCellStyle11;
+            this.start.HeaderText = "Bắt đầu";
+            this.start.Name = "start";
+            this.start.ReadOnly = true;
+            // 
+            // finish
+            // 
+            this.finish.DataPropertyName = "Finish";
+            dataGridViewCellStyle12.Format = "dd-MM-yyyy";
+            dataGridViewCellStyle12.NullValue = null;
+            this.finish.DefaultCellStyle = dataGridViewCellStyle12;
+            this.finish.HeaderText = "Kết thúc";
+            this.finish.Name = "finish";
+            this.finish.ReadOnly = true;
+            // 
+            // sta
+            // 
+            this.sta.DataPropertyName = "Sta";
+            this.sta.HeaderText = "Trạng thái";
+            this.sta.Name = "sta";
+            this.sta.ReadOnly = true;
+            this.sta.Width = 50;
             // 
             // tabProfit
             // 
@@ -183,7 +383,7 @@
             this.tabProfit.Location = new System.Drawing.Point(4, 22);
             this.tabProfit.Name = "tabProfit";
             this.tabProfit.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProfit.Size = new System.Drawing.Size(869, 344);
+            this.tabProfit.Size = new System.Drawing.Size(869, 377);
             this.tabProfit.TabIndex = 1;
             this.tabProfit.Text = "Lợi Nhuận";
             this.tabProfit.UseVisualStyleBackColor = true;
@@ -268,194 +468,11 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Tổng tiền";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // gbDiscount
-            // 
-            this.gbDiscount.Controls.Add(this.nudPercent);
-            this.gbDiscount.Controls.Add(this.txtIDDis);
-            this.gbDiscount.Controls.Add(this.lblID);
-            this.gbDiscount.Controls.Add(this.dtFinish);
-            this.gbDiscount.Controls.Add(this.label6);
-            this.gbDiscount.Controls.Add(this.dtStart);
-            this.gbDiscount.Controls.Add(this.label5);
-            this.gbDiscount.Controls.Add(this.txtDiscription);
-            this.gbDiscount.Controls.Add(this.label2);
-            this.gbDiscount.Controls.Add(this.label1);
-            this.gbDiscount.Location = new System.Drawing.Point(19, 25);
-            this.gbDiscount.Name = "gbDiscount";
-            this.gbDiscount.Size = new System.Drawing.Size(302, 251);
-            this.gbDiscount.TabIndex = 1;
-            this.gbDiscount.TabStop = false;
-            this.gbDiscount.Text = "Giảm Giá";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Phần trăm";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 120);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 19);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Mô tả";
-            // 
-            // txtDiscription
-            // 
-            this.txtDiscription.Location = new System.Drawing.Point(83, 113);
-            this.txtDiscription.Name = "txtDiscription";
-            this.txtDiscription.Size = new System.Drawing.Size(200, 26);
-            this.txtDiscription.TabIndex = 3;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 170);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 19);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Start";
-            // 
-            // dtStart
-            // 
-            this.dtStart.CustomFormat = "dd-MM-yyyy";
-            this.dtStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtStart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtStart.Location = new System.Drawing.Point(83, 163);
-            this.dtStart.Name = "dtStart";
-            this.dtStart.Size = new System.Drawing.Size(200, 26);
-            this.dtStart.TabIndex = 5;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 216);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 19);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Finish";
-            // 
-            // dtFinish
-            // 
-            this.dtFinish.CustomFormat = "dd-MM-yyyy";
-            this.dtFinish.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtFinish.Location = new System.Drawing.Point(83, 209);
-            this.dtFinish.Name = "dtFinish";
-            this.dtFinish.Size = new System.Drawing.Size(200, 26);
-            this.dtFinish.TabIndex = 7;
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(22, 26);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(25, 19);
-            this.lblID.TabIndex = 8;
-            this.lblID.Text = "ID";
-            // 
-            // txtIDDis
-            // 
-            this.txtIDDis.Location = new System.Drawing.Point(83, 19);
-            this.txtIDDis.Name = "txtIDDis";
-            this.txtIDDis.ReadOnly = true;
-            this.txtIDDis.Size = new System.Drawing.Size(100, 26);
-            this.txtIDDis.TabIndex = 9;
-            // 
-            // nudPercent
-            // 
-            this.nudPercent.Location = new System.Drawing.Point(83, 65);
-            this.nudPercent.Name = "nudPercent";
-            this.nudPercent.Size = new System.Drawing.Size(120, 26);
-            this.nudPercent.TabIndex = 2;
-            // 
-            // txtAdd
-            // 
-            this.txtAdd.Location = new System.Drawing.Point(29, 293);
-            this.txtAdd.Name = "txtAdd";
-            this.txtAdd.Size = new System.Drawing.Size(75, 23);
-            this.txtAdd.TabIndex = 2;
-            this.txtAdd.Text = "Thêm";
-            this.txtAdd.UseVisualStyleBackColor = true;
-            // 
-            // txtEdit
-            // 
-            this.txtEdit.Location = new System.Drawing.Point(132, 292);
-            this.txtEdit.Name = "txtEdit";
-            this.txtEdit.Size = new System.Drawing.Size(75, 23);
-            this.txtEdit.TabIndex = 3;
-            this.txtEdit.Text = "Sửa";
-            this.txtEdit.UseVisualStyleBackColor = true;
-            // 
-            // txtDelete
-            // 
-            this.txtDelete.Location = new System.Drawing.Point(227, 292);
-            this.txtDelete.Name = "txtDelete";
-            this.txtDelete.Size = new System.Drawing.Size(75, 23);
-            this.txtDelete.TabIndex = 4;
-            this.txtDelete.Text = "Xóa";
-            this.txtDelete.UseVisualStyleBackColor = true;
-            // 
-            // ID_Dis
-            // 
-            this.ID_Dis.DataPropertyName = "ID_Dis";
-            this.ID_Dis.HeaderText = "Mã giảm giá";
-            this.ID_Dis.Name = "ID_Dis";
-            this.ID_Dis.ReadOnly = true;
-            this.ID_Dis.Width = 50;
-            // 
-            // per
-            // 
-            this.per.DataPropertyName = "Per";
-            this.per.HeaderText = "Phần trăm";
-            this.per.Name = "per";
-            this.per.ReadOnly = true;
-            this.per.Width = 50;
-            // 
-            // descript
-            // 
-            this.descript.DataPropertyName = "Descript";
-            this.descript.HeaderText = "Mô tả";
-            this.descript.Name = "descript";
-            this.descript.ReadOnly = true;
-            // 
-            // start
-            // 
-            this.start.DataPropertyName = "Start";
-            dataGridViewCellStyle5.Format = "dd-MM-yyyy";
-            dataGridViewCellStyle5.NullValue = null;
-            this.start.DefaultCellStyle = dataGridViewCellStyle5;
-            this.start.HeaderText = "Bắt đầu";
-            this.start.Name = "start";
-            this.start.ReadOnly = true;
-            // 
-            // finish
-            // 
-            this.finish.DataPropertyName = "Finish";
-            dataGridViewCellStyle6.Format = "dd-MM-yyyy";
-            dataGridViewCellStyle6.NullValue = null;
-            this.finish.DefaultCellStyle = dataGridViewCellStyle6;
-            this.finish.HeaderText = "Kết thúc";
-            this.finish.Name = "finish";
-            this.finish.ReadOnly = true;
-            // 
-            // sta
-            // 
-            this.sta.DataPropertyName = "Sta";
-            this.sta.HeaderText = "Trạng thái";
-            this.sta.Name = "sta";
-            this.sta.ReadOnly = true;
-            this.sta.Width = 50;
-            // 
             // FrmStatistical
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(899, 410);
+            this.ClientSize = new System.Drawing.Size(899, 429);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -465,14 +482,14 @@
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabDiscount.ResumeLayout(false);
+            this.gbDiscount.ResumeLayout(false);
+            this.gbDiscount.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPercent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDiscount)).EndInit();
             this.tabProfit.ResumeLayout(false);
             this.gbTimePicker2.ResumeLayout(false);
             this.gbTimePicker2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.gbDiscount.ResumeLayout(false);
-            this.gbDiscount.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPercent)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -500,9 +517,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.Button txtDelete;
-        private System.Windows.Forms.Button txtEdit;
-        private System.Windows.Forms.Button txtAdd;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox gbDiscount;
         private System.Windows.Forms.NumericUpDown nudPercent;
         private System.Windows.Forms.TextBox txtIDDis;
@@ -520,5 +537,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn start;
         private System.Windows.Forms.DataGridViewTextBoxColumn finish;
         private System.Windows.Forms.DataGridViewTextBoxColumn sta;
+        private System.Windows.Forms.Button btnSave;
     }
 }
