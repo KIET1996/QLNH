@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QLNH.Controller;
+using QLNH.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +17,14 @@ namespace QLNH
         public FrmStatistical()
         {
             InitializeComponent();
+            LoadDiscount();
         }
 
+        void LoadDiscount()
+        {
+            List<Discount> listDiscount = DiscountController.Instance.GetListAllDiscount();
+            gvDiscount.DataSource = listDiscount;
+          
+        }
     }
 }

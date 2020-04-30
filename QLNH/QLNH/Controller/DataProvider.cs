@@ -10,7 +10,8 @@ namespace QLNH.Controller
 {
     public class DataProvider
     {
-        private string connectionSTR = "Server=DESKTOP-ACK104U\\SQLEXPRESS; Database = QL_NhaHang;  uid = mylogin; pwd=mylogin ";
+        //private string connectionSTR = "Server=DESKTOP-ILBQ6DV\\MSSQLSERVER01; Database = QL_NhaHang;  uid = mylogin; pwd=mylogin ";
+        private string connectionSTR = "Data Source=DESKTOP-ILBQ6DV\\MSSQLSERVER01;Initial Catalog=QL_NhaHang;Integrated Security=True";
 
         private static DataProvider instance;
 

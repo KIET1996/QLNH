@@ -20,12 +20,30 @@ namespace QLNH.Controller
 
         private DiscountController() { }
 
-        //Lấy danh sách Discount từ csdl, trả về list các phần tử là Discount
+        //Lấy danh sách Discount còn hoạt động từ csdl, trả về list các phần tử là Discount
         public List<Discount> GetListDiscount()
         {
             List<Discount> list = new List<Discount>();
 
             string query = "select * from Discount where sta=0";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                Discount discount = new Discount(item);
+                list.Add(discount);
+            }
+
+            return list;
+        }
+
+        //Lấy danh sách Discount từ csdl, trả về list các phần tử là Discount
+        public List<Discount> GetListAllDiscount()
+        {
+            List<Discount> list = new List<Discount>();
+
+            string query = "select * from Discount";
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
