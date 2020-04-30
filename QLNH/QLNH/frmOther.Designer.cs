@@ -45,6 +45,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnButton = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtPercent = new System.Windows.Forms.TextBox();
             this.cbDiscount = new System.Windows.Forms.ComboBox();
             this.lbDiscount = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@
             this.mnDish = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOther = new System.Windows.Forms.ToolStripMenuItem();
             this.mnStatistic = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnOther.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.updQuantity)).BeginInit();
             this.pnBill.SuspendLayout();
@@ -248,6 +248,16 @@
             this.pnButton.Size = new System.Drawing.Size(168, 366);
             this.pnButton.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(10, 79);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 22);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Phần trăm ";
+            // 
             // txtPercent
             // 
             this.txtPercent.Location = new System.Drawing.Point(13, 109);
@@ -340,11 +350,12 @@
             this.mnManagenment.Name = "mnManagenment";
             this.mnManagenment.Size = new System.Drawing.Size(84, 26);
             this.mnManagenment.Text = "Quản lý";
+            this.mnManagenment.Click += new System.EventHandler(this.mnManagenment_Click);
             // 
             // bànToolStripMenuItem
             // 
             this.bànToolStripMenuItem.Name = "bànToolStripMenuItem";
-            this.bànToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
+            this.bànToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.bànToolStripMenuItem.Text = "Bàn";
             // 
             // mnDish
@@ -353,6 +364,7 @@
             this.mnDish.Name = "mnDish";
             this.mnDish.Size = new System.Drawing.Size(81, 26);
             this.mnDish.Text = "Món ăn";
+            this.mnDish.Click += new System.EventHandler(this.mnDish_Click);
             // 
             // mnOther
             // 
@@ -367,16 +379,7 @@
             this.mnStatistic.Name = "mnStatistic";
             this.mnStatistic.Size = new System.Drawing.Size(94, 26);
             this.mnStatistic.Text = "Thống kê";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 22);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Phần trăm ";
+            this.mnStatistic.Click += new System.EventHandler(this.mnStatistic_Click);
             // 
             // frmOther
             // 

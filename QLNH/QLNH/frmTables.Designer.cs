@@ -126,6 +126,7 @@
             this.mnDish.Name = "mnDish";
             this.mnDish.Size = new System.Drawing.Size(81, 26);
             this.mnDish.Text = "Món ăn";
+            this.mnDish.Click += new System.EventHandler(this.mnDish_Click);
             // 
             // mnOrder
             // 
@@ -133,6 +134,7 @@
             this.mnOrder.Name = "mnOrder";
             this.mnOrder.Size = new System.Drawing.Size(90, 26);
             this.mnOrder.Text = "Gọi món";
+            this.mnOrder.Click += new System.EventHandler(this.mnOrder_Click);
             // 
             // mnStatistic
             // 
@@ -140,6 +142,7 @@
             this.mnStatistic.Name = "mnStatistic";
             this.mnStatistic.Size = new System.Drawing.Size(94, 26);
             this.mnStatistic.Text = "Thống kê";
+            this.mnStatistic.Click += new System.EventHandler(this.mnStatistic_Click);
             // 
             // mnLogout
             // 
@@ -642,6 +645,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmTables";
             this.Text = "Quản lý nhà hàng";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTables_FormClosing);
             this.Load += new System.EventHandler(this.frmTables_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

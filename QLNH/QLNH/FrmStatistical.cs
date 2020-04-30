@@ -187,5 +187,38 @@ namespace QLNH
             DateTime finish = dtStatisticFinish.Value;
             loadStatisticDish(start, finish);
         }
+
+        //Su kien dong form
+        private void FrmStatistical_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != System.Windows.Forms.DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        //Chuyen sang form Quan ly ban
+        private void mnManagement_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmTables frm = new frmTables();
+            frm.Show();
+        }
+
+        //Chuyen sang form Quan ly mon
+        private void mnDish_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMenu frm = new frmMenu();
+            frm.Show();
+        }
+
+        //Chuyen sang form Quan ly goi mon
+        private void mnOrder_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmOther frm = new frmOther();
+            frm.Show();
+        }
     }
 }

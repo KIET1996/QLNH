@@ -299,5 +299,38 @@ namespace QLNH
                 position_Load();
             }
         }
+
+        //Su kien dong form
+        private void frmTables_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != System.Windows.Forms.DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        //Chuyen sang form Quan ly thong ke
+        private void mnStatistic_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmStatistical frm = new FrmStatistical();
+            frm.Show();
+        }
+
+        //Chuyen sang form Quan ly goi mon
+        private void mnOrder_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmOther frm = new QLNH.frmOther();
+            frm.Show();
+        }
+
+        //Chuyen sang form Quan ly mon
+        private void mnDish_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMenu frm = new QLNH.frmMenu();
+            frm.Show();
+        }
     }
 }
