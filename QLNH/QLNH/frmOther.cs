@@ -136,6 +136,7 @@ namespace QLNH
         private void mnLogout_Click(object sender, EventArgs e)
         {
             this.Close();
+     
         }
 
         //Su kien dong form
@@ -143,8 +144,10 @@ namespace QLNH
         {
             if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != System.Windows.Forms.DialogResult.OK)
             {
+               // Application.Exit();
                 e.Cancel = true;
             }
+           
         }
 
         //Bắt sự kiện khi Categogy thay đổi thức ăn thay đổi
@@ -199,6 +202,28 @@ namespace QLNH
            
         }
 
-       
+        //Chuyen sang form Quan ly mon
+        private void mnDish_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMenu frm = new QLNH.frmMenu();
+            frm.Show();
+        }
+
+        //Chuyen sang form Quan thong ke
+        private void mnStatistic_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmStatistical frm = new FrmStatistical();
+            frm.Show();
+        }
+
+        ///Chuyen sang form Quan ly ban
+        private void mnManagenment_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmTables frm = new frmTables();
+            frm.Show();
+        }
     }
 }
