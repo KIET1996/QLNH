@@ -96,6 +96,7 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabDiscount.SuspendLayout();
@@ -187,6 +188,7 @@
             // 
             // tabDiscount
             // 
+            this.tabDiscount.Controls.Add(this.btnCancel);
             this.tabDiscount.Controls.Add(this.btnSave);
             this.tabDiscount.Controls.Add(this.btnDelete);
             this.tabDiscount.Controls.Add(this.btnEdit);
@@ -206,10 +208,10 @@
             // btnSave
             // 
             this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(138, 394);
+            this.btnSave.Location = new System.Drawing.Point(206, 382);
             this.btnSave.Margin = new System.Windows.Forms.Padding(6);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(110, 39);
+            this.btnSave.Size = new System.Drawing.Size(110, 40);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -797,6 +799,18 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Enabled = false;
+            this.btnCancel.Location = new System.Drawing.Point(72, 382);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(6);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(110, 40);
+            this.btnCancel.TabIndex = 6;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // FrmStatistical
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -900,5 +914,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

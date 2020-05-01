@@ -22,6 +22,7 @@ namespace QLNH
             LoadDiscount();
             loadProfit(dtDTStart.Value, dtDTFinish.Value);
             loadStatisticDish(dtStatisticStart.Value, dtStatisticFinish.Value);
+            resetField(true);
         }
 
         // load danh sách các chương trình giảm giá
@@ -60,6 +61,7 @@ namespace QLNH
             dtStart.Value = DateTime.Today;
             dtFinish.Value = DateTime.Today;
             btnSave.Enabled = !status;
+            btnCancel.Enabled = !status;
             btnEdit.Enabled = status;
             btnDelete.Enabled = status;
             btnAdd.Enabled = status;
@@ -219,6 +221,12 @@ namespace QLNH
             {
                 Application.Exit();
             }
+        }
+
+        //huy hoat dong luu
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            resetField(true);
         }
     }
 }
