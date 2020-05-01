@@ -117,7 +117,7 @@ namespace QLNH.Model
                  sta = value;
              }
          }
-        //  Get/Set for 1st Radio button
+        /*  Get/Set for 1st Radio button
         public bool PhucVu
         {
             // If the Global Variable = 1 return true, else return false
@@ -168,7 +168,7 @@ namespace QLNH.Model
                 }
             }
         }
-
+        */
         public string Descript
         {
             get
