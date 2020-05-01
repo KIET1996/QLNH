@@ -248,6 +248,7 @@
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -257,6 +258,7 @@
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnDelete
             // 
@@ -485,6 +487,7 @@
             this.btnSavePos.TabIndex = 5;
             this.btnSavePos.Text = "Lưu";
             this.btnSavePos.UseVisualStyleBackColor = true;
+            this.btnSavePos.Click += new System.EventHandler(this.btnSavePos_Click);
             // 
             // btnCanl
             // 
@@ -494,6 +497,7 @@
             this.btnCanl.TabIndex = 4;
             this.btnCanl.Text = "Hủy";
             this.btnCanl.UseVisualStyleBackColor = true;
+            this.btnCanl.Click += new System.EventHandler(this.btnCanl_Click);
             // 
             // btnDeletePos
             // 

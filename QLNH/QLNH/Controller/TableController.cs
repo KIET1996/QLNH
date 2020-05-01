@@ -55,6 +55,14 @@ namespace QLNH.Controller
             return gettableList;
         }
 
+        //Reset cac truong
+        public bool ResetTable()
+        {
+            string sql = string.Format("SELECT MAX(ID_Table) from Table_Management");
+            int result = (Int32)DataProvider.Instance.ExecuteScalar(sql);
+            return result > 0;
+        }
+
         //Insert table
         public bool InsertTable(int idpos, int capa, int sta)
         {
