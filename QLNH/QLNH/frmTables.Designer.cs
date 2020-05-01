@@ -151,6 +151,7 @@
             this.mnLogout.Name = "mnLogout";
             this.mnLogout.Size = new System.Drawing.Size(98, 26);
             this.mnLogout.Text = "Đăng xuất";
+            this.mnLogout.Click += new System.EventHandler(this.mnLogout_Click);
             // 
             // tabTable
             // 

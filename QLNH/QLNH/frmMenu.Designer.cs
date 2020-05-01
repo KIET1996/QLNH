@@ -37,6 +37,11 @@
             this.mnLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.TagMenu = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtpage = new System.Windows.Forms.TextBox();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.btnLast = new System.Windows.Forms.Button();
+            this.btnFirst = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.btnDeleteCa = new System.Windows.Forms.Button();
             this.btnAddCa = new System.Windows.Forms.Button();
@@ -71,22 +76,17 @@
             this.btnAddFood = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.datagrdFood = new System.Windows.Forms.DataGridView();
-            this.lblheadFood = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.btnFoodSearch = new System.Windows.Forms.Button();
-            this.txtFoodSearch = new System.Windows.Forms.TextBox();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.txtpage = new System.Windows.Forms.TextBox();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnPrevious = new System.Windows.Forms.Button();
-            this.btnLast = new System.Windows.Forms.Button();
-            this.btnFirst = new System.Windows.Forms.Button();
             this.ID_Dish = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descript = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblheadFood = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.btnFoodSearch = new System.Windows.Forms.Button();
+            this.txtFoodSearch = new System.Windows.Forms.TextBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.TagMenu.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -114,7 +114,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1067, 37);
+            this.menuStrip1.Size = new System.Drawing.Size(1067, 32);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -124,28 +124,28 @@
             this.bànToolStripMenuItem});
             this.mnManagement.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnManagement.Name = "mnManagement";
-            this.mnManagement.Size = new System.Drawing.Size(106, 31);
+            this.mnManagement.Size = new System.Drawing.Size(89, 26);
             this.mnManagement.Text = "Quản lý ";
             this.mnManagement.Click += new System.EventHandler(this.mnManagement_Click);
             // 
             // bànToolStripMenuItem
             // 
             this.bànToolStripMenuItem.Name = "bànToolStripMenuItem";
-            this.bànToolStripMenuItem.Size = new System.Drawing.Size(135, 32);
+            this.bànToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
             this.bànToolStripMenuItem.Text = "Bàn";
             // 
             // mnDish
             // 
             this.mnDish.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnDish.Name = "mnDish";
-            this.mnDish.Size = new System.Drawing.Size(98, 31);
+            this.mnDish.Size = new System.Drawing.Size(81, 26);
             this.mnDish.Text = "Món ăn";
             // 
             // mnOrder
             // 
             this.mnOrder.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnOrder.Name = "mnOrder";
-            this.mnOrder.Size = new System.Drawing.Size(107, 31);
+            this.mnOrder.Size = new System.Drawing.Size(90, 26);
             this.mnOrder.Text = "Gọi món";
             this.mnOrder.Click += new System.EventHandler(this.mnOrder_Click);
             // 
@@ -153,7 +153,7 @@
             // 
             this.mnStatistic.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnStatistic.Name = "mnStatistic";
-            this.mnStatistic.Size = new System.Drawing.Size(114, 31);
+            this.mnStatistic.Size = new System.Drawing.Size(94, 26);
             this.mnStatistic.Text = "Thống kê";
             this.mnStatistic.Click += new System.EventHandler(this.mnStatistic_Click);
             // 
@@ -161,8 +161,9 @@
             // 
             this.mnLogout.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnLogout.Name = "mnLogout";
-            this.mnLogout.Size = new System.Drawing.Size(123, 31);
+            this.mnLogout.Size = new System.Drawing.Size(100, 26);
             this.mnLogout.Text = "Đăng xuất";
+            this.mnLogout.Click += new System.EventHandler(this.mnLogout_Click);
             // 
             // TagMenu
             // 
@@ -185,15 +186,65 @@
             this.tabPage1.Controls.Add(this.panel12);
             this.tabPage1.Controls.Add(this.datagrdviewCategories);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 36);
+            this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage1.Size = new System.Drawing.Size(1052, 497);
+            this.tabPage1.Size = new System.Drawing.Size(1052, 502);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Loại Món";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // txtpage
+            // 
+            this.txtpage.Location = new System.Drawing.Point(222, 430);
+            this.txtpage.Name = "txtpage";
+            this.txtpage.Size = new System.Drawing.Size(79, 30);
+            this.txtpage.TabIndex = 16;
+            this.txtpage.Text = "1";
+            this.txtpage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtpage.TextChanged += new System.EventHandler(this.txtpage_TextChanged);
+            // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(386, 430);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(49, 37);
+            this.btnNext.TabIndex = 15;
+            this.btnNext.Text = ">>";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.Location = new System.Drawing.Point(113, 430);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(52, 37);
+            this.btnPrevious.TabIndex = 14;
+            this.btnPrevious.Text = "<<";
+            this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            // 
+            // btnLast
+            // 
+            this.btnLast.Location = new System.Drawing.Point(441, 430);
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(73, 37);
+            this.btnLast.TabIndex = 13;
+            this.btnLast.Text = "Cuối";
+            this.btnLast.UseVisualStyleBackColor = true;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
+            // 
+            // btnFirst
+            // 
+            this.btnFirst.Location = new System.Drawing.Point(21, 430);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(86, 37);
+            this.btnFirst.TabIndex = 12;
+            this.btnFirst.Text = "Trước";
+            this.btnFirst.UseVisualStyleBackColor = true;
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
             // panel12
             // 
@@ -238,7 +289,7 @@
             this.txtCaId.Location = new System.Drawing.Point(148, 34);
             this.txtCaId.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCaId.Name = "txtCaId";
-            this.txtCaId.Size = new System.Drawing.Size(245, 30);
+            this.txtCaId.Size = new System.Drawing.Size(245, 26);
             this.txtCaId.TabIndex = 4;
             // 
             // lblCaID
@@ -248,7 +299,7 @@
             this.lblCaID.Location = new System.Drawing.Point(12, 34);
             this.lblCaID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCaID.Name = "lblCaID";
-            this.lblCaID.Size = new System.Drawing.Size(96, 25);
+            this.lblCaID.Size = new System.Drawing.Size(82, 20);
             this.lblCaID.TabIndex = 3;
             this.lblCaID.Text = "Mã Loại:";
             // 
@@ -258,7 +309,7 @@
             this.txtCaName.Location = new System.Drawing.Point(148, 83);
             this.txtCaName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCaName.Name = "txtCaName";
-            this.txtCaName.Size = new System.Drawing.Size(245, 30);
+            this.txtCaName.Size = new System.Drawing.Size(245, 26);
             this.txtCaName.TabIndex = 6;
             // 
             // lblCaName
@@ -268,7 +319,7 @@
             this.lblCaName.Location = new System.Drawing.Point(12, 89);
             this.lblCaName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCaName.Name = "lblCaName";
-            this.lblCaName.Size = new System.Drawing.Size(104, 25);
+            this.lblCaName.Size = new System.Drawing.Size(88, 20);
             this.lblCaName.TabIndex = 5;
             this.lblCaName.Text = "Tên Loại:";
             // 
@@ -305,11 +356,11 @@
             this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Controls.Add(this.panel11);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 36);
+            this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage2.Size = new System.Drawing.Size(1052, 497);
+            this.tabPage2.Size = new System.Drawing.Size(1052, 502);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Món Ăn";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -359,7 +410,7 @@
             this.lblFoodID.Location = new System.Drawing.Point(15, 17);
             this.lblFoodID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFoodID.Name = "lblFoodID";
-            this.lblFoodID.Size = new System.Drawing.Size(90, 25);
+            this.lblFoodID.Size = new System.Drawing.Size(76, 21);
             this.lblFoodID.TabIndex = 0;
             this.lblFoodID.Text = "Mã món:";
             // 
@@ -368,7 +419,7 @@
             this.txtFoodID.Location = new System.Drawing.Point(122, 8);
             this.txtFoodID.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtFoodID.Name = "txtFoodID";
-            this.txtFoodID.Size = new System.Drawing.Size(130, 35);
+            this.txtFoodID.Size = new System.Drawing.Size(130, 30);
             this.txtFoodID.TabIndex = 1;
             this.txtFoodID.TextChanged += new System.EventHandler(this.txtFoodID_TextChanged);
             // 
@@ -378,7 +429,7 @@
             this.cobFoodCa.Location = new System.Drawing.Point(122, 52);
             this.cobFoodCa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cobFoodCa.Name = "cobFoodCa";
-            this.cobFoodCa.Size = new System.Drawing.Size(242, 37);
+            this.cobFoodCa.Size = new System.Drawing.Size(242, 33);
             this.cobFoodCa.TabIndex = 8;
             // 
             // lblFoodName
@@ -388,7 +439,7 @@
             this.lblFoodName.Location = new System.Drawing.Point(15, 112);
             this.lblFoodName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFoodName.Name = "lblFoodName";
-            this.lblFoodName.Size = new System.Drawing.Size(121, 25);
+            this.lblFoodName.Size = new System.Drawing.Size(103, 21);
             this.lblFoodName.TabIndex = 0;
             this.lblFoodName.Text = "Tên món ăn:";
             // 
@@ -398,7 +449,7 @@
             this.txtFoodName.Location = new System.Drawing.Point(122, 99);
             this.txtFoodName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtFoodName.Name = "txtFoodName";
-            this.txtFoodName.Size = new System.Drawing.Size(248, 35);
+            this.txtFoodName.Size = new System.Drawing.Size(248, 30);
             this.txtFoodName.TabIndex = 2;
             // 
             // label2
@@ -408,7 +459,7 @@
             this.label2.Location = new System.Drawing.Point(15, 65);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 27);
+            this.label2.Size = new System.Drawing.Size(90, 22);
             this.label2.TabIndex = 0;
             this.label2.Text = "Loại món:";
             // 
@@ -419,7 +470,7 @@
             this.lblFoodPrice.Location = new System.Drawing.Point(15, 203);
             this.lblFoodPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFoodPrice.Name = "lblFoodPrice";
-            this.lblFoodPrice.Size = new System.Drawing.Size(58, 27);
+            this.lblFoodPrice.Size = new System.Drawing.Size(50, 22);
             this.lblFoodPrice.TabIndex = 0;
             this.lblFoodPrice.Text = "Giá: ";
             // 
@@ -430,7 +481,7 @@
             this.lblFoodUnit.Location = new System.Drawing.Point(15, 158);
             this.lblFoodUnit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFoodUnit.Name = "lblFoodUnit";
-            this.lblFoodUnit.Size = new System.Drawing.Size(79, 25);
+            this.lblFoodUnit.Size = new System.Drawing.Size(65, 21);
             this.lblFoodUnit.TabIndex = 0;
             this.lblFoodUnit.Text = "Đơn vị:";
             // 
@@ -444,7 +495,7 @@
             0,
             0});
             this.numBoxFoodPrice.Name = "numBoxFoodPrice";
-            this.numBoxFoodPrice.Size = new System.Drawing.Size(168, 35);
+            this.numBoxFoodPrice.Size = new System.Drawing.Size(168, 30);
             this.numBoxFoodPrice.TabIndex = 5;
             this.numBoxFoodPrice.ValueChanged += new System.EventHandler(this.numBoxFoodPrice_ValueChanged);
             // 
@@ -462,7 +513,7 @@
             this.txtFoodUnit.Location = new System.Drawing.Point(122, 143);
             this.txtFoodUnit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtFoodUnit.Name = "txtFoodUnit";
-            this.txtFoodUnit.Size = new System.Drawing.Size(168, 35);
+            this.txtFoodUnit.Size = new System.Drawing.Size(168, 30);
             this.txtFoodUnit.TabIndex = 1;
             // 
             // lblFoodDes
@@ -472,7 +523,7 @@
             this.lblFoodDes.Location = new System.Drawing.Point(15, 241);
             this.lblFoodDes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFoodDes.Name = "lblFoodDes";
-            this.lblFoodDes.Size = new System.Drawing.Size(70, 25);
+            this.lblFoodDes.Size = new System.Drawing.Size(58, 21);
             this.lblFoodDes.TabIndex = 3;
             this.lblFoodDes.Text = "Mô tả:";
             // 
@@ -483,7 +534,7 @@
             this.label1.Location = new System.Drawing.Point(15, 302);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 25);
+            this.label1.Size = new System.Drawing.Size(84, 21);
             this.label1.TabIndex = 11;
             this.label1.Text = "Trạng thái";
             // 
@@ -516,7 +567,7 @@
             this.radioBtnStatusOff.Location = new System.Drawing.Point(111, 2);
             this.radioBtnStatusOff.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.radioBtnStatusOff.Name = "radioBtnStatusOff";
-            this.radioBtnStatusOff.Size = new System.Drawing.Size(184, 31);
+            this.radioBtnStatusOff.Size = new System.Drawing.Size(148, 26);
             this.radioBtnStatusOff.TabIndex = 1;
             this.radioBtnStatusOff.TabStop = true;
             this.radioBtnStatusOff.Text = "Không phục vụ";
@@ -529,7 +580,7 @@
             this.radioBtnStatusOn.Location = new System.Drawing.Point(4, 3);
             this.radioBtnStatusOn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.radioBtnStatusOn.Name = "radioBtnStatusOn";
-            this.radioBtnStatusOn.Size = new System.Drawing.Size(116, 31);
+            this.radioBtnStatusOn.Size = new System.Drawing.Size(93, 26);
             this.radioBtnStatusOn.TabIndex = 0;
             this.radioBtnStatusOn.TabStop = true;
             this.radioBtnStatusOn.Text = "Phục vụ";
@@ -587,107 +638,6 @@
             this.datagrdFood.Size = new System.Drawing.Size(624, 380);
             this.datagrdFood.TabIndex = 1;
             // 
-            // lblheadFood
-            // 
-            this.lblheadFood.AutoSize = true;
-            this.lblheadFood.Location = new System.Drawing.Point(6, -3);
-            this.lblheadFood.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblheadFood.Name = "lblheadFood";
-            this.lblheadFood.Size = new System.Drawing.Size(92, 29);
-            this.lblheadFood.TabIndex = 0;
-            this.lblheadFood.Text = "Món ăn";
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.btnFoodSearch);
-            this.panel11.Controls.Add(this.txtFoodSearch);
-            this.panel11.Location = new System.Drawing.Point(10, 7);
-            this.panel11.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(464, 52);
-            this.panel11.TabIndex = 4;
-            // 
-            // btnFoodSearch
-            // 
-            this.btnFoodSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFoodSearch.Location = new System.Drawing.Point(314, 3);
-            this.btnFoodSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnFoodSearch.Name = "btnFoodSearch";
-            this.btnFoodSearch.Size = new System.Drawing.Size(110, 40);
-            this.btnFoodSearch.TabIndex = 2;
-            this.btnFoodSearch.Text = "Tìm kiếm";
-            this.btnFoodSearch.UseVisualStyleBackColor = true;
-            this.btnFoodSearch.Click += new System.EventHandler(this.btnFoodSearch_Click);
-            // 
-            // txtFoodSearch
-            // 
-            this.txtFoodSearch.Location = new System.Drawing.Point(4, 3);
-            this.txtFoodSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtFoodSearch.Name = "txtFoodSearch";
-            this.txtFoodSearch.Size = new System.Drawing.Size(287, 35);
-            this.txtFoodSearch.TabIndex = 1;
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnExit.Location = new System.Drawing.Point(946, 575);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(110, 40);
-            this.btnExit.TabIndex = 3;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // txtpage
-            // 
-            this.txtpage.Location = new System.Drawing.Point(222, 430);
-            this.txtpage.Name = "txtpage";
-            this.txtpage.Size = new System.Drawing.Size(79, 35);
-            this.txtpage.TabIndex = 16;
-            this.txtpage.Text = "1";
-            this.txtpage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtpage.TextChanged += new System.EventHandler(this.txtpage_TextChanged);
-            // 
-            // btnNext
-            // 
-            this.btnNext.Location = new System.Drawing.Point(386, 430);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(49, 37);
-            this.btnNext.TabIndex = 15;
-            this.btnNext.Text = ">>";
-            this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // btnPrevious
-            // 
-            this.btnPrevious.Location = new System.Drawing.Point(113, 430);
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(52, 37);
-            this.btnPrevious.TabIndex = 14;
-            this.btnPrevious.Text = "<<";
-            this.btnPrevious.UseVisualStyleBackColor = true;
-            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
-            // 
-            // btnLast
-            // 
-            this.btnLast.Location = new System.Drawing.Point(441, 430);
-            this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(73, 37);
-            this.btnLast.TabIndex = 13;
-            this.btnLast.Text = "Cuối";
-            this.btnLast.UseVisualStyleBackColor = true;
-            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
-            // 
-            // btnFirst
-            // 
-            this.btnFirst.Location = new System.Drawing.Point(21, 430);
-            this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(86, 37);
-            this.btnFirst.TabIndex = 12;
-            this.btnFirst.Text = "Trước";
-            this.btnFirst.UseVisualStyleBackColor = true;
-            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
-            // 
             // ID_Dish
             // 
             this.ID_Dish.DataPropertyName = "ID_Dish";
@@ -724,9 +674,60 @@
             this.Sta.HeaderText = "Trạng Thái";
             this.Sta.Name = "Sta";
             // 
+            // lblheadFood
+            // 
+            this.lblheadFood.AutoSize = true;
+            this.lblheadFood.Location = new System.Drawing.Point(6, -3);
+            this.lblheadFood.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblheadFood.Name = "lblheadFood";
+            this.lblheadFood.Size = new System.Drawing.Size(78, 25);
+            this.lblheadFood.TabIndex = 0;
+            this.lblheadFood.Text = "Món ăn";
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.btnFoodSearch);
+            this.panel11.Controls.Add(this.txtFoodSearch);
+            this.panel11.Location = new System.Drawing.Point(10, 7);
+            this.panel11.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(464, 52);
+            this.panel11.TabIndex = 4;
+            // 
+            // btnFoodSearch
+            // 
+            this.btnFoodSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFoodSearch.Location = new System.Drawing.Point(314, 3);
+            this.btnFoodSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnFoodSearch.Name = "btnFoodSearch";
+            this.btnFoodSearch.Size = new System.Drawing.Size(110, 40);
+            this.btnFoodSearch.TabIndex = 2;
+            this.btnFoodSearch.Text = "Tìm kiếm";
+            this.btnFoodSearch.UseVisualStyleBackColor = true;
+            this.btnFoodSearch.Click += new System.EventHandler(this.btnFoodSearch_Click);
+            // 
+            // txtFoodSearch
+            // 
+            this.txtFoodSearch.Location = new System.Drawing.Point(4, 3);
+            this.txtFoodSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtFoodSearch.Name = "txtFoodSearch";
+            this.txtFoodSearch.Size = new System.Drawing.Size(287, 30);
+            this.txtFoodSearch.TabIndex = 1;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExit.Location = new System.Drawing.Point(946, 575);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(110, 40);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // frmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 27F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 623);
             this.ControlBox = false;

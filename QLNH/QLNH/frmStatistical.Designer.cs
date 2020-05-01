@@ -41,6 +41,7 @@
             this.mnLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabDiscount = new System.Windows.Forms.TabPage();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -172,6 +173,7 @@
             this.mnLogout.Name = "mnLogout";
             this.mnLogout.Size = new System.Drawing.Size(105, 26);
             this.mnLogout.Text = "Đăng Xuất";
+            this.mnLogout.Click += new System.EventHandler(this.mnLogout_Click);
             // 
             // tabControl1
             // 
@@ -187,6 +189,7 @@
             // 
             // tabDiscount
             // 
+            this.tabDiscount.Controls.Add(this.btnCancel);
             this.tabDiscount.Controls.Add(this.btnSave);
             this.tabDiscount.Controls.Add(this.btnDelete);
             this.tabDiscount.Controls.Add(this.btnEdit);
@@ -203,13 +206,25 @@
             this.tabDiscount.Text = "Giảm Giá";
             this.tabDiscount.UseVisualStyleBackColor = true;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Enabled = false;
+            this.btnCancel.Location = new System.Drawing.Point(72, 382);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(6);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(110, 40);
+            this.btnCancel.TabIndex = 6;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // btnSave
             // 
             this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(138, 394);
+            this.btnSave.Location = new System.Drawing.Point(206, 382);
             this.btnSave.Margin = new System.Windows.Forms.Padding(6);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(110, 39);
+            this.btnSave.Size = new System.Drawing.Size(110, 40);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -900,5 +915,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

@@ -375,6 +375,17 @@ namespace QLNH
             }
         }
 
-        
+        //Tro ve login
+        private void mnLogout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có thật sự muốn đăng xuất?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.OK)
+            {
+                this.Hide();
+                frmLogin frm = new frmLogin();
+                frm.Show();
+                this.Close();
+                //Application.Exit();
+            }
+        }
     }
 }
