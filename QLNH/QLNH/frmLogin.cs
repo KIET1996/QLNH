@@ -33,7 +33,7 @@ namespace QLNH
             {
                 if (Login(userName, passWord))
                 {
-                    frmMenu menu = new frmMenu();
+                    frmOther menu = new frmOther();
                     this.Hide();
                     menu.ShowDialog();
               //      this.Show();

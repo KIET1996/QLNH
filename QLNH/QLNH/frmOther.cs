@@ -135,8 +135,14 @@ namespace QLNH
         //Su kien thoat form
         private void mnLogout_Click(object sender, EventArgs e)
         {
-            this.Close();
-     
+            if (MessageBox.Show("Bạn có thật sự muốn đăng xuất?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.OK)
+            {
+                this.Hide();
+                frmLogin frm = new frmLogin();
+                frm.Show();
+                this.Close();
+                //Application.Exit();
+            }
         }
 
         //Bắt sự kiện khi Categogy thay đổi thức ăn thay đổi
