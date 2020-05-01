@@ -85,9 +85,9 @@ namespace QLNH.Controller
         }
 
         //thuc hien truy van lay ve ma so lon nhat IDPOS, xoa trang cac truong them vao thong qua phuong thuc resetfields
-        public bool CheckAddPos(int ID_Pos)
+        public bool ResetPosition()
         {
-            string sql = string.Format("SELECT MAX(ID_Pos) FROM Position_Table where ID_Pos = '{0}'", ID_Pos);
+            string sql = string.Format("SELECT MAX(ID_Pos) from Position_Table");
             int result = (Int32)DataProvider.Instance.ExecuteScalar(sql);
             return result > 0;
         }

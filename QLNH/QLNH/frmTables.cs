@@ -45,28 +45,7 @@ namespace QLNH
             LoadPositionIntoComboBox(cbPosition); //combobox khu vuc cua bang table
         }
 
-        /*Reset lai cac truong
-        void ResetFields(bool status)
-        {
-            txtIDPos.Clear();
-            txtNamePos.Clear();
-            txtNotePos.Clear();
-            txtIDTable.Clear();
-            txtStatusPos.Clear();
-            cbPosition.SelectedIndex = -1;
-            
-
-            radYes.Checked = true;
-            radNo.Checked = false;
-            btnSavePos.Enabled = status;
-            btnSave.Enabled = status;
-            btnCancel.Enabled = status;
-            btnCanl.Enabled = status;
-            btnAddPos.Enabled = !status;
-            btnAdd.Enabled = !status;
-            btnEdit.Enabled = !status;
-            btnEditPos.Enabled = !status;
-        }*/
+        
 
         /*-------------------Tao cac ham xu ly Table---------------------*/
         private void table_Load()
@@ -140,8 +119,39 @@ namespace QLNH
             }
         }
 
+        //Reset lai cac truong của table
+        void ResetFieldsTable(bool status)
+        {
+            txtIDTable.Clear();
+            cbPosition.SelectedIndex = -1;
+            numCapa.Value = numCapa.Minimum;
+
+            radYes.Checked = false;
+            radNo.Checked = true;
+            btnSave.Enabled = status;
+            btnCancel.Enabled = status;
+            btnAdd.Enabled = !status;
+            btnEdit.Enabled = !status;
+            btnDelete.Enabled = !status;
+        }
+
         //tao xu kien cho nut them
         private void btnAddTable_Click(object sender, EventArgs e)
+        {
+            if (TableController.Instance.ResetTable())
+            {
+                ResetFieldsTable(true);
+            }        
+        }
+
+        //tao su kien cho nut huy
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            ResetFieldsTable(false);
+        }
+
+        //Lưu cho su kien nut them ban
+        private void btnSave_Click(object sender, EventArgs e)
         {
             int ID_Pos = (cbPosition.SelectedItem as Position).ID_Pos;
             int Capability = (int)numCapa.Value;
@@ -157,7 +167,7 @@ namespace QLNH
                 MessageBox.Show("Thêm bàn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
                 table_Load();
             }
-            //MessageBox.Show("ID thanh cong" + ID_Pos);
+            
         }
 
         //su kien xoa ban
@@ -217,25 +227,32 @@ namespace QLNH
             txtIDPos.DataBindings.Add(new Binding("Text", dtGridPosition.DataSource, "ID_Pos"));
         }
 
-        /* su kien click nut add
+        void ResetFieldsPosition(bool status)
+        {
+            txtIDPos.Clear();
+            txtNamePos.Clear();
+            txtStatusPos.Clear();
+            txtNotePos.Clear();
+
+            btnSavePos.Enabled = status;
+            btnCanl.Enabled = status;
+            btnAddPos.Enabled = !status;
+            btnEditPos.Enabled = !status;
+            btnDeletePos.Enabled = !status;
+        }
+
+        //reset cac truong khi click them
         private void btnAddPos_Click(object sender, EventArgs e)
         {
-            try
+            if (PositionController.Instance.ResetPosition())
             {
-                PositionController.Instance.CheckAddPos(ID_Pos);
+                ResetFieldsPosition(true);
             }
-            catch (Exception)
-            {
-                ID_Pos = 0;
-            }
-            ID_Pos = ID_Pos + 1;
-            ResetFields(true);
-            txtIDPos.Text = ID_Pos.ToString();
-        }*/
+        }
 
-       private void btnAddPos_Click(object sender, EventArgs e)
+        private void btnSavePos_Click(object sender, EventArgs e)
         {
-            if(txtNamePos.Text == "" || txtStatusPos.Text == "")
+            if (txtNamePos.Text == "" || txtStatusPos.Text == "")
             {
                 MessageBox.Show("Bạn chưa nhập tên khu vực hoặc trạng thái. Vui lòng nhập đầy dủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -258,14 +275,19 @@ namespace QLNH
                             MessageBox.Show("Thêm khu vực thành công!");
                             position_Load();
                         }
-                     }
+                    }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
+        private void btnCanl_Click(object sender, EventArgs e)
+        {
+            ResetFieldsPosition(false);
+        }        
 
         private void btnDeletePos_Click(object sender, EventArgs e)
         {
@@ -332,5 +354,7 @@ namespace QLNH
                 Application.Exit();
             }
         }
+
+        
     }
 }
