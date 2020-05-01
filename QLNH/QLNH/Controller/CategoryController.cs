@@ -95,7 +95,26 @@ namespace QLNH.Controller
             return (int)DataProvider.Instance.ExecuteScalar("execute sumCa ");
         }
 
+        //Lay ID Category lon nhat
+        public int GetMaxIDCategory()
+        {
+            try
+            {
+                return (int)DataProvider.Instance.ExecuteScalar("SELECT MAX(ID_Ca) FROM Categories");
+            }
+            catch
+            {
+                return 0;
+            }
+        }
 
+        //Cap nhat loai mon an
+        public bool UpdateCategory(int ID_Ca, string name)
+        {
+            string sql = string.Format("UPDATE Categories SET name = '{0}' where ID_Ca = '{1}'", name, ID_Ca);
+            int result = DataProvider.Instance.ExecuteNonQuery(sql);
 
+            return result > 0;
+        }
     }
 }
