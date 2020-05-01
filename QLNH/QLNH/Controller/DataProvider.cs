@@ -11,7 +11,9 @@ namespace QLNH.Controller
     public class DataProvider
     {
         //Kiet
-        private string connectionSTR = "Server=USER1OR-7NBBV36\\SQLEXPRESS; Database = QL_NhaHang;  uid = mylogin; pwd=mylogin ";
+        private string connectionSTR = "Server=.\\SQLEXPRESS; Database = QL_NhaHang;  uid = mylogin; pwd=mylogin ";
+        //Trinh
+        //private string connectionSTR = "Server=USER1OR-7NBBV36\\SQLEXPRESS; Database = QL_NhaHang;  uid = mylogin; pwd=mylogin ";
         //Thu
         //private string connectionSTR = "Server=; Database = QL_NhaHang;  uid = mylogin; pwd=mylogin ";
         //Thanh
