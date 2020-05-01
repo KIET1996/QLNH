@@ -91,5 +91,17 @@ namespace QLNH.Controller
             return result > 0;
         }
 
+        //Lay ID Table lon nhat
+        public int GetMaxIDTable()
+        {
+            try
+            {
+                return (int)DataProvider.Instance.ExecuteScalar("SELECT MAX(ID_Table) FROM Table_Management");
+            }
+            catch
+            {
+                return 0;
+            }
+        }
     }
 }

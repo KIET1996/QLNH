@@ -22,6 +22,7 @@ namespace QLNH
         public frmTables()
         {
             InitializeComponent();
+            ResetFieldsTable(false);
         }
 
         private void mnuOrder_Click(object sender, EventArgs e)
@@ -141,6 +142,9 @@ namespace QLNH
             if (TableController.Instance.ResetTable())
             {
                 ResetFieldsTable(true);
+                int count = TableController.Instance.GetMaxIDTable();
+                count++;
+                txtIDTable.Text = count.ToString();
             }        
         }
 
@@ -154,6 +158,7 @@ namespace QLNH
         private void btnSave_Click(object sender, EventArgs e)
         {
             int ID_Pos = (cbPosition.SelectedItem as Position).ID_Pos;
+      //      MessageBox.Show("Hãy chọn khu vực!"+ID_Pos, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
             int Capability = (int)numCapa.Value;
             int sta = 0;
 
@@ -161,13 +166,21 @@ namespace QLNH
             {
                 sta = 1;
             }
-
-            if (TableController.Instance.InsertTable(ID_Pos, Capability, sta))
+            if (ID_Pos > 0)
             {
-                MessageBox.Show("Thêm bàn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
-                table_Load();
+                if (TableController.Instance.InsertTable(ID_Pos, Capability, sta))
+                {
+                    MessageBox.Show("Thêm bàn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    table_Load();
+                    ResetFieldsTable(false);
+                }
             }
-            
+            else
+            {
+                MessageBox.Show("Hãy chọn khu vực!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+            } 
+
+
         }
 
         //su kien xoa ban

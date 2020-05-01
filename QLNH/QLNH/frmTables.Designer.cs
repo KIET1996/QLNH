@@ -244,7 +244,7 @@
             // 
             this.btnSave.Location = new System.Drawing.Point(268, 328);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(91, 38);
+            this.btnSave.Size = new System.Drawing.Size(110, 40);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -254,7 +254,7 @@
             // 
             this.btnCancel.Location = new System.Drawing.Point(113, 328);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(91, 38);
+            this.btnCancel.Size = new System.Drawing.Size(110, 40);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -264,7 +264,7 @@
             // 
             this.btnDelete.Location = new System.Drawing.Point(345, 268);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(80, 37);
+            this.btnDelete.Size = new System.Drawing.Size(110, 40);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -274,7 +274,7 @@
             // 
             this.btnEdit.Location = new System.Drawing.Point(191, 268);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(89, 37);
+            this.btnEdit.Size = new System.Drawing.Size(110, 40);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -284,7 +284,7 @@
             // 
             this.btnAdd.Location = new System.Drawing.Point(46, 268);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(89, 37);
+            this.btnAdd.Size = new System.Drawing.Size(110, 40);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -364,6 +364,7 @@
             this.txtIDTable.Enabled = false;
             this.txtIDTable.Location = new System.Drawing.Point(146, 38);
             this.txtIDTable.Name = "txtIDTable";
+            this.txtIDTable.ReadOnly = true;
             this.txtIDTable.Size = new System.Drawing.Size(219, 30);
             this.txtIDTable.TabIndex = 6;
             this.txtIDTable.TextChanged += new System.EventHandler(this.txtIDTable_TextChanged);
