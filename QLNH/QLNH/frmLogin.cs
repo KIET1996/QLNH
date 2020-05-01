@@ -18,6 +18,7 @@ namespace QLNH
             InitializeComponent();
             txtUserName.Text = "vankiet";
             txtpwd.Text = "123";
+            btnLogin.Focus();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -35,7 +36,7 @@ namespace QLNH
                     frmMenu menu = new frmMenu();
                     this.Hide();
                     menu.ShowDialog();
-                    this.Show();
+              //      this.Show();
                 }
                 else
                 {
