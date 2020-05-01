@@ -25,7 +25,7 @@ namespace QLNH.Model
             this.Name = row["name"].ToString();
             this.Unit = row["unit"].ToString();
             this.Price = (double)row["price"];
-            this.sta = Convert.ToInt32(row["sta"]);
+            this.Sta = Convert.ToInt32(row["sta"]);
             this.Descript = row["descript"].ToString();
         }
 
@@ -36,7 +36,7 @@ namespace QLNH.Model
             this.Name = name;
             this.Unit = unit;
             this.Price = price;
-            this.sta = sta;
+            this.Sta = sta;
             this.Descript = descript;
         }
 
@@ -105,7 +105,7 @@ namespace QLNH.Model
             }
         }
 
-        /* public int Sta
+        public int Sta
          {
              get
              {
@@ -116,7 +116,7 @@ namespace QLNH.Model
              {
                  sta = value;
              }
-         }*/
+         }
         //  Get/Set for 1st Radio button
         public bool PhucVu
         {

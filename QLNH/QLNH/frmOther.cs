@@ -139,17 +139,6 @@ namespace QLNH
      
         }
 
-        //Su kien dong form
-        private void frmOther_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != System.Windows.Forms.DialogResult.OK)
-            {
-               // Application.Exit();
-                e.Cancel = true;
-            }
-           
-        }
-
         //Bắt sự kiện khi Categogy thay đổi thức ăn thay đổi
         private void cbCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -224,6 +213,15 @@ namespace QLNH
             this.Hide();
             frmTables frm = new frmTables();
             frm.Show();
+        }
+
+        //Thoát chương trình
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
     }
 }

@@ -300,15 +300,6 @@ namespace QLNH
             }
         }
 
-        //Su kien dong form
-        private void frmTables_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != System.Windows.Forms.DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
-        }
-
         //Chuyen sang form Quan ly thong ke
         private void mnStatistic_Click(object sender, EventArgs e)
         {
@@ -331,6 +322,15 @@ namespace QLNH
             this.Hide();
             frmMenu frm = new QLNH.frmMenu();
             frm.Show();
+        }
+
+        //Thoát chương trình
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
     }
 }

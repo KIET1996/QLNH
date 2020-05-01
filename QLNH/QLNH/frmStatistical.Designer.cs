@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnManagement = new System.Windows.Forms.ToolStripMenuItem();
+            this.bànToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnDish = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOrder = new System.Windows.Forms.ToolStripMenuItem();
             this.mnStatistic = new System.Windows.Forms.ToolStripMenuItem();
@@ -94,7 +95,7 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bànToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnExit = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabDiscount.SuspendLayout();
@@ -121,8 +122,8 @@
             this.mnLogout});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1199, 30);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(11, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(1067, 32);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -135,6 +136,12 @@
             this.mnManagement.Size = new System.Drawing.Size(89, 26);
             this.mnManagement.Text = "Quản Lý";
             this.mnManagement.Click += new System.EventHandler(this.mnManagement_Click);
+            // 
+            // bànToolStripMenuItem
+            // 
+            this.bànToolStripMenuItem.Name = "bànToolStripMenuItem";
+            this.bànToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
+            this.bànToolStripMenuItem.Text = "Bàn";
             // 
             // mnDish
             // 
@@ -171,11 +178,11 @@
             this.tabControl1.Controls.Add(this.tabDiscount);
             this.tabControl1.Controls.Add(this.tabProfit);
             this.tabControl1.Controls.Add(this.tabDish);
-            this.tabControl1.Location = new System.Drawing.Point(0, 34);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabControl1.Location = new System.Drawing.Point(0, 35);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1169, 496);
+            this.tabControl1.Size = new System.Drawing.Size(1067, 527);
             this.tabControl1.TabIndex = 1;
             // 
             // tabDiscount
@@ -187,11 +194,11 @@
             this.tabDiscount.Controls.Add(this.gbDiscount);
             this.tabDiscount.Controls.Add(this.gvDiscount);
             this.tabDiscount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabDiscount.Location = new System.Drawing.Point(4, 25);
-            this.tabDiscount.Margin = new System.Windows.Forms.Padding(4);
+            this.tabDiscount.Location = new System.Drawing.Point(4, 31);
+            this.tabDiscount.Margin = new System.Windows.Forms.Padding(6);
             this.tabDiscount.Name = "tabDiscount";
-            this.tabDiscount.Padding = new System.Windows.Forms.Padding(4);
-            this.tabDiscount.Size = new System.Drawing.Size(1161, 467);
+            this.tabDiscount.Padding = new System.Windows.Forms.Padding(6);
+            this.tabDiscount.Size = new System.Drawing.Size(1059, 492);
             this.tabDiscount.TabIndex = 0;
             this.tabDiscount.Text = "Giảm Giá";
             this.tabDiscount.UseVisualStyleBackColor = true;
@@ -199,10 +206,10 @@
             // btnSave
             // 
             this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(136, 415);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Location = new System.Drawing.Point(138, 394);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(6);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 37);
+            this.btnSave.Size = new System.Drawing.Size(110, 39);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -210,10 +217,10 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(383, 415);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelete.Location = new System.Drawing.Point(262, 331);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(6);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 37);
+            this.btnDelete.Size = new System.Drawing.Size(110, 39);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -221,10 +228,10 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(257, 415);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEdit.Location = new System.Drawing.Point(140, 331);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(6);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(100, 37);
+            this.btnEdit.Size = new System.Drawing.Size(110, 39);
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -232,10 +239,10 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(13, 415);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Location = new System.Drawing.Point(18, 331);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(6);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 37);
+            this.btnAdd.Size = new System.Drawing.Size(110, 40);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -253,37 +260,37 @@
             this.gbDiscount.Controls.Add(this.txtDiscription);
             this.gbDiscount.Controls.Add(this.label2);
             this.gbDiscount.Controls.Add(this.label1);
-            this.gbDiscount.Location = new System.Drawing.Point(27, 66);
-            this.gbDiscount.Margin = new System.Windows.Forms.Padding(4);
+            this.gbDiscount.Location = new System.Drawing.Point(18, 11);
+            this.gbDiscount.Margin = new System.Windows.Forms.Padding(6);
             this.gbDiscount.Name = "gbDiscount";
-            this.gbDiscount.Padding = new System.Windows.Forms.Padding(4);
-            this.gbDiscount.Size = new System.Drawing.Size(403, 309);
+            this.gbDiscount.Padding = new System.Windows.Forms.Padding(6);
+            this.gbDiscount.Size = new System.Drawing.Size(354, 296);
             this.gbDiscount.TabIndex = 1;
             this.gbDiscount.TabStop = false;
             this.gbDiscount.Text = "Giảm Giá";
             // 
             // nudPercent
             // 
-            this.nudPercent.Location = new System.Drawing.Point(111, 80);
-            this.nudPercent.Margin = new System.Windows.Forms.Padding(4);
+            this.nudPercent.Location = new System.Drawing.Point(112, 87);
+            this.nudPercent.Margin = new System.Windows.Forms.Padding(6);
             this.nudPercent.Name = "nudPercent";
-            this.nudPercent.Size = new System.Drawing.Size(160, 30);
+            this.nudPercent.Size = new System.Drawing.Size(118, 30);
             this.nudPercent.TabIndex = 2;
             // 
             // txtIDDis
             // 
-            this.txtIDDis.Location = new System.Drawing.Point(111, 23);
-            this.txtIDDis.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIDDis.Location = new System.Drawing.Point(112, 36);
+            this.txtIDDis.Margin = new System.Windows.Forms.Padding(6);
             this.txtIDDis.Name = "txtIDDis";
             this.txtIDDis.ReadOnly = true;
-            this.txtIDDis.Size = new System.Drawing.Size(132, 30);
+            this.txtIDDis.Size = new System.Drawing.Size(118, 30);
             this.txtIDDis.TabIndex = 9;
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(29, 32);
-            this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblID.Location = new System.Drawing.Point(11, 44);
+            this.lblID.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(30, 22);
             this.lblID.TabIndex = 8;
@@ -293,56 +300,56 @@
             // 
             this.dtFinish.CustomFormat = "dd-MM-yyyy";
             this.dtFinish.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtFinish.Location = new System.Drawing.Point(111, 257);
-            this.dtFinish.Margin = new System.Windows.Forms.Padding(4);
+            this.dtFinish.Location = new System.Drawing.Point(112, 240);
+            this.dtFinish.Margin = new System.Windows.Forms.Padding(6);
             this.dtFinish.Name = "dtFinish";
-            this.dtFinish.Size = new System.Drawing.Size(265, 30);
+            this.dtFinish.Size = new System.Drawing.Size(223, 30);
             this.dtFinish.TabIndex = 7;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 266);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(16, 243);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 22);
+            this.label6.Size = new System.Drawing.Size(83, 22);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Finish";
+            this.label6.Text = "Đến ngày";
             // 
             // dtStart
             // 
             this.dtStart.CustomFormat = "dd-MM-yyyy";
             this.dtStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtStart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtStart.Location = new System.Drawing.Point(111, 201);
-            this.dtStart.Margin = new System.Windows.Forms.Padding(4);
+            this.dtStart.Location = new System.Drawing.Point(112, 189);
+            this.dtStart.Margin = new System.Windows.Forms.Padding(6);
             this.dtStart.Name = "dtStart";
-            this.dtStart.Size = new System.Drawing.Size(265, 30);
+            this.dtStart.Size = new System.Drawing.Size(223, 30);
             this.dtStart.TabIndex = 5;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(29, 209);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(12, 191);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 22);
+            this.label5.Size = new System.Drawing.Size(74, 22);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Start";
+            this.label5.Text = "Từ ngày";
             // 
             // txtDiscription
             // 
-            this.txtDiscription.Location = new System.Drawing.Point(111, 139);
-            this.txtDiscription.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDiscription.Location = new System.Drawing.Point(112, 138);
+            this.txtDiscription.Margin = new System.Windows.Forms.Padding(6);
             this.txtDiscription.Name = "txtDiscription";
-            this.txtDiscription.Size = new System.Drawing.Size(265, 30);
+            this.txtDiscription.Size = new System.Drawing.Size(223, 30);
             this.txtDiscription.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 148);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(12, 132);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 22);
             this.label2.TabIndex = 2;
@@ -351,8 +358,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 89);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(11, 88);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 22);
             this.label1.TabIndex = 0;
@@ -370,11 +377,11 @@
             this.start,
             this.finish,
             this.sta});
-            this.gvDiscount.Location = new System.Drawing.Point(464, 7);
-            this.gvDiscount.Margin = new System.Windows.Forms.Padding(4);
+            this.gvDiscount.Location = new System.Drawing.Point(384, 12);
+            this.gvDiscount.Margin = new System.Windows.Forms.Padding(6);
             this.gvDiscount.Name = "gvDiscount";
             this.gvDiscount.ReadOnly = true;
-            this.gvDiscount.Size = new System.Drawing.Size(668, 383);
+            this.gvDiscount.Size = new System.Drawing.Size(612, 372);
             this.gvDiscount.TabIndex = 0;
             this.gvDiscount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDiscount_CellClick);
             // 
@@ -384,7 +391,7 @@
             this.ID_Dis.HeaderText = "Mã giảm giá";
             this.ID_Dis.Name = "ID_Dis";
             this.ID_Dis.ReadOnly = true;
-            this.ID_Dis.Width = 50;
+            this.ID_Dis.Width = 70;
             // 
             // per
             // 
@@ -392,7 +399,7 @@
             this.per.HeaderText = "Phần trăm";
             this.per.Name = "per";
             this.per.ReadOnly = true;
-            this.per.Width = 50;
+            this.per.Width = 70;
             // 
             // descript
             // 
@@ -400,26 +407,29 @@
             this.descript.HeaderText = "Mô tả";
             this.descript.Name = "descript";
             this.descript.ReadOnly = true;
+            this.descript.Width = 140;
             // 
             // start
             // 
             this.start.DataPropertyName = "Start";
-            dataGridViewCellStyle9.Format = "dd-MM-yyyy";
-            dataGridViewCellStyle9.NullValue = null;
-            this.start.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Format = "dd-MM-yyyy";
+            dataGridViewCellStyle1.NullValue = null;
+            this.start.DefaultCellStyle = dataGridViewCellStyle1;
             this.start.HeaderText = "Bắt đầu";
             this.start.Name = "start";
             this.start.ReadOnly = true;
+            this.start.Width = 110;
             // 
             // finish
             // 
             this.finish.DataPropertyName = "Finish";
-            dataGridViewCellStyle10.Format = "dd-MM-yyyy";
-            dataGridViewCellStyle10.NullValue = "null";
-            this.finish.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Format = "dd-MM-yyyy";
+            dataGridViewCellStyle2.NullValue = "null";
+            this.finish.DefaultCellStyle = dataGridViewCellStyle2;
             this.finish.HeaderText = "Kết thúc";
             this.finish.Name = "finish";
             this.finish.ReadOnly = true;
+            this.finish.Width = 110;
             // 
             // sta
             // 
@@ -427,7 +437,7 @@
             this.sta.HeaderText = "Trạng thái";
             this.sta.Name = "sta";
             this.sta.ReadOnly = true;
-            this.sta.Width = 50;
+            this.sta.Width = 70;
             // 
             // tabProfit
             // 
@@ -438,10 +448,10 @@
             this.tabProfit.Controls.Add(this.groupBox1);
             this.tabProfit.Controls.Add(this.gvProfit);
             this.tabProfit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabProfit.Location = new System.Drawing.Point(4, 25);
-            this.tabProfit.Margin = new System.Windows.Forms.Padding(4);
+            this.tabProfit.Location = new System.Drawing.Point(4, 31);
+            this.tabProfit.Margin = new System.Windows.Forms.Padding(6);
             this.tabProfit.Name = "tabProfit";
-            this.tabProfit.Size = new System.Drawing.Size(1161, 467);
+            this.tabProfit.Size = new System.Drawing.Size(1059, 492);
             this.tabProfit.TabIndex = 2;
             this.tabProfit.Text = "Doanh thu";
             this.tabProfit.UseVisualStyleBackColor = true;
@@ -449,17 +459,19 @@
             // txtTotal
             // 
             this.txtTotal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(915, 397);
+            this.txtTotal.Location = new System.Drawing.Point(693, 417);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(217, 30);
+            this.txtTotal.Size = new System.Drawing.Size(270, 30);
             this.txtTotal.TabIndex = 5;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(477, 16);
+            this.label10.Location = new System.Drawing.Point(355, 22);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(197, 27);
             this.label10.TabIndex = 4;
@@ -469,7 +481,8 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(724, 400);
+            this.label9.Location = new System.Drawing.Point(508, 418);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(163, 27);
             this.label9.TabIndex = 3;
@@ -478,10 +491,10 @@
             // btnDTSeen
             // 
             this.btnDTSeen.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDTSeen.Location = new System.Drawing.Point(180, 273);
-            this.btnDTSeen.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDTSeen.Location = new System.Drawing.Point(109, 211);
+            this.btnDTSeen.Margin = new System.Windows.Forms.Padding(6);
             this.btnDTSeen.Name = "btnDTSeen";
-            this.btnDTSeen.Size = new System.Drawing.Size(100, 37);
+            this.btnDTSeen.Size = new System.Drawing.Size(110, 40);
             this.btnDTSeen.TabIndex = 2;
             this.btnDTSeen.Text = "Xem";
             this.btnDTSeen.UseVisualStyleBackColor = true;
@@ -494,11 +507,11 @@
             this.groupBox1.Controls.Add(this.dtDTStart);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(67, 32);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(11, 22);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(341, 234);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBox1.Size = new System.Drawing.Size(323, 177);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Doanh Thu";
@@ -507,17 +520,17 @@
             // 
             this.dtDTFinish.CustomFormat = "dd-MM-yyyy";
             this.dtDTFinish.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtDTFinish.Location = new System.Drawing.Point(91, 165);
-            this.dtDTFinish.Margin = new System.Windows.Forms.Padding(4);
+            this.dtDTFinish.Location = new System.Drawing.Point(100, 108);
+            this.dtDTFinish.Margin = new System.Windows.Forms.Padding(6);
             this.dtDTFinish.Name = "dtDTFinish";
-            this.dtDTFinish.Size = new System.Drawing.Size(191, 30);
+            this.dtDTFinish.Size = new System.Drawing.Size(189, 30);
             this.dtDTFinish.TabIndex = 3;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(17, 138);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(12, 108);
+            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 22);
             this.label8.TabIndex = 2;
@@ -527,8 +540,8 @@
             // 
             this.dtDTStart.CustomFormat = "dd-MM-yyyy";
             this.dtDTStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtDTStart.Location = new System.Drawing.Point(91, 89);
-            this.dtDTStart.Margin = new System.Windows.Forms.Padding(4);
+            this.dtDTStart.Location = new System.Drawing.Point(98, 43);
+            this.dtDTStart.Margin = new System.Windows.Forms.Padding(6);
             this.dtDTStart.Name = "dtDTStart";
             this.dtDTStart.Size = new System.Drawing.Size(191, 30);
             this.dtDTStart.TabIndex = 1;
@@ -536,8 +549,8 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 62);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(12, 43);
+            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 22);
             this.label7.TabIndex = 0;
@@ -555,11 +568,11 @@
             this.Time_Payment,
             this.Percent,
             this.Total});
-            this.gvProfit.Location = new System.Drawing.Point(477, 47);
-            this.gvProfit.Margin = new System.Windows.Forms.Padding(4);
+            this.gvProfit.Location = new System.Drawing.Point(360, 55);
+            this.gvProfit.Margin = new System.Windows.Forms.Padding(6);
             this.gvProfit.Name = "gvProfit";
             this.gvProfit.ReadOnly = true;
-            this.gvProfit.Size = new System.Drawing.Size(655, 343);
+            this.gvProfit.Size = new System.Drawing.Size(603, 357);
             this.gvProfit.TabIndex = 0;
             // 
             // ID_Bill
@@ -568,7 +581,6 @@
             this.ID_Bill.HeaderText = "Mã hóa đơn";
             this.ID_Bill.Name = "ID_Bill";
             this.ID_Bill.ReadOnly = true;
-            this.ID_Bill.Width = 50;
             // 
             // ID_Table
             // 
@@ -581,22 +593,24 @@
             // Time_Arrive
             // 
             this.Time_Arrive.DataPropertyName = "Time_Arrive";
-            dataGridViewCellStyle11.Format = "dd-MM-yyyy";
-            dataGridViewCellStyle11.NullValue = null;
-            this.Time_Arrive.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Format = "dd-MM-yyyy";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Time_Arrive.DefaultCellStyle = dataGridViewCellStyle3;
             this.Time_Arrive.HeaderText = "Check in";
             this.Time_Arrive.Name = "Time_Arrive";
             this.Time_Arrive.ReadOnly = true;
+            this.Time_Arrive.Width = 125;
             // 
             // Time_Payment
             // 
             this.Time_Payment.DataPropertyName = "Time_Payment";
-            dataGridViewCellStyle12.Format = "dd-MM-yyyy";
-            dataGridViewCellStyle12.NullValue = null;
-            this.Time_Payment.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Format = "dd-MM-yyyy";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Time_Payment.DefaultCellStyle = dataGridViewCellStyle4;
             this.Time_Payment.HeaderText = "Check out";
             this.Time_Payment.Name = "Time_Payment";
             this.Time_Payment.ReadOnly = true;
+            this.Time_Payment.Width = 125;
             // 
             // Percent
             // 
@@ -612,7 +626,7 @@
             this.Total.HeaderText = "Tổng tiền";
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
-            this.Total.Width = 110;
+            this.Total.Width = 120;
             // 
             // tabDish
             // 
@@ -622,11 +636,11 @@
             this.tabDish.Controls.Add(this.gbTimePicker2);
             this.tabDish.Controls.Add(this.gvStatisticDish);
             this.tabDish.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabDish.Location = new System.Drawing.Point(4, 25);
-            this.tabDish.Margin = new System.Windows.Forms.Padding(4);
+            this.tabDish.Location = new System.Drawing.Point(4, 31);
+            this.tabDish.Margin = new System.Windows.Forms.Padding(6);
             this.tabDish.Name = "tabDish";
-            this.tabDish.Padding = new System.Windows.Forms.Padding(4);
-            this.tabDish.Size = new System.Drawing.Size(1161, 467);
+            this.tabDish.Padding = new System.Windows.Forms.Padding(6);
+            this.tabDish.Size = new System.Drawing.Size(1059, 492);
             this.tabDish.TabIndex = 1;
             this.tabDish.Text = "Món Ăn";
             this.tabDish.UseVisualStyleBackColor = true;
@@ -635,7 +649,8 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(682, 401);
+            this.label11.Location = new System.Drawing.Point(553, 421);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(163, 27);
             this.label11.TabIndex = 10;
@@ -643,18 +658,19 @@
             // 
             // txtTotalStatistic
             // 
-            this.txtTotalStatistic.Location = new System.Drawing.Point(871, 398);
+            this.txtTotalStatistic.Location = new System.Drawing.Point(724, 418);
+            this.txtTotalStatistic.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotalStatistic.Name = "txtTotalStatistic";
             this.txtTotalStatistic.ReadOnly = true;
-            this.txtTotalStatistic.Size = new System.Drawing.Size(246, 30);
+            this.txtTotalStatistic.Size = new System.Drawing.Size(255, 30);
             this.txtTotalStatistic.TabIndex = 9;
             // 
             // btnSeen
             // 
-            this.btnSeen.Location = new System.Drawing.Point(191, 353);
-            this.btnSeen.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSeen.Location = new System.Drawing.Point(116, 211);
+            this.btnSeen.Margin = new System.Windows.Forms.Padding(6);
             this.btnSeen.Name = "btnSeen";
-            this.btnSeen.Size = new System.Drawing.Size(100, 37);
+            this.btnSeen.Size = new System.Drawing.Size(110, 40);
             this.btnSeen.TabIndex = 7;
             this.btnSeen.Text = "Xem";
             this.btnSeen.UseVisualStyleBackColor = true;
@@ -666,11 +682,11 @@
             this.gbTimePicker2.Controls.Add(this.dtStatisticFinish);
             this.gbTimePicker2.Controls.Add(this.dtStatisticStart);
             this.gbTimePicker2.Controls.Add(this.label4);
-            this.gbTimePicker2.Location = new System.Drawing.Point(67, 32);
-            this.gbTimePicker2.Margin = new System.Windows.Forms.Padding(4);
+            this.gbTimePicker2.Location = new System.Drawing.Point(12, 12);
+            this.gbTimePicker2.Margin = new System.Windows.Forms.Padding(6);
             this.gbTimePicker2.Name = "gbTimePicker2";
-            this.gbTimePicker2.Padding = new System.Windows.Forms.Padding(4);
-            this.gbTimePicker2.Size = new System.Drawing.Size(341, 293);
+            this.gbTimePicker2.Padding = new System.Windows.Forms.Padding(6);
+            this.gbTimePicker2.Size = new System.Drawing.Size(328, 187);
             this.gbTimePicker2.TabIndex = 6;
             this.gbTimePicker2.TabStop = false;
             this.gbTimePicker2.Text = "Thời Gian";
@@ -678,8 +694,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 62);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(12, 40);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 22);
             this.label3.TabIndex = 1;
@@ -688,26 +704,26 @@
             // dtStatisticFinish
             // 
             this.dtStatisticFinish.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtStatisticFinish.Location = new System.Drawing.Point(91, 201);
-            this.dtStatisticFinish.Margin = new System.Windows.Forms.Padding(4);
+            this.dtStatisticFinish.Location = new System.Drawing.Point(103, 94);
+            this.dtStatisticFinish.Margin = new System.Windows.Forms.Padding(6);
             this.dtStatisticFinish.Name = "dtStatisticFinish";
-            this.dtStatisticFinish.Size = new System.Drawing.Size(191, 30);
+            this.dtStatisticFinish.Size = new System.Drawing.Size(167, 30);
             this.dtStatisticFinish.TabIndex = 4;
             // 
             // dtStatisticStart
             // 
             this.dtStatisticStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtStatisticStart.Location = new System.Drawing.Point(91, 102);
-            this.dtStatisticStart.Margin = new System.Windows.Forms.Padding(4);
+            this.dtStatisticStart.Location = new System.Drawing.Point(103, 40);
+            this.dtStatisticStart.Margin = new System.Windows.Forms.Padding(6);
             this.dtStatisticStart.Name = "dtStatisticStart";
-            this.dtStatisticStart.Size = new System.Drawing.Size(191, 30);
+            this.dtStatisticStart.Size = new System.Drawing.Size(167, 30);
             this.dtStatisticStart.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 160);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(12, 100);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 22);
             this.label4.TabIndex = 2;
@@ -724,11 +740,11 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.gvStatisticDish.Location = new System.Drawing.Point(416, 8);
-            this.gvStatisticDish.Margin = new System.Windows.Forms.Padding(4);
+            this.gvStatisticDish.Location = new System.Drawing.Point(352, 12);
+            this.gvStatisticDish.Margin = new System.Windows.Forms.Padding(6);
             this.gvStatisticDish.Name = "gvStatisticDish";
             this.gvStatisticDish.ReadOnly = true;
-            this.gvStatisticDish.Size = new System.Drawing.Size(701, 383);
+            this.gvStatisticDish.Size = new System.Drawing.Size(627, 396);
             this.gvStatisticDish.TabIndex = 0;
             // 
             // MaMon
@@ -737,7 +753,7 @@
             this.MaMon.HeaderText = "Mã món";
             this.MaMon.Name = "MaMon";
             this.MaMon.ReadOnly = true;
-            this.MaMon.Width = 70;
+            this.MaMon.Width = 80;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -745,7 +761,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Món";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 150;
+            this.dataGridViewTextBoxColumn1.Width = 160;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -753,6 +769,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Giá";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 110;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -760,7 +777,6 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Số lượng";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 80;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -768,26 +784,33 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Tổng tiền";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 120;
+            this.dataGridViewTextBoxColumn4.Width = 130;
             // 
-            // bànToolStripMenuItem
+            // btnExit
             // 
-            this.bànToolStripMenuItem.Name = "bànToolStripMenuItem";
-            this.bànToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.bànToolStripMenuItem.Text = "Bàn";
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExit.Location = new System.Drawing.Point(945, 571);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(110, 40);
+            this.btnExit.TabIndex = 4;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FrmStatistical
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1199, 528);
+            this.ClientSize = new System.Drawing.Size(1067, 623);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FrmStatistical";
-            this.Text = "Quản Lý Nhà Hàng";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmStatistical_FormClosing);
+            this.Text = "Quản lý nhà hàng";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -856,25 +879,26 @@
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Bill;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Table;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Time_Arrive;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Time_Payment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Percent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtTotalStatistic;
+        private System.Windows.Forms.ToolStripMenuItem bànToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Dis;
         private System.Windows.Forms.DataGridViewTextBoxColumn per;
         private System.Windows.Forms.DataGridViewTextBoxColumn descript;
         private System.Windows.Forms.DataGridViewTextBoxColumn start;
         private System.Windows.Forms.DataGridViewTextBoxColumn finish;
         private System.Windows.Forms.DataGridViewTextBoxColumn sta;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtTotalStatistic;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Bill;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Table;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Time_Arrive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Time_Payment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Percent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaMon;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.ToolStripMenuItem bànToolStripMenuItem;
+        private System.Windows.Forms.Button btnExit;
     }
 }

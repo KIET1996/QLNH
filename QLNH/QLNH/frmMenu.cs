@@ -26,7 +26,7 @@ namespace QLNH
             InitializeComponent();
         }
 
-      
+
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
@@ -261,7 +261,7 @@ namespace QLNH
 
                             MessageBox.Show("Thêm loại món ăn thành công");
                             Load_category();
-                           
+
                         }
 
                     }
@@ -296,15 +296,6 @@ namespace QLNH
             LoadCobCategory(cobFoodCa);
         }
 
-        //Su kien dong form
-        private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != System.Windows.Forms.DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
-        }
-
         ///Chuyen sang form Quan ly thong ke
         private void mnStatistic_Click(object sender, EventArgs e)
         {
@@ -328,5 +319,14 @@ namespace QLNH
             frmTables frm = new frmTables();
             frm.Show();
         }
+        //Thoát chương trình
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
+    
     }
 }
