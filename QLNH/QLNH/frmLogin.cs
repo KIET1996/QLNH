@@ -16,6 +16,8 @@ namespace QLNH
         public frmLogin()
         {
             InitializeComponent();
+            txtUserName.Text = "vankiet";
+            txtpwd.Text = "123";
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
