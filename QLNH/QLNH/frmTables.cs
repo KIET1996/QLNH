@@ -23,6 +23,7 @@ namespace QLNH
         {
             InitializeComponent();
             ResetFieldsTable(false);
+            ResetFieldsPosition(false);
         }
 
         private void mnuOrder_Click(object sender, EventArgs e)
@@ -260,6 +261,9 @@ namespace QLNH
             if (PositionController.Instance.ResetPosition())
             {
                 ResetFieldsPosition(true);
+                int count = PositionController.Instance.GetMaxIDPos();
+                count++;
+                txtIDPos.Text = count.ToString();
             }
         }
 
@@ -287,6 +291,7 @@ namespace QLNH
                         {
                             MessageBox.Show("Thêm khu vực thành công!");
                             position_Load();
+                            ResetFieldsPosition(false);
                         }
                     }
                 }

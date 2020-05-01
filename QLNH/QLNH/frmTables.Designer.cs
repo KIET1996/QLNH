@@ -484,7 +484,7 @@
             // 
             this.btnSavePos.Location = new System.Drawing.Point(291, 379);
             this.btnSavePos.Name = "btnSavePos";
-            this.btnSavePos.Size = new System.Drawing.Size(84, 31);
+            this.btnSavePos.Size = new System.Drawing.Size(110, 40);
             this.btnSavePos.TabIndex = 5;
             this.btnSavePos.Text = "Lưu";
             this.btnSavePos.UseVisualStyleBackColor = true;
@@ -494,7 +494,7 @@
             // 
             this.btnCanl.Location = new System.Drawing.Point(121, 379);
             this.btnCanl.Name = "btnCanl";
-            this.btnCanl.Size = new System.Drawing.Size(91, 31);
+            this.btnCanl.Size = new System.Drawing.Size(110, 40);
             this.btnCanl.TabIndex = 4;
             this.btnCanl.Text = "Hủy";
             this.btnCanl.UseVisualStyleBackColor = true;
@@ -504,7 +504,7 @@
             // 
             this.btnDeletePos.Location = new System.Drawing.Point(366, 322);
             this.btnDeletePos.Name = "btnDeletePos";
-            this.btnDeletePos.Size = new System.Drawing.Size(95, 32);
+            this.btnDeletePos.Size = new System.Drawing.Size(110, 40);
             this.btnDeletePos.TabIndex = 3;
             this.btnDeletePos.Text = "Xóa";
             this.btnDeletePos.UseVisualStyleBackColor = true;
@@ -514,7 +514,7 @@
             // 
             this.btnEditPos.Location = new System.Drawing.Point(203, 322);
             this.btnEditPos.Name = "btnEditPos";
-            this.btnEditPos.Size = new System.Drawing.Size(96, 32);
+            this.btnEditPos.Size = new System.Drawing.Size(110, 40);
             this.btnEditPos.TabIndex = 2;
             this.btnEditPos.Text = "Sửa";
             this.btnEditPos.UseVisualStyleBackColor = true;
@@ -524,7 +524,7 @@
             // 
             this.btnAddPos.Location = new System.Drawing.Point(53, 322);
             this.btnAddPos.Name = "btnAddPos";
-            this.btnAddPos.Size = new System.Drawing.Size(84, 32);
+            this.btnAddPos.Size = new System.Drawing.Size(110, 40);
             this.btnAddPos.TabIndex = 1;
             this.btnAddPos.Text = "Thêm";
             this.btnAddPos.UseVisualStyleBackColor = true;
