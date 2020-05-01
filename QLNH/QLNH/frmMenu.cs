@@ -229,59 +229,8 @@ namespace QLNH
 
         }
 
-       
-        private void btnAddCa_Click(object sender, EventArgs e)
-        {
-            
-        }
-        //Them moi cac loai mon an
-        private void btnAddCa_Click_1(object sender, EventArgs e)
-        {
-            if (txtCaName.Text == "")
-            {
-                MessageBox.Show("Bạn phải nhập tên loại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-            }
-            else
-            {
-                try
-                {
-                    string name = txtCaName.Text;
-
-                    if (CategoryController.Instance.CheckCategory(name))
-                    {
-
-                        MessageBox.Show("Loại món ăn đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    }
-
-                    else
-                    {
-                        if (CategoryController.Instance.AddCategory(name))
-                        {
-
-                            MessageBox.Show("Thêm loại món ăn thành công");
-                            Load_category();
-
-                        }
-
-                    }
-
-                }
-                catch
-                {
-
-                }
-            }
-        }
-
         // Xoa cac loai mon an
         private void btnDeleteCa_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btnDeleteCa_Click_1(object sender, EventArgs e)
         {
             int id_Ca = Convert.ToInt32(txtCaId.Text);
 
@@ -385,6 +334,79 @@ namespace QLNH
                 frm.Show();
                 this.Close();
                 //Application.Exit();
+            }
+        }
+
+        //Luu them mon
+        private void btnSaveCa_Click(object sender, EventArgs e)
+        {
+            if (txtCaName.Text == "")
+            {
+                MessageBox.Show("Bạn phải nhập tên loại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
+                {
+                    string name = txtCaName.Text;
+
+                    if (CategoryController.Instance.CheckCategory(name))
+                    {
+                        MessageBox.Show("Loại món ăn đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        if (CategoryController.Instance.AddCategory(name))
+                        {
+                            MessageBox.Show("Thêm loại món ăn thành công");
+                            Load_category();
+                            ResetFieldCategory(true);
+                        }
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
+        //Them loai moi mon an 
+        private void btnAddCa_Click(object sender, EventArgs e)
+        {
+            ResetFieldCategory(false);
+            int count = CategoryController.Instance.GetMaxIDCategory();
+            count++;
+            txtCaId.Text = count.ToString();
+            txtCaName.Clear();
+        }
+
+        //Reset lai cac button
+        public void ResetFieldCategory(bool status)
+        {
+            btnAddCa.Enabled = status;
+            btnEditCa.Enabled = status;
+            btnDeleteCa.Enabled = status;
+            btnCancleCa.Enabled = !status;
+            btnSaveCa.Enabled = !status;
+        }
+
+        //Huy them moi loai mon an
+        private void btnCancleCa_Click(object sender, EventArgs e)
+        {
+            ResetFieldCategory(true);
+        }
+
+        //Chinh sua loai mon an
+        private void btnEditCa_Click(object sender, EventArgs e)
+        {
+            int ID_Ca = Convert.ToInt32(txtCaId.Text);
+            string name = txtCaName.Text;
+
+            if (CategoryController.Instance.UpdateCategory(ID_Ca, name))
+            {
+                MessageBox.Show("Sửa thông tin thành công!");
+                Load_category();
             }
         }
     }

@@ -43,6 +43,9 @@
             this.btnLast = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.btnSaveCa = new System.Windows.Forms.Button();
+            this.btnCancleCa = new System.Windows.Forms.Button();
+            this.btnEditCa = new System.Windows.Forms.Button();
             this.btnDeleteCa = new System.Windows.Forms.Button();
             this.btnAddCa = new System.Windows.Forms.Button();
             this.txtCaId = new System.Windows.Forms.TextBox();
@@ -249,6 +252,9 @@
             // panel12
             // 
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel12.Controls.Add(this.btnSaveCa);
+            this.panel12.Controls.Add(this.btnCancleCa);
+            this.panel12.Controls.Add(this.btnEditCa);
             this.panel12.Controls.Add(this.btnDeleteCa);
             this.panel12.Controls.Add(this.btnAddCa);
             this.panel12.Controls.Add(this.txtCaId);
@@ -261,27 +267,62 @@
             this.panel12.Size = new System.Drawing.Size(419, 378);
             this.panel12.TabIndex = 11;
             // 
+            // btnSaveCa
+            // 
+            this.btnSaveCa.Enabled = false;
+            this.btnSaveCa.Location = new System.Drawing.Point(218, 199);
+            this.btnSaveCa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSaveCa.Name = "btnSaveCa";
+            this.btnSaveCa.Size = new System.Drawing.Size(110, 40);
+            this.btnSaveCa.TabIndex = 12;
+            this.btnSaveCa.Text = "Lưu";
+            this.btnSaveCa.UseVisualStyleBackColor = true;
+            this.btnSaveCa.Click += new System.EventHandler(this.btnSaveCa_Click);
+            // 
+            // btnCancleCa
+            // 
+            this.btnCancleCa.Enabled = false;
+            this.btnCancleCa.Location = new System.Drawing.Point(82, 199);
+            this.btnCancleCa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnCancleCa.Name = "btnCancleCa";
+            this.btnCancleCa.Size = new System.Drawing.Size(110, 40);
+            this.btnCancleCa.TabIndex = 11;
+            this.btnCancleCa.Text = "Hủy";
+            this.btnCancleCa.UseVisualStyleBackColor = true;
+            this.btnCancleCa.Click += new System.EventHandler(this.btnCancleCa_Click);
+            // 
+            // btnEditCa
+            // 
+            this.btnEditCa.Location = new System.Drawing.Point(155, 141);
+            this.btnEditCa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnEditCa.Name = "btnEditCa";
+            this.btnEditCa.Size = new System.Drawing.Size(110, 40);
+            this.btnEditCa.TabIndex = 10;
+            this.btnEditCa.Text = "Sửa";
+            this.btnEditCa.UseVisualStyleBackColor = true;
+            this.btnEditCa.Click += new System.EventHandler(this.btnEditCa_Click);
+            // 
             // btnDeleteCa
             // 
-            this.btnDeleteCa.Location = new System.Drawing.Point(283, 141);
+            this.btnDeleteCa.Location = new System.Drawing.Point(282, 141);
             this.btnDeleteCa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDeleteCa.Name = "btnDeleteCa";
             this.btnDeleteCa.Size = new System.Drawing.Size(110, 40);
             this.btnDeleteCa.TabIndex = 9;
             this.btnDeleteCa.Text = "Xóa";
             this.btnDeleteCa.UseVisualStyleBackColor = true;
-            this.btnDeleteCa.Click += new System.EventHandler(this.btnDeleteCa_Click_1);
+            this.btnDeleteCa.Click += new System.EventHandler(this.btnDeleteCa_Click);
             // 
             // btnAddCa
             // 
-            this.btnAddCa.Location = new System.Drawing.Point(148, 140);
+            this.btnAddCa.Location = new System.Drawing.Point(28, 141);
             this.btnAddCa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddCa.Name = "btnAddCa";
             this.btnAddCa.Size = new System.Drawing.Size(110, 40);
             this.btnAddCa.TabIndex = 8;
             this.btnAddCa.Text = "Thêm";
             this.btnAddCa.UseVisualStyleBackColor = true;
-            this.btnAddCa.Click += new System.EventHandler(this.btnAddCa_Click_1);
+            this.btnAddCa.Click += new System.EventHandler(this.btnAddCa_Click);
             // 
             // txtCaId
             // 
@@ -289,6 +330,7 @@
             this.txtCaId.Location = new System.Drawing.Point(148, 34);
             this.txtCaId.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCaId.Name = "txtCaId";
+            this.txtCaId.ReadOnly = true;
             this.txtCaId.Size = new System.Drawing.Size(245, 26);
             this.txtCaId.TabIndex = 4;
             // 
@@ -623,6 +665,7 @@
             // datagrdFood
             // 
             this.datagrdFood.AllowUserToAddRows = false;
+            this.datagrdFood.AllowUserToDeleteRows = false;
             this.datagrdFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagrdFood.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_Dish,
@@ -634,6 +677,7 @@
             this.datagrdFood.Location = new System.Drawing.Point(4, 25);
             this.datagrdFood.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.datagrdFood.Name = "datagrdFood";
+            this.datagrdFood.ReadOnly = true;
             this.datagrdFood.RowTemplate.Height = 28;
             this.datagrdFood.Size = new System.Drawing.Size(624, 380);
             this.datagrdFood.TabIndex = 1;
@@ -643,36 +687,42 @@
             this.ID_Dish.DataPropertyName = "ID_Dish";
             this.ID_Dish.HeaderText = "Mã món";
             this.ID_Dish.Name = "ID_Dish";
+            this.ID_Dish.ReadOnly = true;
             // 
             // name
             // 
             this.name.DataPropertyName = "name";
             this.name.HeaderText = "Tên món";
             this.name.Name = "name";
+            this.name.ReadOnly = true;
             // 
             // unit
             // 
             this.unit.DataPropertyName = "unit";
             this.unit.HeaderText = "Đơn vị";
             this.unit.Name = "unit";
+            this.unit.ReadOnly = true;
             // 
             // price
             // 
             this.price.DataPropertyName = "price";
             this.price.HeaderText = "Giá";
             this.price.Name = "price";
+            this.price.ReadOnly = true;
             // 
             // descript
             // 
             this.descript.DataPropertyName = "descript";
             this.descript.HeaderText = "Mô tả";
             this.descript.Name = "descript";
+            this.descript.ReadOnly = true;
             // 
             // Sta
             // 
             this.Sta.DataPropertyName = "sta";
             this.Sta.HeaderText = "Trạng Thái";
             this.Sta.Name = "Sta";
+            this.Sta.ReadOnly = true;
             // 
             // lblheadFood
             // 
@@ -824,5 +874,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn descript;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sta;
+        private System.Windows.Forms.Button btnSaveCa;
+        private System.Windows.Forms.Button btnCancleCa;
+        private System.Windows.Forms.Button btnEditCa;
     }
 }
