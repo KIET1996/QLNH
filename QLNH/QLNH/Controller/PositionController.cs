@@ -92,6 +92,17 @@ namespace QLNH.Controller
             return result > 0;
         }
 
-
+        //Lay ID  Pos lon nhat
+        public int GetMaxIDPos()
+        {
+            try
+            {
+                return (int)DataProvider.Instance.ExecuteScalar("SELECT MAX(ID_Pos) FROM Position_Table");
+            }
+            catch
+            {
+                return 0;
+            }
+        }
     }
 }
