@@ -56,6 +56,12 @@ namespace QLNH.Controller
             return list;
         }
 
+        // Lít food by procedure
+        public DataTable ListDish()
+        {
+            return DataProvider.Instance.ExecuteQuery("execute listfood");
+        }
+
         // Add new food
         public bool AddFood(int ID_Ca, string name, string unit, double price, string descipt, int sta)
         {
@@ -89,6 +95,12 @@ namespace QLNH.Controller
             }
 
             return list;
+        }
+
+        // Search food 
+        public DataTable Search(string name)
+        {
+            return DataProvider.Instance.ExecuteQuery("execute searchfish @name", new object[] { name });
         }
 
         //Update Food
