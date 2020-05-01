@@ -18,7 +18,7 @@ namespace QLNH.Controller
             private set { TableController.instance = value; }
         }
 
-        public static int TableWidth = 95;
+        public static int TableWidth = 110;
         public static int TableHeight = 95;
 
         private TableController() { }

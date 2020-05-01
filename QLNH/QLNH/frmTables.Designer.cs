@@ -83,6 +83,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.btnExit = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabTable.SuspendLayout();
             this.tabPageTable.SuspendLayout();
@@ -109,7 +110,7 @@
             this.mnLogout});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1155, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1067, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -162,7 +163,7 @@
             this.tabTable.Location = new System.Drawing.Point(0, 33);
             this.tabTable.Name = "tabTable";
             this.tabTable.SelectedIndex = 0;
-            this.tabTable.Size = new System.Drawing.Size(1548, 896);
+            this.tabTable.Size = new System.Drawing.Size(1077, 525);
             this.tabTable.TabIndex = 1;
             // 
             // tabPageTable
@@ -177,7 +178,7 @@
             this.tabPageTable.Location = new System.Drawing.Point(4, 31);
             this.tabPageTable.Name = "tabPageTable";
             this.tabPageTable.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTable.Size = new System.Drawing.Size(1540, 861);
+            this.tabPageTable.Size = new System.Drawing.Size(1069, 490);
             this.tabPageTable.TabIndex = 0;
             this.tabPageTable.Text = "Bàn";
             this.tabPageTable.UseVisualStyleBackColor = true;
@@ -185,9 +186,9 @@
             // grpListTable
             // 
             this.grpListTable.Controls.Add(this.dtGridTable);
-            this.grpListTable.Location = new System.Drawing.Point(499, 36);
+            this.grpListTable.Location = new System.Drawing.Point(483, 36);
             this.grpListTable.Name = "grpListTable";
-            this.grpListTable.Size = new System.Drawing.Size(631, 395);
+            this.grpListTable.Size = new System.Drawing.Size(548, 440);
             this.grpListTable.TabIndex = 6;
             this.grpListTable.TabStop = false;
             this.grpListTable.Text = "Danh sách bàn";
@@ -206,7 +207,7 @@
             this.dtGridTable.Name = "dtGridTable";
             this.dtGridTable.ReadOnly = true;
             this.dtGridTable.RowTemplate.Height = 24;
-            this.dtGridTable.Size = new System.Drawing.Size(578, 343);
+            this.dtGridTable.Size = new System.Drawing.Size(498, 389);
             this.dtGridTable.TabIndex = 0;
             this.dtGridTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridTable_CellClick);
             // 
@@ -223,6 +224,7 @@
             this.PositionTable.HeaderText = "ID Khu Vực";
             this.PositionTable.Name = "PositionTable";
             this.PositionTable.ReadOnly = true;
+            this.PositionTable.Width = 120;
             // 
             // Capability
             // 
@@ -412,7 +414,7 @@
             this.tabPagePosition.Location = new System.Drawing.Point(4, 31);
             this.tabPagePosition.Name = "tabPagePosition";
             this.tabPagePosition.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePosition.Size = new System.Drawing.Size(1540, 861);
+            this.tabPagePosition.Size = new System.Drawing.Size(1069, 490);
             this.tabPagePosition.TabIndex = 1;
             this.tabPagePosition.Text = "Khu vực";
             this.tabPagePosition.UseVisualStyleBackColor = true;
@@ -421,9 +423,9 @@
             // 
             this.grpListPos.Controls.Add(this.scrollPosition);
             this.grpListPos.Controls.Add(this.dtGridPosition);
-            this.grpListPos.Location = new System.Drawing.Point(584, 46);
+            this.grpListPos.Location = new System.Drawing.Point(537, 46);
             this.grpListPos.Name = "grpListPos";
-            this.grpListPos.Size = new System.Drawing.Size(539, 395);
+            this.grpListPos.Size = new System.Drawing.Size(467, 395);
             this.grpListPos.TabIndex = 6;
             this.grpListPos.TabStop = false;
             this.grpListPos.Text = "Danh sách khu vực";
@@ -444,11 +446,11 @@
             this.NamePos,
             this.StatusPos,
             this.NotePos});
-            this.dtGridPosition.Location = new System.Drawing.Point(6, 29);
+            this.dtGridPosition.Location = new System.Drawing.Point(0, 29);
             this.dtGridPosition.Name = "dtGridPosition";
             this.dtGridPosition.RowTemplate.Height = 24;
             this.dtGridPosition.ShowCellErrors = false;
-            this.dtGridPosition.Size = new System.Drawing.Size(514, 347);
+            this.dtGridPosition.Size = new System.Drawing.Size(447, 347);
             this.dtGridPosition.TabIndex = 0;
             // 
             // ID_Pos
@@ -477,7 +479,7 @@
             // 
             // btnSavePos
             // 
-            this.btnSavePos.Location = new System.Drawing.Point(310, 379);
+            this.btnSavePos.Location = new System.Drawing.Point(291, 379);
             this.btnSavePos.Name = "btnSavePos";
             this.btnSavePos.Size = new System.Drawing.Size(84, 31);
             this.btnSavePos.TabIndex = 5;
@@ -486,7 +488,7 @@
             // 
             // btnCanl
             // 
-            this.btnCanl.Location = new System.Drawing.Point(140, 379);
+            this.btnCanl.Location = new System.Drawing.Point(121, 379);
             this.btnCanl.Name = "btnCanl";
             this.btnCanl.Size = new System.Drawing.Size(91, 31);
             this.btnCanl.TabIndex = 4;
@@ -495,7 +497,7 @@
             // 
             // btnDeletePos
             // 
-            this.btnDeletePos.Location = new System.Drawing.Point(385, 322);
+            this.btnDeletePos.Location = new System.Drawing.Point(366, 322);
             this.btnDeletePos.Name = "btnDeletePos";
             this.btnDeletePos.Size = new System.Drawing.Size(95, 32);
             this.btnDeletePos.TabIndex = 3;
@@ -505,7 +507,7 @@
             // 
             // btnEditPos
             // 
-            this.btnEditPos.Location = new System.Drawing.Point(222, 322);
+            this.btnEditPos.Location = new System.Drawing.Point(203, 322);
             this.btnEditPos.Name = "btnEditPos";
             this.btnEditPos.Size = new System.Drawing.Size(96, 32);
             this.btnEditPos.TabIndex = 2;
@@ -515,7 +517,7 @@
             // 
             // btnAddPos
             // 
-            this.btnAddPos.Location = new System.Drawing.Point(72, 322);
+            this.btnAddPos.Location = new System.Drawing.Point(53, 322);
             this.btnAddPos.Name = "btnAddPos";
             this.btnAddPos.Size = new System.Drawing.Size(84, 32);
             this.btnAddPos.TabIndex = 1;
@@ -533,7 +535,7 @@
             this.grpPosition.Controls.Add(this.lbStatus);
             this.grpPosition.Controls.Add(this.lbNamePos);
             this.grpPosition.Controls.Add(this.lbIDPosition);
-            this.grpPosition.Location = new System.Drawing.Point(36, 46);
+            this.grpPosition.Location = new System.Drawing.Point(28, 46);
             this.grpPosition.Name = "grpPosition";
             this.grpPosition.Size = new System.Drawing.Size(487, 243);
             this.grpPosition.TabIndex = 0;
@@ -610,7 +612,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1540, 861);
+            this.tabPage1.Size = new System.Drawing.Size(1069, 490);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Nhân viên";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -619,7 +621,7 @@
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 31);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1540, 861);
+            this.tabPage4.Size = new System.Drawing.Size(1069, 490);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Khách hàng";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -628,16 +630,29 @@
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 31);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1540, 861);
+            this.tabPage5.Size = new System.Drawing.Size(1069, 490);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Khuyến mãi";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExit.Location = new System.Drawing.Point(945, 571);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(110, 40);
+            this.btnExit.TabIndex = 4;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // frmTables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1155, 517);
+            this.ClientSize = new System.Drawing.Size(1067, 623);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.tabTable);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -645,7 +660,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmTables";
             this.Text = "Quản lý nhà hàng";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTables_FormClosing);
             this.Load += new System.EventHandler(this.frmTables_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -725,6 +739,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PositionTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn Capability;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 

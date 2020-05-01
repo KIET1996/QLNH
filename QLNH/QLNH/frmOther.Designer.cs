@@ -59,6 +59,7 @@
             this.mnDish = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOther = new System.Windows.Forms.ToolStripMenuItem();
             this.mnStatistic = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnExit = new System.Windows.Forms.Button();
             this.pnOther.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.updQuantity)).BeginInit();
             this.pnBill.SuspendLayout();
@@ -76,16 +77,16 @@
             this.pnOther.Controls.Add(this.btnOther);
             this.pnOther.Controls.Add(this.cbDish);
             this.pnOther.Controls.Add(this.cbCategory);
-            this.pnOther.Location = new System.Drawing.Point(396, 38);
+            this.pnOther.Location = new System.Drawing.Point(514, 38);
             this.pnOther.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnOther.Name = "pnOther";
-            this.pnOther.Size = new System.Drawing.Size(500, 116);
+            this.pnOther.Size = new System.Drawing.Size(527, 116);
             this.pnOther.TabIndex = 0;
             // 
             // updQuantity
             // 
             this.updQuantity.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updQuantity.Location = new System.Drawing.Point(104, 77);
+            this.updQuantity.Location = new System.Drawing.Point(117, 79);
             this.updQuantity.Minimum = new decimal(new int[] {
             100,
             0,
@@ -105,7 +106,7 @@
             // 
             this.lbQuantity.AutoSize = true;
             this.lbQuantity.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbQuantity.Location = new System.Drawing.Point(9, 73);
+            this.lbQuantity.Location = new System.Drawing.Point(22, 73);
             this.lbQuantity.Name = "lbQuantity";
             this.lbQuantity.Size = new System.Drawing.Size(84, 23);
             this.lbQuantity.TabIndex = 6;
@@ -115,7 +116,7 @@
             // 
             this.lbFood.AutoSize = true;
             this.lbFood.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFood.Location = new System.Drawing.Point(9, 38);
+            this.lbFood.Location = new System.Drawing.Point(22, 38);
             this.lbFood.Name = "lbFood";
             this.lbFood.Size = new System.Drawing.Size(48, 23);
             this.lbFood.TabIndex = 5;
@@ -125,7 +126,7 @@
             // 
             this.lbCategories.AutoSize = true;
             this.lbCategories.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCategories.Location = new System.Drawing.Point(9, 4);
+            this.lbCategories.Location = new System.Drawing.Point(22, 4);
             this.lbCategories.Name = "lbCategories";
             this.lbCategories.Size = new System.Drawing.Size(48, 23);
             this.lbCategories.TabIndex = 4;
@@ -134,10 +135,10 @@
             // btnOther
             // 
             this.btnOther.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOther.Location = new System.Drawing.Point(345, 69);
+            this.btnOther.Location = new System.Drawing.Point(391, 4);
             this.btnOther.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnOther.Name = "btnOther";
-            this.btnOther.Size = new System.Drawing.Size(103, 38);
+            this.btnOther.Size = new System.Drawing.Size(123, 87);
             this.btnOther.TabIndex = 2;
             this.btnOther.Text = "Chọn món";
             this.btnOther.UseVisualStyleBackColor = true;
@@ -147,20 +148,20 @@
             // 
             this.cbDish.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDish.FormattingEnabled = true;
-            this.cbDish.Location = new System.Drawing.Point(104, 40);
+            this.cbDish.Location = new System.Drawing.Point(117, 42);
             this.cbDish.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbDish.Name = "cbDish";
-            this.cbDish.Size = new System.Drawing.Size(227, 30);
+            this.cbDish.Size = new System.Drawing.Size(244, 30);
             this.cbDish.TabIndex = 1;
             // 
             // cbCategory
             // 
             this.cbCategory.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(104, 4);
+            this.cbCategory.Location = new System.Drawing.Point(117, 4);
             this.cbCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(224, 30);
+            this.cbCategory.Size = new System.Drawing.Size(244, 30);
             this.cbCategory.TabIndex = 0;
             this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategories_SelectedIndexChanged);
             // 
@@ -169,17 +170,17 @@
             this.pnBill.Controls.Add(this.txtTotal);
             this.pnBill.Controls.Add(this.lbTotal);
             this.pnBill.Controls.Add(this.lvBill);
-            this.pnBill.Location = new System.Drawing.Point(394, 161);
+            this.pnBill.Location = new System.Drawing.Point(514, 161);
             this.pnBill.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnBill.Name = "pnBill";
-            this.pnBill.Size = new System.Drawing.Size(333, 366);
+            this.pnBill.Size = new System.Drawing.Size(379, 366);
             this.pnBill.TabIndex = 1;
             // 
             // txtTotal
             // 
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtTotal.Location = new System.Drawing.Point(170, 325);
+            this.txtTotal.Location = new System.Drawing.Point(201, 325);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(160, 28);
@@ -191,7 +192,7 @@
             // 
             this.lbTotal.AutoSize = true;
             this.lbTotal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotal.Location = new System.Drawing.Point(72, 325);
+            this.lbTotal.Location = new System.Drawing.Point(98, 325);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.Size = new System.Drawing.Size(97, 23);
             this.lbTotal.TabIndex = 1;
@@ -204,10 +205,10 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
-            this.lvBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvBill.Location = new System.Drawing.Point(4, 16);
+            this.lvBill.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvBill.Location = new System.Drawing.Point(13, 16);
             this.lvBill.Name = "lvBill";
-            this.lvBill.Size = new System.Drawing.Size(326, 304);
+            this.lvBill.Size = new System.Drawing.Size(350, 304);
             this.lvBill.TabIndex = 0;
             this.lvBill.UseCompatibleStateImageBehavior = false;
             this.lvBill.View = System.Windows.Forms.View.Details;
@@ -242,10 +243,10 @@
             this.pnButton.Controls.Add(this.lbDiscount);
             this.pnButton.Controls.Add(this.btnCheckout);
             this.pnButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnButton.Location = new System.Drawing.Point(733, 161);
+            this.pnButton.Location = new System.Drawing.Point(897, 161);
             this.pnButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnButton.Name = "pnButton";
-            this.pnButton.Size = new System.Drawing.Size(168, 366);
+            this.pnButton.Size = new System.Drawing.Size(147, 366);
             this.pnButton.TabIndex = 2;
             // 
             // label1
@@ -263,7 +264,7 @@
             this.txtPercent.Location = new System.Drawing.Point(13, 109);
             this.txtPercent.Name = "txtPercent";
             this.txtPercent.ReadOnly = true;
-            this.txtPercent.Size = new System.Drawing.Size(100, 24);
+            this.txtPercent.Size = new System.Drawing.Size(123, 24);
             this.txtPercent.TabIndex = 9;
             // 
             // cbDiscount
@@ -271,7 +272,7 @@
             this.cbDiscount.FormattingEnabled = true;
             this.cbDiscount.Location = new System.Drawing.Point(9, 41);
             this.cbDiscount.Name = "cbDiscount";
-            this.cbDiscount.Size = new System.Drawing.Size(143, 26);
+            this.cbDiscount.Size = new System.Drawing.Size(123, 26);
             this.cbDiscount.TabIndex = 8;
             this.cbDiscount.SelectedIndexChanged += new System.EventHandler(this.cbDiscount_SelectedIndexChanged);
             // 
@@ -291,7 +292,7 @@
             this.btnCheckout.Location = new System.Drawing.Point(9, 315);
             this.btnCheckout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCheckout.Name = "btnCheckout";
-            this.btnCheckout.Size = new System.Drawing.Size(104, 38);
+            this.btnCheckout.Size = new System.Drawing.Size(123, 38);
             this.btnCheckout.TabIndex = 0;
             this.btnCheckout.Text = "Thanh toán";
             this.btnCheckout.UseVisualStyleBackColor = true;
@@ -303,17 +304,17 @@
             this.panel1.Location = new System.Drawing.Point(3, 38);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(387, 489);
+            this.panel1.Size = new System.Drawing.Size(505, 489);
             this.panel1.TabIndex = 3;
             // 
             // fpnTable
             // 
             this.fpnTable.AutoScroll = true;
             this.fpnTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fpnTable.Location = new System.Drawing.Point(3, 4);
+            this.fpnTable.Location = new System.Drawing.Point(3, 38);
             this.fpnTable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fpnTable.Name = "fpnTable";
-            this.fpnTable.Size = new System.Drawing.Size(380, 472);
+            this.fpnTable.Size = new System.Drawing.Size(499, 438);
             this.fpnTable.TabIndex = 0;
             // 
             // mnLogout
@@ -338,7 +339,7 @@
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(901, 30);
+            this.menuStrip2.Size = new System.Drawing.Size(1067, 30);
             this.menuStrip2.TabIndex = 5;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -355,7 +356,7 @@
             // bànToolStripMenuItem
             // 
             this.bànToolStripMenuItem.Name = "bànToolStripMenuItem";
-            this.bànToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.bànToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
             this.bànToolStripMenuItem.Text = "Bàn";
             // 
             // mnDish
@@ -381,11 +382,25 @@
             this.mnStatistic.Text = "Thống kê";
             this.mnStatistic.Click += new System.EventHandler(this.mnStatistic_Click);
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(934, 569);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(110, 40);
+            this.btnExit.TabIndex = 6;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // frmOther
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 562);
+            this.ClientSize = new System.Drawing.Size(1067, 623);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnButton);
             this.Controls.Add(this.pnBill);
@@ -394,8 +409,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmOther";
-            this.Text = "Quản lý hà hàng";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmOther_FormClosing);
+            this.Text = "Quản lý nhà hàng";
             this.pnOther.ResumeLayout(false);
             this.pnOther.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.updQuantity)).EndInit();
@@ -444,6 +458,7 @@
         private System.Windows.Forms.ComboBox cbDiscount;
         private System.Windows.Forms.TextBox txtPercent;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 
