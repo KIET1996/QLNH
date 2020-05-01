@@ -50,7 +50,7 @@ namespace QLNH.Controller
         //Delete category
         public bool DeleteCategory(int id_Ca)
         {
-            string query = string.Format("DeLETE dbo.Categories ( id_Ca)VALUES  ( {0})", id_Ca);
+            string query = string.Format("DELETE dbo.Categories WHERE ID_Ca =  {0}", id_Ca);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
@@ -83,7 +83,19 @@ namespace QLNH.Controller
             return result > 0;
         }
 
-       
+        //Load page
+        public DataTable loadCaPage(int page)
+        {
+            return DataProvider.Instance.ExecuteQuery("execute loadPag @page", new object[] { page });
+        }
+
+        // Load num page category 
+        public int loadCaPageNum()
+        {
+            return (int)DataProvider.Instance.ExecuteScalar("execute sumCa ");
+        }
+
+
 
     }
 }

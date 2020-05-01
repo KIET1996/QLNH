@@ -57,7 +57,7 @@ namespace QLNH
         //Load data Food
         private void Load_Dishes()
         {
-            BindingData1.DataSource = Controller.DishController.Instance.GetListDish();
+            BindingData1.DataSource = Controller.DishController.Instance.ListDish();
 
         }
 
@@ -69,8 +69,9 @@ namespace QLNH
             numBoxFoodPrice.DataBindings.Add(new Binding("Value", datagrdFood.DataSource, "Price"));
             txtFoodUnit.DataBindings.Add(new Binding("Text", datagrdFood.DataSource, "Unit"));
             txtFoodDes.DataBindings.Add(new Binding("Text", datagrdFood.DataSource, "Descript"));
-            radioBtnStatusOn.DataBindings.Add("Checked", datagrdFood.DataSource, "PhucVu", true, DataSourceUpdateMode.OnPropertyChanged, false);
-            radioBtnStatusOff.DataBindings.Add("Checked", datagrdFood.DataSource, "NgungPhucVu", true, DataSourceUpdateMode.OnPropertyChanged, false);
+            radioBtnStatusOn.DataBindings.Add(new Binding("Checked", datagrdFood.DataSource, "Sta"));
+           // radioBtnStatusOn.DataBindings.Add("Checked", datagrdFood.DataSource, "PhucVu", true, DataSourceUpdateMode.OnPropertyChanged, false);
+            //radioBtnStatusOff.DataBindings.Add("Checked", datagrdFood.DataSource, "NgungPhucVu", true, DataSourceUpdateMode.OnPropertyChanged, false);
 
         }
 
@@ -160,7 +161,7 @@ namespace QLNH
             }
         }
 
-        //Update   food
+        //Update  food
         private void btnUpdateFood_Click(object sender, EventArgs e)
         {
             int ID_Ca = (cobFoodCa.SelectedItem as Category).Id_Ca;
@@ -184,15 +185,10 @@ namespace QLNH
         }
 
         // Search Food
-        List<Dish> SearchingFood(string name)
-        {
-            List<Model.Dish> listfood = DishController.Instance.SearchFood(name);
-
-            return listfood;
-        }
         private void btnFoodSearch_Click(object sender, EventArgs e)
         {
-            BindingData1.DataSource = SearchingFood(txtFoodSearch.Text);
+            // BindingData1.DataSource = SearchingFood(txtFoodSearch.Text);
+            BindingData1.DataSource = DishController.Instance.Search(txtFoodSearch.Text);
         }
 
 
@@ -233,8 +229,13 @@ namespace QLNH
 
         }
 
-        //Them moi cac loai mon an
+       
         private void btnAddCa_Click(object sender, EventArgs e)
+        {
+            
+        }
+        //Them moi cac loai mon an
+        private void btnAddCa_Click_1(object sender, EventArgs e)
         {
             if (txtCaName.Text == "")
             {
@@ -277,6 +278,11 @@ namespace QLNH
         // Xoa cac loai mon an
         private void btnDeleteCa_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void btnDeleteCa_Click_1(object sender, EventArgs e)
+        {
             int id_Ca = Convert.ToInt32(txtCaId.Text);
 
             if (CategoryController.Instance.DeleteCategory(id_Ca))
@@ -289,6 +295,47 @@ namespace QLNH
                 MessageBox.Show("Xóa bị lỗi, thử lại nào");
             }
         }
+
+        // Phân trang
+
+        private void btnFirst_Click(object sender, EventArgs e)
+        {
+            txtpage.Text = "1";
+        }
+
+        private void btnLast_Click(object sender, EventArgs e)
+        {
+            int recordNum = CategoryController.Instance.loadCaPageNum();
+            int lastpage = recordNum / 10;
+            if (recordNum % 10 != 0)
+            {
+                lastpage++;
+            }
+            txtpage.Text = lastpage.ToString();
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            int page = Convert.ToInt32(txtpage.Text);
+            if (page > 1)
+                page--;
+            txtpage.Text = page.ToString();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            int page = Convert.ToInt32(txtpage.Text);
+            int recordNum = CategoryController.Instance.loadCaPageNum();
+            if (page < recordNum)
+                page++;
+            txtpage.Text = page.ToString();
+        }
+
+        private void txtpage_TextChanged(object sender, EventArgs e)
+        {
+            categoryList.DataSource = CategoryController.Instance.loadCaPage(Convert.ToInt32(txtpage.Text));
+        }
+
 
         //Tai lai trang
         private void btnReset_Click(object sender, EventArgs e)
@@ -327,6 +374,7 @@ namespace QLNH
                 Application.Exit();
             }
         }
-    
+
+        
     }
 }
