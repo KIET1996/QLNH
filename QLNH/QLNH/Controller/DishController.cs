@@ -120,5 +120,18 @@ namespace QLNH.Controller
 
             return result > 0;
         }
+
+        //Get max ID Dish 
+        public int getMaxIdDish()
+        {
+            try
+            {
+                return (int)DataProvider.Instance.ExecuteScalar("SELECT MAX(ID_Dish) FROM Dishes");
+            }
+            catch
+            {
+                return 0;
+            }
+        }
     }
 }

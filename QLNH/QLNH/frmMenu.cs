@@ -20,6 +20,7 @@ namespace QLNH
 
         BindingSource categoryList = new BindingSource();
         BindingSource BindingData1 = new BindingSource();
+        
 
         public frmMenu()
         {
@@ -55,6 +56,16 @@ namespace QLNH
         }
         /*********************Dish**********************/
         //Load data Food
+
+        void ResetFieldsDish(bool status)
+        {
+            btnSave.Enabled = !status;
+            btnAddFood.Enabled = status;
+            btnCancel.Enabled = !status;
+            btnUpdateFood.Enabled = status;
+            btnDeleteFood.Enabled = status;
+
+        }
         private void Load_Dishes()
         {
             BindingData1.DataSource = Controller.DishController.Instance.ListDish();
@@ -91,7 +102,7 @@ namespace QLNH
             {
                 if (datagrdFood.SelectedCells.Count > 0)
                 {
-                    int id = (int)datagrdFood.SelectedCells[0].OwningRow.Cells["ID_Ca"].Value;
+                    int id = (int)datagrdFood.SelectedCells[0].OwningRow.Cells["Mã Loại"].Value;
 
                     Category ca = CategoryController.Instance.getCategoryByID(id);
                     cobFoodCa.SelectedItem = ca;
@@ -119,8 +130,26 @@ namespace QLNH
 
         }
 
+        int noDish;
         // Add new Food
         private void btnAddFood_Click(object sender, EventArgs e)
+        {
+            ResetFieldsDish(false);
+            try
+            {
+                noDish = DishController.Instance.getMaxIdDish();
+            }
+            catch
+            {
+                noDish = 0;
+            }
+            noDish++;
+            
+            txtFoodID.Text = noDish.ToString();
+        }
+
+
+        private void btnSave_Click(object sender, EventArgs e)
         {
             string name = txtFoodName.Text;
             int ID_Ca = (cobFoodCa.SelectedItem as Category).Id_Ca;
@@ -154,6 +183,7 @@ namespace QLNH
                     {
                         MessageBox.Show("Thêm món ăn thành công");
                         Load_Dishes();
+                        ResetFieldsDish(true);
                     }
 
                 }
@@ -213,6 +243,10 @@ namespace QLNH
             }
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            ResetFieldsDish(true);
+        }
         /*********************Category**********************/
 
         // create function load categories
@@ -409,5 +443,7 @@ namespace QLNH
                 Load_category();
             }
         }
+
+       
     }
 }
