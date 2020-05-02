@@ -80,7 +80,7 @@ namespace QLNH
             numBoxFoodPrice.DataBindings.Add(new Binding("Value", datagrdFood.DataSource, "Price"));
             txtFoodUnit.DataBindings.Add(new Binding("Text", datagrdFood.DataSource, "Unit"));
             txtFoodDes.DataBindings.Add(new Binding("Text", datagrdFood.DataSource, "Descript"));
-            radioBtnStatusOn.DataBindings.Add(new Binding("Checked", datagrdFood.DataSource, "Sta"));
+          //  radioBtnStatusOn.DataBindings.Add(new Binding("Checked", datagrdFood.DataSource, "Sta"));
            // radioBtnStatusOn.DataBindings.Add("Checked", datagrdFood.DataSource, "PhucVu", true, DataSourceUpdateMode.OnPropertyChanged, false);
             //radioBtnStatusOff.DataBindings.Add("Checked", datagrdFood.DataSource, "NgungPhucVu", true, DataSourceUpdateMode.OnPropertyChanged, false);
 
@@ -444,6 +444,22 @@ namespace QLNH
             }
         }
 
-       
+        private void datagrdFood_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = datagrdFood.CurrentRow.Index;
+            string temp = datagrdFood.Rows[index].Cells[4].Value.ToString();
+          //  MessageBox.Show("==="+temp);
+            if (temp == "False")
+            {
+                radioBtnStatusOff.Checked = true;
+                radioBtnStatusOn.Checked = false;
+            }
+            else
+            {
+                radioBtnStatusOff.Checked = false;
+                radioBtnStatusOn.Checked = true;
+            } 
+           
+        }
     }
 }
