@@ -80,9 +80,6 @@
             this.lbStatus = new System.Windows.Forms.Label();
             this.lbNamePos = new System.Windows.Forms.Label();
             this.lbIDPosition = new System.Windows.Forms.Label();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.btnExit = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabTable.SuspendLayout();
@@ -157,9 +154,6 @@
             // 
             this.tabTable.Controls.Add(this.tabPageTable);
             this.tabTable.Controls.Add(this.tabPagePosition);
-            this.tabTable.Controls.Add(this.tabPage1);
-            this.tabTable.Controls.Add(this.tabPage4);
-            this.tabTable.Controls.Add(this.tabPage5);
             this.tabTable.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabTable.Location = new System.Drawing.Point(0, 33);
             this.tabTable.Name = "tabTable";
@@ -613,34 +607,6 @@
             this.lbIDPosition.TabIndex = 0;
             this.lbIDPosition.Text = "ID Khu Vực";
             // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 31);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1069, 490);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Nhân viên";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 31);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1069, 490);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Khách hàng";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 31);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1069, 490);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Khuyến mãi";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -728,10 +694,7 @@
         private System.Windows.Forms.GroupBox grpListPos;
         private System.Windows.Forms.VScrollBar scrollPosition;
         private System.Windows.Forms.DataGridView dtGridPosition;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ToolStripMenuItem mnLogout;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.RadioButton radYes;
         private System.Windows.Forms.RadioButton radNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Pos;
