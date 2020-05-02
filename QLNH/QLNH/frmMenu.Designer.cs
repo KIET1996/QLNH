@@ -440,7 +440,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(283, 363);
+            this.btnCancel.Location = new System.Drawing.Point(84, 418);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(110, 40);
@@ -452,7 +452,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(156, 363);
+            this.btnSave.Location = new System.Drawing.Point(215, 418);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(110, 40);
@@ -600,7 +600,7 @@
             // btnDeleteFood
             // 
             this.btnDeleteFood.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteFood.Location = new System.Drawing.Point(90, 420);
+            this.btnDeleteFood.Location = new System.Drawing.Point(151, 363);
             this.btnDeleteFood.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDeleteFood.Name = "btnDeleteFood";
             this.btnDeleteFood.Size = new System.Drawing.Size(110, 40);
@@ -648,7 +648,7 @@
             // btnUpdateFood
             // 
             this.btnUpdateFood.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateFood.Location = new System.Drawing.Point(254, 420);
+            this.btnUpdateFood.Location = new System.Drawing.Point(283, 363);
             this.btnUpdateFood.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnUpdateFood.Name = "btnUpdateFood";
             this.btnUpdateFood.Size = new System.Drawing.Size(110, 40);
