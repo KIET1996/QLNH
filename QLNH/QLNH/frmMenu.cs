@@ -14,10 +14,8 @@ namespace QLNH
 {
     public partial class frmMenu : Form
     {
-        // Khai bao BindingSource vi moi lan binding thi datasource se bi thay doi 
-        //Bang cach gan datagrdviewCategories.DataSource = categoryList;
-        // vi the moi lan load len thi du lieu se thay doi theo binding day 
-
+   
+        // Data Binding
         BindingSource categoryList = new BindingSource();
         BindingSource BindingData1 = new BindingSource();
         
@@ -40,9 +38,10 @@ namespace QLNH
         }
 
 
-        // Load all categories dish
+       
         private void frmMenu_Load(object sender, EventArgs e)
         {
+            // Category
             Load_category();
             datagrdviewCategories.DataSource = categoryList;
             addCategoryBinding();
@@ -56,7 +55,6 @@ namespace QLNH
         }
         /*********************Dish**********************/
         //Load data Food
-
         void ResetFieldsDish(bool status)
         {
             btnSave.Enabled = !status;
@@ -66,6 +64,7 @@ namespace QLNH
             btnDeleteFood.Enabled = status;
 
         }
+        // Load all food
         private void Load_Dishes()
         {
             BindingData1.DataSource = Controller.DishController.Instance.ListDish();
@@ -75,15 +74,11 @@ namespace QLNH
         // Binding data food
         void AddFood()
         {
-            txtFoodID.DataBindings.Add(new Binding("Text", datagrdFood.DataSource, "ID_Dish"));
-            txtFoodName.DataBindings.Add(new Binding("Text", datagrdFood.DataSource, "Name"));
-            numBoxFoodPrice.DataBindings.Add(new Binding("Value", datagrdFood.DataSource, "Price"));
-            txtFoodUnit.DataBindings.Add(new Binding("Text", datagrdFood.DataSource, "Unit"));
-            txtFoodDes.DataBindings.Add(new Binding("Text", datagrdFood.DataSource, "Descript"));
-          //  radioBtnStatusOn.DataBindings.Add(new Binding("Checked", datagrdFood.DataSource, "Sta"));
-           // radioBtnStatusOn.DataBindings.Add("Checked", datagrdFood.DataSource, "PhucVu", true, DataSourceUpdateMode.OnPropertyChanged, false);
-            //radioBtnStatusOff.DataBindings.Add("Checked", datagrdFood.DataSource, "NgungPhucVu", true, DataSourceUpdateMode.OnPropertyChanged, false);
-
+            txtFoodID.DataBindings.Add(new Binding("Text", datagrdFood.DataSource, "ID_Dish",true, DataSourceUpdateMode.Never));
+            txtFoodName.DataBindings.Add(new Binding("Text", datagrdFood.DataSource, "Name", true, DataSourceUpdateMode.Never));
+            numBoxFoodPrice.DataBindings.Add(new Binding("Value", datagrdFood.DataSource, "Price", true, DataSourceUpdateMode.Never));
+            txtFoodUnit.DataBindings.Add(new Binding("Text", datagrdFood.DataSource, "Unit", true, DataSourceUpdateMode.Never));
+            txtFoodDes.DataBindings.Add(new Binding("Text", datagrdFood.DataSource, "Descript", true, DataSourceUpdateMode.Never));
         }
 
         // Dishplay combox in Data food
@@ -95,7 +90,7 @@ namespace QLNH
         }
 
 
-        // Khi idFood thay doi thi Category cung se thay doi the0
+        // Khi idFood thay doi thi Category cung se thay doi the
         private void txtFoodID_TextChanged(object sender, EventArgs e)
         {
             try
@@ -151,44 +146,50 @@ namespace QLNH
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string name = txtFoodName.Text;
-            int ID_Ca = (cobFoodCa.SelectedItem as Category).Id_Ca;
-            string unit = txtFoodUnit.Text;
-            double price = (double)numBoxFoodPrice.Value;
-            string descript = txtFoodDes.Text;
-            int sta = 0;
-
-            if (radioBtnStatusOn.Checked)
+            try
             {
-                sta = 1;
-            }
+                string name = txtFoodName.Text;
+                int ID_Ca = (cobFoodCa.SelectedItem as Category).Id_Ca;
+                string unit = txtFoodUnit.Text;
+                double price = (double)numBoxFoodPrice.Value;
+                string descript = txtFoodDes.Text;
+                int sta = 0;
 
-            if (name == "" || unit == "" || descript == "")
-            {
-                MessageBox.Show("Nhập thiếu thông tin món ăn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Load_Dishes();
-            }
-            else
-            {
-
-                if (DishController.Instance.CheckFood(name))
+                if (radioBtnStatusOn.Checked)
                 {
-                    MessageBox.Show("Món ăn đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    Load_Dishes();
+                    sta = 1;
                 }
 
+                if (name == "" || unit == "" || descript == "")
+                {
+                    MessageBox.Show("Nhập thiếu thông tin món ăn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Load_Dishes();
+                }
                 else
                 {
-                    if (DishController.Instance.AddFood(ID_Ca, name, unit, price, descript, sta))
+
+                    if (DishController.Instance.CheckFood(name))
                     {
-                        MessageBox.Show("Thêm món ăn thành công");
+                        MessageBox.Show("Món ăn đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         Load_Dishes();
-                        ResetFieldsDish(true);
+                    }
+
+                    else
+                    {
+                        if (DishController.Instance.AddFood(ID_Ca, name, unit, price, descript, sta))
+                        {
+                            MessageBox.Show("Thêm món ăn thành công");
+                            Load_Dishes();
+                            ResetFieldsDish(true);
+                        }
+
                     }
 
                 }
-
             }
+            catch
+            { } 
+            
         }
 
         //Update  food
@@ -233,22 +234,27 @@ namespace QLNH
         //Delete food
         private void btnDeleteFood_Click(object sender, EventArgs e)
         {
-            int ID_Dish = Convert.ToInt32(txtFoodID.Text);
-
-            DialogResult dr = MessageBox.Show("Bạn có muốn xóa không?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-            if (dr == DialogResult.Yes)
+            try
             {
-                if (DishController.Instance.DeleteFood(ID_Dish))
-                {
-                    MessageBox.Show("Xóa món ăn thành công");
-                    Load_Dishes();
-                }
-                else
-                {
-                    MessageBox.Show("Xóa món ăn thất bại");
-                }
+                int ID_Dish = Convert.ToInt32(txtFoodID.Text);
 
+                DialogResult dr = MessageBox.Show("Bạn có muốn xóa không?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (dr == DialogResult.Yes)
+                {
+                    if (DishController.Instance.DeleteFood(ID_Dish))
+                    {
+                        MessageBox.Show("Xóa món ăn thành công");
+                        Load_Dishes();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa món ăn thất bại");
+                    }
+
+                }
             }
+            catch { }
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -266,29 +272,39 @@ namespace QLNH
         // DataBindingAddCategory
         void addCategoryBinding()
         {
-            txtCaName.DataBindings.Add(new Binding("Text", datagrdviewCategories.DataSource, "name"));
-            txtCaId.DataBindings.Add(new Binding("Text", datagrdviewCategories.DataSource, "ID_Ca"));
+            txtCaName.DataBindings.Add(new Binding("Text", datagrdviewCategories.DataSource, "name", true, DataSourceUpdateMode.Never));
+            txtCaId.DataBindings.Add(new Binding("Text", datagrdviewCategories.DataSource, "ID_Ca", true, DataSourceUpdateMode.Never));
 
         }
 
         // Xoa cac loai mon an
         private void btnDeleteCa_Click(object sender, EventArgs e)
         {
-            int id_Ca = Convert.ToInt32(txtCaId.Text);
+            try
+            {
 
-            if (CategoryController.Instance.DeleteCategory(id_Ca))
-            {
-                MessageBox.Show("Xóa loại món thành công");
-                Load_category();
+                int id_Ca = Convert.ToInt32(txtCaId.Text);
+
+                DialogResult dr = MessageBox.Show("Bạn có muốn xóa không?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (dr == DialogResult.Yes)
+                {
+                    if (CategoryController.Instance.DeleteCategory(id_Ca))
+                    {
+                        MessageBox.Show("Xóa loại món thành công");
+                        Load_category();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa bị lỗi, thử lại nào");
+                    }
+                }
+
             }
-            else
-            {
-                MessageBox.Show("Xóa bị lỗi, thử lại nào");
-            }
+            catch { }
+                
         }
 
         // Phân trang
-
         private void btnFirst_Click(object sender, EventArgs e)
         {
             txtpage.Text = "1";
@@ -406,10 +422,7 @@ namespace QLNH
                         }
                     }
                 }
-                catch
-                {
-
-                }
+                catch { }
             }
         }
 
@@ -442,16 +455,22 @@ namespace QLNH
         //Chinh sua loai mon an
         private void btnEditCa_Click(object sender, EventArgs e)
         {
-            int ID_Ca = Convert.ToInt32(txtCaId.Text);
-            string name = txtCaName.Text;
-
-            if (CategoryController.Instance.UpdateCategory(ID_Ca, name))
+            try
             {
-                MessageBox.Show("Sửa thông tin thành công!");
-                Load_category();
+                int ID_Ca = Convert.ToInt32(txtCaId.Text);
+                string name = txtCaName.Text;
+
+                if (CategoryController.Instance.UpdateCategory(ID_Ca, name))
+                {
+                    MessageBox.Show("Sửa thông tin thành công!");
+                    Load_category();
+                }
             }
+            catch { }
+            
         }
 
+        // Xu ly radioButton
         private void datagrdFood_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = datagrdFood.CurrentRow.Index;
