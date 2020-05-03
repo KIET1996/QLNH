@@ -38,10 +38,6 @@
             this.tabPageTable = new System.Windows.Forms.TabPage();
             this.grpListTable = new System.Windows.Forms.GroupBox();
             this.dtGridTable = new System.Windows.Forms.DataGridView();
-            this.ID_Table = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PositionTable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Capability = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -81,6 +77,10 @@
             this.lbNamePos = new System.Windows.Forms.Label();
             this.lbIDPosition = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
+            this.ID_Table = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PositionTable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Capability = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tabTable.SuspendLayout();
             this.tabPageTable.SuspendLayout();
@@ -205,35 +205,6 @@
             this.dtGridTable.Size = new System.Drawing.Size(498, 389);
             this.dtGridTable.TabIndex = 0;
             this.dtGridTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridTable_CellClick);
-            // 
-            // ID_Table
-            // 
-            this.ID_Table.DataPropertyName = "ID_Table";
-            this.ID_Table.HeaderText = "ID Bàn";
-            this.ID_Table.Name = "ID_Table";
-            this.ID_Table.ReadOnly = true;
-            // 
-            // PositionTable
-            // 
-            this.PositionTable.DataPropertyName = "ID_Pos";
-            this.PositionTable.HeaderText = "ID Khu Vực";
-            this.PositionTable.Name = "PositionTable";
-            this.PositionTable.ReadOnly = true;
-            this.PositionTable.Width = 120;
-            // 
-            // Capability
-            // 
-            this.Capability.DataPropertyName = "Capa";
-            this.Capability.HeaderText = "Cơ Cấu";
-            this.Capability.Name = "Capability";
-            this.Capability.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Sta";
-            this.Column1.HeaderText = "Trạng Thái";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             // 
             // btnSave
             // 
@@ -378,9 +349,9 @@
             this.labCapability.AutoSize = true;
             this.labCapability.Location = new System.Drawing.Point(27, 112);
             this.labCapability.Name = "labCapability";
-            this.labCapability.Size = new System.Drawing.Size(84, 22);
+            this.labCapability.Size = new System.Drawing.Size(88, 22);
             this.labCapability.TabIndex = 3;
-            this.labCapability.Text = "Sức chứa";
+            this.labCapability.Text = "Sức Chứa";
             // 
             // labPosition
             // 
@@ -618,6 +589,35 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // ID_Table
+            // 
+            this.ID_Table.DataPropertyName = "ID_Table";
+            this.ID_Table.HeaderText = "ID Bàn";
+            this.ID_Table.Name = "ID_Table";
+            this.ID_Table.ReadOnly = true;
+            // 
+            // PositionTable
+            // 
+            this.PositionTable.DataPropertyName = "ID_Pos";
+            this.PositionTable.HeaderText = "ID Khu Vực";
+            this.PositionTable.Name = "PositionTable";
+            this.PositionTable.ReadOnly = true;
+            this.PositionTable.Width = 120;
+            // 
+            // Capability
+            // 
+            this.Capability.DataPropertyName = "Capa";
+            this.Capability.HeaderText = "Sức Chứa";
+            this.Capability.Name = "Capability";
+            this.Capability.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Sta";
+            this.Column1.HeaderText = "Trạng Thái";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
             // frmTables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -704,11 +704,11 @@
         private System.Windows.Forms.TextBox txtStatusPos;
         private System.Windows.Forms.Panel panelStatus;
         private System.Windows.Forms.NumericUpDown numCapa;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Table;
         private System.Windows.Forms.DataGridViewTextBoxColumn PositionTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn Capability;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.Button btnExit;
     }
 }
 

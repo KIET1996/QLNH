@@ -202,21 +202,29 @@ namespace QLNH
         //Sua thong tin ban
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            int ID_Table = Convert.ToInt32(txtIDTable.Text);
-            int ID_Pos = (cbPosition.SelectedItem as Position).ID_Pos;
-            int Capability = Convert.ToInt32(numCapa.Value);
-            int Sta = 0;
-
-            if (radYes.Checked)
+            try
             {
-                Sta = 1;
-            }
+                int ID_Table = Convert.ToInt32(txtIDTable.Text);
+                int ID_Pos = (cbPosition.SelectedItem as Position).ID_Pos;
+                int Capability = Convert.ToInt32(numCapa.Value);
+                int Sta = 0;
 
-            if (TableController.Instance.UpdateTable(ID_Table, ID_Pos, Capability, Sta))
-            {
-                MessageBox.Show("Sửa thông tin thành công!");
-                table_Load();
+                if (radYes.Checked)
+                {
+                    Sta = 1;
+                }
+
+                if (TableController.Instance.UpdateTable(ID_Table, ID_Pos, Capability, Sta))
+                {
+                    MessageBox.Show("Sửa thông tin thành công!");
+                    table_Load();
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Nhập thông tin đầy đủ!");
+            }
+            
         }
 
         /*--------------------Tao cac ham xu ly position------------------*/

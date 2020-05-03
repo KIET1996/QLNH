@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnManagement = new System.Windows.Forms.ToolStripMenuItem();
             this.bànToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,6 +58,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gvDiscount = new System.Windows.Forms.DataGridView();
+            this.ID_Dis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.per = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descript = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.start = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.finish = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabProfit = new System.Windows.Forms.TabPage();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -91,12 +97,6 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExit = new System.Windows.Forms.Button();
-            this.ID_Dis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.per = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descript = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.start = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.finish = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabDiscount.SuspendLayout();
@@ -400,6 +400,60 @@
             this.gvDiscount.TabIndex = 0;
             this.gvDiscount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDiscount_CellClick);
             // 
+            // ID_Dis
+            // 
+            this.ID_Dis.DataPropertyName = "ID_Dis";
+            this.ID_Dis.HeaderText = "Mã KM";
+            this.ID_Dis.Name = "ID_Dis";
+            this.ID_Dis.ReadOnly = true;
+            this.ID_Dis.Width = 70;
+            // 
+            // per
+            // 
+            this.per.DataPropertyName = "Per";
+            this.per.HeaderText = "Phần trăm";
+            this.per.Name = "per";
+            this.per.ReadOnly = true;
+            this.per.Width = 70;
+            // 
+            // descript
+            // 
+            this.descript.DataPropertyName = "Descript";
+            this.descript.HeaderText = "Mô tả";
+            this.descript.Name = "descript";
+            this.descript.ReadOnly = true;
+            this.descript.Width = 140;
+            // 
+            // start
+            // 
+            this.start.DataPropertyName = "Start";
+            dataGridViewCellStyle1.Format = "dd-MM-yyyy";
+            dataGridViewCellStyle1.NullValue = null;
+            this.start.DefaultCellStyle = dataGridViewCellStyle1;
+            this.start.HeaderText = "Bắt đầu";
+            this.start.Name = "start";
+            this.start.ReadOnly = true;
+            this.start.Width = 110;
+            // 
+            // finish
+            // 
+            this.finish.DataPropertyName = "Finish";
+            dataGridViewCellStyle2.Format = "dd-MM-yyyy";
+            dataGridViewCellStyle2.NullValue = "null";
+            this.finish.DefaultCellStyle = dataGridViewCellStyle2;
+            this.finish.HeaderText = "Kết thúc";
+            this.finish.Name = "finish";
+            this.finish.ReadOnly = true;
+            this.finish.Width = 110;
+            // 
+            // sta
+            // 
+            this.sta.DataPropertyName = "Sta";
+            this.sta.HeaderText = "Trạng thái";
+            this.sta.Name = "sta";
+            this.sta.ReadOnly = true;
+            this.sta.Width = 70;
+            // 
             // tabProfit
             // 
             this.tabProfit.Controls.Add(this.txtTotal);
@@ -664,7 +718,8 @@
             // 
             // dtStatisticFinish
             // 
-            this.dtStatisticFinish.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtStatisticFinish.CustomFormat = "dd-MM-yyyy";
+            this.dtStatisticFinish.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtStatisticFinish.Location = new System.Drawing.Point(103, 94);
             this.dtStatisticFinish.Margin = new System.Windows.Forms.Padding(6);
             this.dtStatisticFinish.Name = "dtStatisticFinish";
@@ -673,7 +728,8 @@
             // 
             // dtStatisticStart
             // 
-            this.dtStatisticStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtStatisticStart.CustomFormat = "dd-MM-yyyy";
+            this.dtStatisticStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtStatisticStart.Location = new System.Drawing.Point(103, 40);
             this.dtStatisticStart.Margin = new System.Windows.Forms.Padding(6);
             this.dtStatisticStart.Name = "dtStatisticStart";
@@ -757,60 +813,6 @@
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // ID_Dis
-            // 
-            this.ID_Dis.DataPropertyName = "ID_Dis";
-            this.ID_Dis.HeaderText = "Mã KM";
-            this.ID_Dis.Name = "ID_Dis";
-            this.ID_Dis.ReadOnly = true;
-            this.ID_Dis.Width = 70;
-            // 
-            // per
-            // 
-            this.per.DataPropertyName = "Per";
-            this.per.HeaderText = "Phần trăm";
-            this.per.Name = "per";
-            this.per.ReadOnly = true;
-            this.per.Width = 70;
-            // 
-            // descript
-            // 
-            this.descript.DataPropertyName = "Descript";
-            this.descript.HeaderText = "Mô tả";
-            this.descript.Name = "descript";
-            this.descript.ReadOnly = true;
-            this.descript.Width = 140;
-            // 
-            // start
-            // 
-            this.start.DataPropertyName = "Start";
-            dataGridViewCellStyle1.Format = "dd-MM-yyyy";
-            dataGridViewCellStyle1.NullValue = null;
-            this.start.DefaultCellStyle = dataGridViewCellStyle1;
-            this.start.HeaderText = "Bắt đầu";
-            this.start.Name = "start";
-            this.start.ReadOnly = true;
-            this.start.Width = 110;
-            // 
-            // finish
-            // 
-            this.finish.DataPropertyName = "Finish";
-            dataGridViewCellStyle2.Format = "dd-MM-yyyy";
-            dataGridViewCellStyle2.NullValue = "null";
-            this.finish.DefaultCellStyle = dataGridViewCellStyle2;
-            this.finish.HeaderText = "Kết thúc";
-            this.finish.Name = "finish";
-            this.finish.ReadOnly = true;
-            this.finish.Width = 110;
-            // 
-            // sta
-            // 
-            this.sta.DataPropertyName = "Sta";
-            this.sta.HeaderText = "Trạng thái";
-            this.sta.Name = "sta";
-            this.sta.ReadOnly = true;
-            this.sta.Width = 70;
             // 
             // FrmStatistical
             // 
