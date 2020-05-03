@@ -194,23 +194,31 @@ namespace QLNH
         //Update  food
         private void btnUpdateFood_Click(object sender, EventArgs e)
         {
-            int ID_Ca = (cobFoodCa.SelectedItem as Category).Id_Ca;
-            string name = txtFoodName.Text;
-            string unit = txtFoodUnit.Text;
-            float price = (float)numBoxFoodPrice.Value;
-            string descript = txtFoodDes.Text;
-            int sta = 0;
-            int ID_Dish = Convert.ToInt32(txtFoodID.Text);
 
-            if (radioBtnStatusOn.Checked)
+            try
             {
-                sta = 1;
+                int ID_Ca = (cobFoodCa.SelectedItem as Category).Id_Ca;
+                string name = txtFoodName.Text;
+                string unit = txtFoodUnit.Text;
+                float price = (float)numBoxFoodPrice.Value;
+                string descript = txtFoodDes.Text;
+                int sta = 0;
+                int ID_Dish = Convert.ToInt32(txtFoodID.Text);
+
+                if (radioBtnStatusOn.Checked)
+                {
+                    sta = 1;
+                }
+
+                if (DishController.Instance.UpdateFood(ID_Ca, name, unit, price, descript, sta, ID_Dish))
+                {
+                    MessageBox.Show("Sửa món thành công");
+                    Load_Dishes();
+                }
             }
-
-            if (DishController.Instance.UpdateFood(ID_Ca, name, unit, price, descript, sta, ID_Dish))
+            catch (Exception)
             {
-                MessageBox.Show("Sửa món thành công");
-                Load_Dishes();
+                MessageBox.Show("Nhập đầy đủ thông tin");
             }
         }
 
