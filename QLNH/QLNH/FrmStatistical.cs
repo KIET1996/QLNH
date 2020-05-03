@@ -79,69 +79,91 @@ namespace QLNH
         // Xử lí sự kiện khi click button "Lưu"
         private void btnSave_Click(object sender, EventArgs e)
         {
-
-            double per = Convert.ToDouble(nudPercent.Value);
-            string descript = txtDiscription.Text;
-            DateTime start = dtStart.Value;
-            DateTime finish = dtFinish.Value;
-
-            if (txtDiscription.Text == "")
+            try
             {
-                MessageBox.Show("Bạn chưa nhập mô tả giảm giá. Vui lòng nhập đầy dủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                if (start > finish)
+                double per = Convert.ToDouble(nudPercent.Value);
+                string descript = txtDiscription.Text;
+                DateTime start = dtStart.Value;
+                DateTime finish = dtFinish.Value;
+
+                if (txtDiscription.Text == "")
                 {
-                    MessageBox.Show("Ngày bắt đầu giảm giá không thể lớn hơn ngày kết thúc. Vui lòng nhập lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn chưa nhập mô tả giảm giá. Vui lòng nhập đầy dủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    if (DiscountController.Instance.InsertDiscount(per, descript, start, finish))
+                    if (start > finish)
                     {
-                        MessageBox.Show("Thêm chương trình giảm giá thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
-                        LoadDiscount();
-                        resetField(true);
+                        MessageBox.Show("Ngày bắt đầu giảm giá không thể lớn hơn ngày kết thúc. Vui lòng nhập lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        if (DiscountController.Instance.InsertDiscount(per, descript, start, finish))
+                        {
+                            MessageBox.Show("Thêm chương trình giảm giá thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+                            LoadDiscount();
+                            resetField(true);
+                        }
                     }
                 }
-
             }
+            catch (Exception) { }
+          
         }
 
         // Xử lí sự kiện khi click button "sửa"
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            int ID_Dis = Convert.ToInt32(txtIDDis.Text);
-            Double per = Convert.ToDouble(nudPercent.Value);
-            string descript = txtDiscription.Text;
-            DateTime start = dtStart.Value;
-
-            DateTime finish = dtFinish.Value;
-            if (DiscountController.Instance.UpdateDiscount(ID_Dis, per, descript, start, finish))
+            if (MessageBox.Show("Bạn có thật sự muốn chỉnh sửa?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
             {
-                MessageBox.Show("Sửa thông tin thành công!");
-                LoadDiscount();
+                try
+                {
+                    int ID_Dis = Convert.ToInt32(txtIDDis.Text);
+                    Double per = Convert.ToDouble(nudPercent.Value);
+                    string descript = txtDiscription.Text;
+                    DateTime start = dtStart.Value;
+
+                    DateTime finish = dtFinish.Value;
+                    if (DiscountController.Instance.UpdateDiscount(ID_Dis, per, descript, start, finish))
+                    {
+                        MessageBox.Show("Sửa thông tin thành công!");
+                        LoadDiscount();
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Cần nhập đủ thông tin!");
+                }
             }
+           
         }
 
         // Xử lí sự kiện khi click button "xóa"
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int ID_Dis = Convert.ToInt32(txtIDDis.Text);
-
-            DialogResult dr = MessageBox.Show("Bạn có muốn xóa chương trình giảm giá này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (dr == DialogResult.OK)
+            try
             {
-                if (DiscountController.Instance.DeleteDiscount(ID_Dis))
+                int ID_Dis = Convert.ToInt32(txtIDDis.Text);
+
+                DialogResult dr = MessageBox.Show("Bạn có muốn xóa chương trình giảm giá này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dr == DialogResult.OK)
                 {
-                    MessageBox.Show("Xóa chương trình giảm giá thành công!");
-                    LoadDiscount();
-                }
-                else
-                {
-                    MessageBox.Show("Xóa chương trình giảm giá thất bại!");
+                    if (DiscountController.Instance.DeleteDiscount(ID_Dis))
+                    {
+                        MessageBox.Show("Xóa chương trình giảm giá thành công!");
+                        LoadDiscount();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa chương trình giảm giá thất bại!");
+                    }
                 }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Chọn khuyến mãi cần xóa");
+            }
+            
         }
 
         //Load doanh thu tu ngay a den ngay b

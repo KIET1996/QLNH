@@ -32,6 +32,7 @@ namespace QLNH
             List<Discount> listDiscount = DiscountController.Instance.GetListDiscount();
             cbDiscount.DataSource = listDiscount;
             cbDiscount.DisplayMember = "descript";
+          
         }
 
         // Load danh sach loai mon an
@@ -40,6 +41,7 @@ namespace QLNH
             List<Category> listCategory = CategoryController.Instance.GetListCategory();
             cbCategory.DataSource = listCategory;
             cbCategory.DisplayMember = "name";
+           
 
         }
 
@@ -96,7 +98,6 @@ namespace QLNH
                 total += item.Total;
                 lvBill.Items.Add(lvItem);
             }
-           
             CultureInfo culture = new CultureInfo("vi-VN");
             txtTotal.Text = total.ToString("C", culture);
         }
@@ -112,24 +113,29 @@ namespace QLNH
         //Gọi món theo bàn
         private void btnOther_Click(object sender, EventArgs e)
         {
-            Table table = lvBill.Tag as Table;
-
-            int idBill = BillController.Instance.GetUncheckBillID(table.ID_Table);
-            int idDish = (cbDish.SelectedItem as Dish).ID_Dish;
-            int count = (int)updQuantity.Value;
-
-            if (idBill == -1)
+            try
             {
-                BillController.Instance.InsertBill(table.ID_Table);
-                BillDetailController.Instance.InsertBillDetail(BillController.Instance.GetMaxIDBill(), idDish, count);
+                Table table = lvBill.Tag as Table;
+
+                int idBill = BillController.Instance.GetUncheckBillID(table.ID_Table);
+                int idDish = (cbDish.SelectedItem as Dish).ID_Dish;
+                int count = (int)updQuantity.Value;
+
+                if (idBill == -1)
+                {
+                    BillController.Instance.InsertBill(table.ID_Table);
+                    BillDetailController.Instance.InsertBillDetail(BillController.Instance.GetMaxIDBill(), idDish, count);
+                }
+                else
+                {
+                    BillDetailController.Instance.InsertBillDetail(idBill, idDish, count);
+                }
+                updQuantity.Value = 1;
+                ShowBill(table.ID_Table);
+                LoadTable();
             }
-            else
-            {
-                BillDetailController.Instance.InsertBillDetail(idBill, idDish, count);
-            }
-            updQuantity.Value = 1;
-            ShowBill(table.ID_Table);
-            LoadTable();
+            catch (Exception) { }
+          
         }
 
         //Su kien thoat form
@@ -163,38 +169,52 @@ namespace QLNH
         //Thanh toán tièn
         private void btnCheckout_Click(object sender, EventArgs e)
         {
-            Table table = lvBill.Tag as Table;
-
-            int idBill = BillController.Instance.GetUncheckBillID(table.ID_Table);
-
-            double per = Convert.ToDouble(txtPercent.Text) / 100;
-            double total =Convert.ToDouble(txtTotal.Text.Split(',')[0]);
-            total = (total + total * 0.1 - total * per)*1000;
-
-            if (idBill != -1)
+            try
             {
-                if (MessageBox.Show(string.Format("Bạn có chắc thanh toán hóa đơn cho bàn {0}\n Tổng tiền= tổng tiền + 10%(VAT) - giảm giá \n= {1} ", table.ID_Table, total), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
-                {
-                    BillController.Instance.CheckOut(idBill, id_discount, total);
-                    ShowBill(table.ID_Table);
+                Table table = lvBill.Tag as Table;
 
-                    LoadTable();
+                int idBill = BillController.Instance.GetUncheckBillID(table.ID_Table);
+
+                double per = Convert.ToDouble(txtPercent.Text) / 100;
+                double total = Convert.ToDouble(txtTotal.Text.Split(',')[0]);
+                total = (total + total * 0.1 - total * per) * 1000;
+
+                if (idBill != -1)
+                {
+                    if (MessageBox.Show(string.Format("Bạn có chắc thanh toán hóa đơn cho bàn {0}\n Tổng tiền= tổng tiền + 10%(VAT) - giảm giá \n= {1} ", table.ID_Table, total), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                    {
+                        BillController.Instance.CheckOut(idBill, id_discount, total);
+                        ShowBill(table.ID_Table);
+
+                        LoadTable();
+                    }
                 }
             }
+            catch (Exception)
+            {
+
+            }
+            
         }
 
         //Bắt sự kiện combox của discount thay đổi
         private void cbDiscount_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ComboBox cb = sender as ComboBox;
+            try
+            {
+                ComboBox cb = sender as ComboBox;
 
-            if (cb.SelectedItem == null)
-                return;
-            Discount selected = cb.SelectedItem as Discount;
-            txtPercent.Text = selected.Per.ToString();
-            id_discount = selected.ID_Dis;
+                if (cb.SelectedItem == null)
+                    return;
+                Discount selected = cb.SelectedItem as Discount;
+                txtPercent.Text = selected.Per.ToString();
+                id_discount = selected.ID_Dis;
+            }
+            catch (Exception)
+            {
 
-           
+            }
+
         }
 
         //Chuyen sang form Quan ly mon
