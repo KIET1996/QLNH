@@ -184,19 +184,27 @@ namespace QLNH
         {
             int ID_Table = Convert.ToInt32(txtIDTable.Text);
 
-            DialogResult dr = MessageBox.Show("Bạn có muốn xóa bàn này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (dr == DialogResult.OK)
+            try
             {
-                if (TableController.Instance.DeleteTable(ID_Table))
+                DialogResult dr = MessageBox.Show("Bạn có muốn xóa bàn này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dr == DialogResult.OK)
                 {
-                    MessageBox.Show("Xóa bàn thành công!");
-                    table_Load();
-                }
-                else
-                {
-                    MessageBox.Show("Xóa bàn thất bại!");
+                    if (TableController.Instance.DeleteTable(ID_Table))
+                    {
+                        MessageBox.Show("Xóa bàn thành công!");
+                        table_Load();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa bàn thất bại!");
+                    }
                 }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         //Sua thong tin ban
@@ -204,21 +212,31 @@ namespace QLNH
         {
             try
             {
-                int ID_Table = Convert.ToInt32(txtIDTable.Text);
-                int ID_Pos = (cbPosition.SelectedItem as Position).ID_Pos;
-                int Capability = Convert.ToInt32(numCapa.Value);
-                int Sta = 0;
-
-                if (radYes.Checked)
+                DialogResult dr = MessageBox.Show("Bạn có muốn sửa bàn này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dr == DialogResult.OK)
                 {
-                    Sta = 1;
-                }
+                    int ID_Table = Convert.ToInt32(txtIDTable.Text);
+                    int ID_Pos = (cbPosition.SelectedItem as Position).ID_Pos;
+                    int Capability = Convert.ToInt32(numCapa.Value);
+                    int Sta = 0;
 
-                if (TableController.Instance.UpdateTable(ID_Table, ID_Pos, Capability, Sta))
-                {
-                    MessageBox.Show("Sửa thông tin thành công!");
-                    table_Load();
+                    if (radYes.Checked)
+                    {
+                        Sta = 1;
+                    }
+
+                    if (TableController.Instance.UpdateTable(ID_Table, ID_Pos, Capability, Sta))
+                    {
+                        MessageBox.Show("Sửa thông tin thành công!");
+                        table_Load();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa thông tin không thành công!");
+                        table_Load();
+                    }
                 }
+                
             }
             catch (Exception)
             {
@@ -314,19 +332,27 @@ namespace QLNH
         {
             int ID_Pos = Convert.ToInt32(txtIDPos.Text);
 
-            DialogResult dr = MessageBox.Show("Bạn có muốn xóa khu vực này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (dr == DialogResult.OK)
+            try
             {
-                if (PositionController.Instance.DeletePosition(ID_Pos))
+                DialogResult dr = MessageBox.Show("Bạn có muốn xóa khu vực này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dr == DialogResult.OK)
                 {
-                    MessageBox.Show("Xóa khu vực thành công!");
-                    position_Load();
-                }
-                else
-                {
-                    MessageBox.Show("Xóa khu vực thất bại!");
+                    if (PositionController.Instance.DeletePosition(ID_Pos))
+                    {
+                        MessageBox.Show("Xóa khu vực thành công!");
+                        position_Load();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa khu vực thất bại!");
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void btnEditPos_Click(object sender, EventArgs e)
@@ -335,20 +361,26 @@ namespace QLNH
             string name = txtNamePos.Text;
             string Sta = txtStatusPos.Text;
             string note = txtNotePos.Text;
-
-            DialogResult dr = MessageBox.Show("Bạn có muốn chỉnh sửa khu vực này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (dr == DialogResult.OK)
+            if (name != "")
             {
-                if (PositionController.Instance.UpdatePosition(ID_Pos, name, Sta, note))
+                DialogResult dr = MessageBox.Show("Bạn có muốn chỉnh sửa khu vực này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dr == DialogResult.OK)
                 {
-                    MessageBox.Show("Sửa thông tin thành công!");
-                    position_Load();
+                    if (PositionController.Instance.UpdatePosition(ID_Pos, name, Sta, note))
+                    {
+                        MessageBox.Show("Sửa thông tin thành công!");
+                        position_Load();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Chỉnh sửa khu vực thất bại!");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Chỉnh sửa khu vực thất bại!");
-                }
-            }            
+            }
+            else
+            {
+                MessageBox.Show("Chỉnh sửa khu vực thất bại! Không để trống tên khu vực!");
+            }               
         }
 
         //Chuyen sang form Quan ly thong ke
