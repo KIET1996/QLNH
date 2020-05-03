@@ -335,12 +335,20 @@ namespace QLNH
             string name = txtNamePos.Text;
             string Sta = txtStatusPos.Text;
             string note = txtNotePos.Text;
-            
-            if (PositionController.Instance.UpdatePosition(ID_Pos, name, Sta, note))
+
+            DialogResult dr = MessageBox.Show("Bạn có muốn chỉnh sửa khu vực này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (dr == DialogResult.OK)
             {
-                MessageBox.Show("Sửa thông tin thành công!");
-                position_Load();
-            }
+                if (PositionController.Instance.UpdatePosition(ID_Pos, name, Sta, note))
+                {
+                    MessageBox.Show("Sửa thông tin thành công!");
+                    position_Load();
+                }
+                else
+                {
+                    MessageBox.Show("Chỉnh sửa khu vực thất bại!");
+                }
+            }            
         }
 
         //Chuyen sang form Quan ly thong ke
