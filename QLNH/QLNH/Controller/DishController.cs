@@ -38,7 +38,7 @@ namespace QLNH.Controller
             return list;
         }
 
-        // List Food
+        /*List Food
         public List<Dish> GetListDish()
         {
             List<Dish> list = new List<Dish>();
@@ -55,8 +55,9 @@ namespace QLNH.Controller
 
             return list;
         }
+        */
 
-        // Lít food by procedure
+        // List food by procedure
         public DataTable ListDish()
         {
             return DataProvider.Instance.ExecuteQuery("execute listfood");
@@ -79,7 +80,7 @@ namespace QLNH.Controller
             return result > 0;
         }
 
-        // Searching Food
+        /* Searching Food
         public List<Dish> SearchFood(string name)
         {
             List<Dish> list = new List<Dish>();
@@ -96,6 +97,7 @@ namespace QLNH.Controller
 
             return list;
         }
+        */
 
         // Search food 
         public DataTable Search(string name)
