@@ -153,28 +153,36 @@ namespace QLNH
         //Lưu cho su kien nut them ban
         private void btnSave_Click(object sender, EventArgs e)
         {
-            int ID_Pos = (cbPosition.SelectedItem as Position).ID_Pos;
-      //      MessageBox.Show("Hãy chọn khu vực!"+ID_Pos, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
-            int Capability = (int)numCapa.Value;
-            int sta = 0;
+            try
+            {
+                int ID_Pos = (cbPosition.SelectedItem as Position).ID_Pos;
+                //      MessageBox.Show("Hãy chọn khu vực!"+ID_Pos, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+                int Capability = (int)numCapa.Value;
+                int sta = 0;
 
-            if (radYes.Checked)
-            {
-                sta = 1;
-            }
-            if (ID_Pos > 0)
-            {
-                if (TableController.Instance.InsertTable(ID_Pos, Capability, sta))
+                if (radYes.Checked)
                 {
-                    MessageBox.Show("Thêm bàn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
-                    table_Load();
-                    ResetFieldsTable(false);
+                    sta = 1;
                 }
+                if (ID_Pos > 0)
+                {
+                    if (TableController.Instance.InsertTable(ID_Pos, Capability, sta))
+                    {
+                        MessageBox.Show("Thêm bàn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+                        table_Load();
+                        ResetFieldsTable(false);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Hãy chọn khu vực!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+                }
+
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Hãy chọn khu vực!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
-            } 
+                MessageBox.Show("Nhập đầy đủ các thông tin");
+            }
 
 
         }
